@@ -1,707 +1,434 @@
-<!DOCTYPE html>
-<html lang="en">
-
+﻿<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
 <head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>SB Open source</title>
-
-    <link rel="shortcut icon" href="img/favicon.ico">
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="css/agency.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<title>TruthPad — 给科研、学生、工程、程序员的 Windows 原生编辑器</title>
+<meta name="description" content="TruthPad：2.5 MB 单 exe 的 Windows 原生编辑器，启动不加载任何插件。PDF 批注写回文件、论文速读/精读、外语课程实时中文字幕、字幕一键成讲义、WSL 远程文件、PuTTY 终端停靠、九处 UI 插入点的 C++ 插件体系。">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
 </head>
+<body>
 
-<body id="page-top" class="index">
-<a href="https://github.com/jpillora/notifyjs"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub"></a>
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Spring Breeze</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#opensources">Open Sources</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#softwares">Softwares</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#business">Business</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#events">Events</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#resume">Resume</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
+<header class="topbar">
+  <div class="wrap bar-inner">
+    <a class="brand" href="#top">
+      <img src="assets/logo.svg" alt="" width="26" height="26">
+      <span class="brand-name">TruthPad</span>
+    </a>
+    <nav class="nav">
+      <a href="#who"><span class="zh">适合谁</span><span class="en">Who it's&nbsp;for</span></a>
+      <a href="#light"><span class="zh">轻与快</span><span class="en">Light &amp; fast</span></a>
+      <a href="#pdf">PDF</a>
+      <a href="#subs"><span class="zh">浏览器字幕</span><span class="en">Subtitles</span></a>
+      <a href="#docs"><span class="zh">材料</span><span class="en">Docs</span></a>
+      <a href="#get"><span class="zh">上手</span><span class="en">Get&nbsp;it</span></a>
     </nav>
-
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="intro-text">
-                <div class="intro-lead-in">Thanks for your viste!</div>
-                <div class="intro-heading">We can do more!</div>
-                <a href="#softwares" class="page-scroll btn btn-xl">View More</a>
-            </div>
-        </div>
-    </header>
-
-    <!-- Services Section -->
-    <section id="opensources">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Open Sources</h2>
-                    <h3 class="section-subheading text-muted">The Open Source Softwares we created and we participationed.</h3>
-                </div>
-            </div>
-            <div class="row text-center">
-                <div class="col-md-3">
-                    <a href="http://zhanleewo.github.io/ZLMailComposerViewController">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">Mail Composer</h4></a>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                
-                </div>
-                <div class="col-md-3">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">Libvd</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                </div>
-                <div class="col-md-3">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">Web Security</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                </div>
-                <div class="col-md-3">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">Web Security</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                </div>
-            </div>
-            
-            <div class="clearfix"></div>
-            <div class="col-lg-12 text-center">
-                <div id="success"></div>
-                    <button type="submit" class="btn btn-xl">View More</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Grid Section -->
-    <section id="softwares" class="bg-light-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Softwares</h2>
-                    <h3 class="section-subheading text-muted">The public softwares we developed.</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/roundicons.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Round Icons</h4>
-                        <p class="text-muted">Graphic Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/startup-framework.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Startup Framework</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/treehouse.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Treehouse</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/golden.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Golden</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/escape.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Escape</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/dreams.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Dreams</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="clearfix"></div>
-            <div class="col-lg-12 text-center">
-                <div id="success"></div>
-                    <button type="submit" class="btn btn-xl">View More</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section id="business">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Business</h2>
-                    <h3 class="section-subheading text-muted">Our Individualized Services for you.</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="img/team/1.jpg" class="img-responsive img-circle" alt="">
-                        <h4>Waitting for you!</h4>
-                        <p class="text-muted">Lead Designer</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="img/team/2.jpg" class="img-responsive img-circle" alt="">
-                        <h4>Waitting for you!</h4>
-                        <p class="text-muted">Lead Marketer</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="img/team/3.jpg" class="img-responsive img-circle" alt="">
-                        <h4>Diana Pertersen</h4>
-                        <p class="text-muted">Lead Developer</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
-                </div>
-            </div>
-            
-            <div class="clearfix"></div>
-            <div class="col-lg-12 text-center">
-                <div id="success"></div>
-                    <button type="submit" class="btn btn-xl">View More</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Clients Aside -->
-    <aside class="clients" class="bg-light-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/logos/envato.jpg" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/logos/designmodo.jpg" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/logos/themeforest.jpg" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/logos/creative-market.jpg" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </aside>
-
-    <!-- About Section -->
-    <section id="events" class="bg-light-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Events</h2>
-                    <h3 class="section-subheading text-muted">Since Nov. 2014.</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul class="timeline">
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>2009-2011</h4>
-                                    <h4 class="subheading">Our Humble Beginnings</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/2.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>March 2011</h4>
-                                    <h4 class="subheading">An Agency is Born</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/3.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>December 2012</h4>
-                                    <h4 class="subheading">Transition to Full Service</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/4.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>July 2014</h4>
-                                    <h4 class="subheading">Phase Two Expansion</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <h4>Be Part
-                                    <br>Of Our
-                                    <br>Story!</h4>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="clearfix"></div>
-            <div class="col-lg-12 text-center">
-                <div id="success"></div>
-                    <button type="submit" class="btn btn-xl">View More</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="resume">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Contact Us</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <form name="sentMessage" id="contactForm" novalidate>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name.">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address.">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="form-group">
-                                    <input type="tel" class="form-control" placeholder="Your Phone *" id="phone" required data-validation-required-message="Please enter your phone number.">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <textarea class="form-control" placeholder="Your Message *" id="message" required data-validation-required-message="Please enter a message."></textarea>
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="col-lg-12 text-center">
-                                <div id="success"></div>
-                                <button type="submit" class="btn btn-xl">Send Message</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; Your Website 2014</span>
-                </div>
-                <div class="col-md-4">
-                    <ul class="list-inline social-buttons">
-                        <li><a href="#"><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-google-plus"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-weibo"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-qq"></i></a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <ul class="list-inline quicklinks">
-                        <li><a href="#">Privacy Policy</a>
-                        </li>
-                        <li><a href="#">Terms of Use</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Portfolio Modals -->
-    <!-- Use the modals below to showcase details about your portfolio projects! -->
-
-    <!-- Portfolio Modal 1 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2>Project Name</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive" src="img/portfolio/roundicons-free.png" alt="">
-                            <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                            <p>
-                                <strong>Want these icons in this portfolio item sample?</strong>You can download 60 of them for free, courtesy of <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">RoundIcons.com</a>, or you can purchase the 1500 icon set <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">here</a>.</p>
-                            <ul class="list-inline">
-                                <li>Date: July 2014</li>
-                                <li>Client: Round Icons</li>
-                                <li>Category: Graphic Design</li>
-                            </ul>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="bar-actions">
+      <button id="lang-toggle" class="ghost-btn" type="button" title="切换语言 / Switch language">中<span class="sep">/</span>EN</button>
+      <button id="theme-toggle" class="ghost-btn" type="button" title="切换主题 / Toggle theme" aria-label="Toggle theme">☾</button>
+      <a class="cta" href="#get"><span class="zh">下载 Beta</span><span class="en">Get Beta</span></a>
     </div>
+  </div>
+</header>
 
-    <!-- Portfolio Modal 2 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Project Heading</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="img/portfolio/startup-framework-preview.png" alt="">
-                            <p><a href="http://designmodo.com/startup/?u=787">Startup Framework</a> is a website builder for professionals. Startup Framework contains components and complex blocks (PSD+HTML Bootstrap themes and templates) which can easily be integrated into almost any design. All of these components are made in the same style, and can easily be integrated into projects, allowing you to create hundreds of solutions for your future projects.</p>
-                            <p>You can preview Startup Framework <a href="http://designmodo.com/startup/?u=787">here</a>.</p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<main id="top">
+
+  <!-- ============================ Hero ============================ -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">TruthPad · <span class="zh">Windows 原生嵌入式开发编辑器</span><span class="en">a Windows-native editor</span></p>
+        <h1><span class="zh">小到能装进口袋，<br>强到能读懂一门外语课</span><span class="en">Small enough to pocket,<br>smart enough to subtitle a lecture</span></h1>
+        <p class="lede">
+          <span class="zh">C++20 + 纯 Win32 单 exe；启动不加载任何插件；能力全部挂在插件体系上。</span>
+          <span class="en">A single C++20 / pure-Win32 exe. Loads zero plugins at startup. Everything else is a plugin.</span>
+        </p>
+        <div class="hero-actions">
+          <a class="cta big" href="#who"><span class="zh">看它适合谁</span><span class="en">See who it's for</span></a>
+          <a class="ghost-btn big" href="#subs"><span class="zh">看字幕流水线</span><span class="en">Subtitle pipeline</span></a>
         </div>
-    </div>
-
-    <!-- Portfolio Modal 3 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2>Project Name</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="img/portfolio/treehouse-preview.png" alt="">
-                            <p>Treehouse is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. This is bright and spacious design perfect for people or startup companies looking to showcase their apps or other projects.</p>
-                            <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/treehouse-free-psd-web-template/">FreebiesXpress.com</a>.</p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <p class="hero-audience">
+          <span class="zh"><b>科研工作者 · 学生 · 工程技术人员 · 程序员</b> —— 四类人，四套用法。</span>
+          <span class="en"><b>Researchers · students · engineers · programmers</b> — four ways to work.</span>
+        </p>
+        <div class="stats-grid">
+          <div class="stat"><b>2.5 MB</b><span class="zh">主程序单 exe</span><span class="en">main binary</span></div>
+          <div class="stat"><b>0</b><span class="zh">启动时加载的插件</span><span class="en">plugins loaded at startup</span></div>
+          <div class="stat"><b>9</b><span class="zh">UI 插入点</span><span class="en">UI insertion points</span></div>
         </div>
+      </div>
+      <figure class="shot hero-shot">
+        <span class="dark-only">
+          <img class="zh" src="assets/shot-blank-zh-dark.png" alt="TruthPad 空白页（中文·深色）" loading="lazy">
+          <img class="en" src="assets/shot-blank-en-dark.png" alt="TruthPad empty state (English, dark)" loading="lazy">
+        </span>
+        <span class="light-only">
+          <img class="zh" src="assets/shot-blank-zh-light.png" alt="TruthPad 空白页（中文·浅色）" loading="lazy">
+          <img class="en" src="assets/shot-blank-en-light.png" alt="TruthPad empty state (English, light)" loading="lazy">
+        </span>
+      </figure>
     </div>
+  </section>
 
-    <!-- Portfolio Modal 4 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2>Project Name</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="img/portfolio/golden-preview.png" alt="">
-                            <p>Start Bootstrap's Agency theme is based on Golden, a free PSD website template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Golden is a modern and clean one page web template that was made exclusively for Best PSD Freebies. This template has a great portfolio, timeline, and meet your team sections that can be easily modified to fit your needs.</p>
-                            <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/golden-free-one-page-web-template/">FreebiesXpress.com</a>.</p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <!-- ============================ 适合谁（四类人，四套用法） ============================ -->
+  <section class="section" id="who">
+    <div class="wrap">
+      <h2><span class="zh">四类人，四套用法</span><span class="en">Four kinds of people, four ways to work</span></h2>
+      <p class="section-lede">
+        <span class="zh">同一个程序，四种打开方式。下面每一条都是现成功能，不是路线图。</span>
+        <span class="en">One program, four ways in. Every item below ships today — none of it is a roadmap.</span>
+      </p>
+
+      <div class="who-grid">
+
+        <!-- 科研 -->
+        <article class="who-card">
+          <h3><span class="zh">科研工作者</span><span class="en">Researchers</span></h3>
+          <p class="who-hook">
+            <span class="zh">读论文、做批注、整理讲义 —— 一天要重复十遍。</span>
+            <span class="en">Read, annotate, write up — ten times a day.</span>
+          </p>
+          <ul class="who-list">
+            <li>
+              <span class="zh"><b>批注写回 PDF 文件本身</b>：高亮 / 下划线 / 删除线 / 图形 / 文本框 / 指示批注都能存回文件，换个阅读器打开也看得见。文本框<b>自动换行、高度自适应</b>，选中后能像画图软件一样拖动位置、拖左右边改宽度。</span>
+              <span class="en"><b>Annotations saved into the file</b>: highlight, underline, strike-out, shapes, text boxes and callouts are written back, visible in any reader. Text boxes wrap and auto-fit, and once selected can be dragged or resized by their left/right edges.</span>
+            </li>
+            <li>
+              <span class="zh"><b>论文速读 / 精读</b>：一键得到「核心贡献 / 实验与可信度 / 局限与坑 / 值不值得精读 / 复现检查清单」，精读再补 Mermaid 图与逐节审校；按文档 ID 缓存，同一篇不重复花 token。</span>
+              <span class="en"><b>Paper quick-read / deep-read</b>: contribution, evidence, limits, verdict and a reproduction checklist — deep-read adds Mermaid figures and a per-section review. Cached per document, so the same paper never costs twice.</span>
+            </li>
+            <li>
+              <span class="zh"><b>公式与图就是排版好的</b>：Markdown 里写 <code>\(…\)</code>、<code>\[…\]</code> 和 <code>mermaid</code> 代码块，预览里直接出公式与流程图。</span>
+              <span class="en"><b>Maths and diagrams, typeset</b>: write <code>\(…\)</code>, <code>\[…\]</code> or a <code>mermaid</code> block in Markdown and the preview renders formulas and flowcharts.</span>
+            </li>
+            <li>
+              <span class="zh"><b>一集课程 → 一篇讲师级讲义</b>：本地 whisper 转写 + 三阶段成文，结尾自动带课后总结、学习检查清单、思考题、实验设计；写到一半关掉也能续。</span>
+              <span class="en"><b>A lecture becomes a long-form handout</b>: local whisper plus a three-stage writer, ending with a summary, self-check list, questions and lab design; stop halfway and it resumes.</span>
+            </li>
+          </ul>
+          <figure class="shot who-shot">
+            <span class="dark-only"><img class="zh" src="assets/shot-pdf-zh-dark.png" alt="PDF 阅读与批注（中文·深色）" loading="lazy"><img class="en" src="assets/shot-pdf-en-dark.png" alt="PDF reading and annotation (English, dark)" loading="lazy"></span>
+            <span class="light-only"><img class="zh" src="assets/shot-pdf-zh-light.png" alt="PDF 阅读与批注（中文·浅色）" loading="lazy"><img class="en" src="assets/shot-pdf-en-light.png" alt="PDF reading and annotation (English, light)" loading="lazy"></span>
+            <figcaption><span class="zh">正文、缩略图、批注在同一个标签里；批注存回文件</span><span class="en">Text, thumbnails and annotations in one tab; saved back to the file</span></figcaption>
+          </figure>
+        </article>
+
+        <!-- 学生 -->
+        <article class="who-card">
+          <h3><span class="zh">学生</span><span class="en">Students</span></h3>
+          <p class="who-hook">
+            <span class="zh">外语课听不懂、课程太散、笔记永远没整理。</span>
+            <span class="en">Lectures too fast, notes never written up.</span>
+          </p>
+          <ul class="who-list">
+            <li>
+              <span class="zh"><b>外语课实时出中文字幕</b>：内置浏览器打开视频页点「字幕」；转写在本机跑（音频不出电脑），译文整篇一次到位；字幕条可拖拽、可停靠。</span>
+              <span class="en"><b>Live Chinese subtitles for a foreign-language lecture</b>: open the video in the built-in browser and press Subtitles; transcription runs locally (audio never leaves the machine) and the translation arrives in one pass; the overlay is draggable and dockable.</span>
+            </li>
+            <li>
+              <span class="zh"><b>把一集课变成能复习的讲义</b>：右键「生成文章」→ 标题 / 概述 / 小节 / 总结，公式与图都补齐；没写完关掉也行，回来自动接着写。</span>
+              <span class="en"><b>Turn a lecture into revision material</b>: right-click Generate article → title, overview, sections, summary, with formulas and figures filled in; unfinished work resumes next time.</span>
+            </li>
+            <li>
+              <span class="zh"><b>笔记就是 Markdown</b>：边写边预览，公式、表格、Mermaid 都渲染；工作区树里随手建文件夹，全局搜索支持正则和 <code>glob</code>。</span>
+              <span class="en"><b>Notes are just Markdown</b>: live preview with formulas, tables and Mermaid; build folders in the workspace tree; global search with regex and <code>glob</code>.</span>
+            </li>
+            <li>
+              <span class="zh"><b>轻到可以装在老笔记本上</b>：主程序 2.5 MB，装完即用；不用的插件可以禁用 —— 不看 PDF，PDF 就完全不加载。</span>
+              <span class="en"><b>Light enough for an old laptop</b>: a 2.5 MB main binary, works right after install; unused plugins can be disabled — no PDF reading, no PDF loaded.</span>
+            </li>
+          </ul>
+          <figure class="shot who-shot">
+            <span class="dark-only"><img class="zh" src="assets/shot-browser-zh-dark.png" alt="浏览器 + 中文字幕浮层（中文·深色）" loading="lazy"><img class="en" src="assets/shot-browser-en-dark.png" alt="Browser with subtitles (English, dark)" loading="lazy"></span>
+            <span class="light-only"><img class="zh" src="assets/shot-browser-zh-light.png" alt="浏览器 + 中文字幕浮层（中文·浅色）" loading="lazy"><img class="en" src="assets/shot-browser-en-light.png" alt="Browser with subtitles (English, light)" loading="lazy"></span>
+            <figcaption><span class="zh">英语讲解实时出中文字幕，字幕条贴在页面上</span><span class="en">English speech, live Chinese subtitles on the page</span></figcaption>
+          </figure>
+        </article>
+
+        <!-- 工程技术人员 -->
+        <article class="who-card">
+          <h3><span class="zh">工程技术人员</span><span class="en">Engineers &amp; technicians</span></h3>
+          <p class="who-hook">
+            <span class="zh">看手册、连设备、翻日志、改远程文件 —— 工具散在五个软件里。</span>
+            <span class="en">Manuals, devices, logs and remote files — spread across five programs.</span>
+          </p>
+          <ul class="who-list">
+            <li>
+              <span class="zh"><b>终端就在编辑器底部</b>：PuTTY 会话（串口 / SSH / Telnet）以标签页停靠在下侧，会话配置独立存储，不动系统里那份。</span>
+              <span class="en"><b>A terminal docked under the editor</b>: PuTTY sessions (serial, SSH, Telnet) live in bottom tabs; their profiles are stored separately and leave your system PuTTY alone.</span>
+            </li>
+            <li>
+              <span class="zh"><b>WSL 与远程文件跟本地一样</b>：<code>wsl://</code> 挂进工作区树后，打开、编辑、保存、搜索、另存为全程一致 —— 因为文件系统本身就是插件。</span>
+              <span class="en"><b>WSL and remote files behave like local ones</b>: mount <code>wsl://</code> into the tree and open, edit, save, search and Save-As all work the same — the file system itself is a plugin.</span>
+            </li>
+            <li>
+              <span class="zh"><b>手册和图纸能批注</b>：批注存回 PDF，发给同事照样看得见；几百页的手册不卡（页级缓存、可见页裁剪、关档整块把内存还给系统）。</span>
+              <span class="en"><b>Manual and drawing annotation</b>: annotations go back into the PDF and survive sharing; hundreds of pages stay smooth (page caches, visible-page culling, whole arena returned on close).</span>
+            </li>
+            <li>
+              <span class="zh"><b>日志分频道、可过滤</b>：构建与插件的日志进底部输出栏，按频道分开、按级别过滤；图片查看器能缩放、平移、调亮度对比度、裁剪，不改原文件。</span>
+              <span class="en"><b>Logs per channel, with levels</b>: build and plugin logs land in the bottom output pane, split by channel and filterable by level; the image viewer zooms, pans, adjusts and crops without touching the original.</span>
+            </li>
+          </ul>
+          <figure class="shot who-shot">
+            <span class="dark-only"><img class="zh" src="assets/shot-main-zh-dark.png" alt="工作区树 + 编辑器 + 预览（中文·深色）" loading="lazy"><img class="en" src="assets/shot-main-en-dark.png" alt="Workspace tree, editor and preview (English, dark)" loading="lazy"></span>
+            <span class="light-only"><img class="zh" src="assets/shot-main-zh-light.png" alt="工作区树 + 编辑器 + 预览（中文·浅色）" loading="lazy"><img class="en" src="assets/shot-main-en-light.png" alt="Workspace tree, editor and preview (English, light)" loading="lazy"></span>
+            <figcaption><span class="zh">工作区树（含远程根）+ 编辑器 + 实时预览，一个窗口里干活</span><span class="en">Tree (remote roots included), editor and live preview in one window</span></figcaption>
+          </figure>
+        </article>
+
+        <!-- 程序员 -->
+        <article class="who-card">
+          <h3><span class="zh">程序员</span><span class="en">Programmers</span></h3>
+          <p class="who-hook">
+            <span class="zh">想要「起得快、改得动、能扩展」的编辑器，而不是再装一套 Electron。</span>
+            <span class="en">An editor that starts fast, can be changed, and can be extended — without another Electron runtime.</span>
+          </p>
+          <ul class="who-list">
+            <li>
+              <span class="zh"><b>启动快得能解释</b>：启动只读清单建菜单，<b>一个插件都不加载</b>、<b>一个 WebView2 都不创建</b>；面板和视图第一次显示才装载（收起状态下实测 0 个 WebView2 进程）。</span>
+              <span class="en"><b>Startup you can explain</b>: manifests build the menus, <b>zero plugins loaded</b> and <b>zero WebView2 processes created</b>; panels and views load the first time they are shown.</span>
+            </li>
+            <li>
+              <span class="zh"><b>插件就是把能力声明出来</b>：C++ 插件 SDK（<b>v1→v15 表尾只增不改</b>，老插件不破）＋九处 UI 插入点；自带 sample 插件当模板，改完丢进插件目录就能用。</span>
+              <span class="en"><b>Plugins are declared capabilities</b>: a C++ plugin SDK (v1→v15, append-only so old plugins keep working) plus nine UI insertion points; the bundled sample plugin is the template.</span>
+            </li>
+            <li>
+              <span class="zh"><b>零 Node 的构建链</b>：C++20 + 纯 Win32 + CMake + Visual Studio 2019；第三方引擎全部 vendor 在 <code>third_party/</code>，断网也能构建。</span>
+              <span class="en"><b>A build chain with zero Node</b>: C++20, pure Win32, CMake and Visual Studio 2019; every third-party engine is vendored under <code>third_party/</code>, so it builds offline.</span>
+            </li>
+            <li>
+              <span class="zh"><b>编辑器该有的都有</b>：按扩展名选词法器（Lexilla）、正则与跨行查找替换、多根工作区、标签分栏、深色自绘界面（无边框窗口、自绘菜单，跟随主题）。</span>
+              <span class="en"><b>The usual editor things, done properly</b>: lexer per extension (Lexilla), regex and multi-line search &amp; replace, multi-root workspace, split tabs, and a fully owner-drawn dark UI that follows the theme.</span>
+            </li>
+          </ul>
+          <figure class="shot who-shot">
+            <span class="dark-only"><img class="zh" src="assets/shot-code-zh-dark.png" alt="代码编辑（中文·深色）" loading="lazy"><img class="en" src="assets/shot-code-en-dark.png" alt="Code editing (English, dark)" loading="lazy"></span>
+            <span class="light-only"><img class="zh" src="assets/shot-code-zh-light.png" alt="代码编辑（中文·浅色）" loading="lazy"><img class="en" src="assets/shot-code-en-light.png" alt="Code editing (English, light)" loading="lazy"></span>
+            <figcaption><span class="zh">语法高亮跟随主题；插件可把自己的视图开成标签</span><span class="en">Syntax colours follow the theme; plugins can open their own views as tabs</span></figcaption>
+          </figure>
+        </article>
+
+      </div>
+
+      <p class="footnote">
+        <span class="zh">四类人用的是同一个程序：装哪个插件、开哪个面板，自己定。集成显卡也跑得动，离线也跑得动。</span>
+        <span class="en">All four use the same program — which plugins and panels you enable is up to you. It runs on integrated graphics and it runs offline.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================ 口号（灵魂，别删）============================ -->
+  <section class="slogan-band">
+    <div class="wrap">
+      <p class="slogan slogan-cap">Make Editing Great Again.</p>
+      <p class="slogan slogan-quote">&ldquo;Nobody knows editors better than me!&rdquo;</p>
+    </div>
+  </section>
+
+  <!-- ============================ 轻与快 ============================ -->
+  <section class="section" id="light">
+    <div class="wrap">
+      <h2><span class="zh">快、小、轻量，功能却不少</span><span class="en">Fast, small, light — and featureful</span></h2>
+      <p class="section-lede">
+        <span class="zh">启动只做三件事：读清单、预建入口、等你点。插件按需加载 —— 连「右侧 AI 面板」「下侧日志页签」这类界面，也是第一次显示才装载。</span>
+        <span class="en">Startup does three things: read the manifests, pre-build the entries, wait for you. Plugins load on demand — even panels load only the first time they are shown.</span>
+      </p>
+      <div class="cards">
+        <article class="card">
+          <div class="card-icon">2.5M</div>
+          <h3><span class="zh">单 exe，零 Node.js</span><span class="en">One exe, zero Node.js</span></h3>
+          <p><span class="zh">静态 CRT + LTCG；核心与构建链都不需要 Node。</span><span class="en">Static CRT + LTCG; no Node anywhere in the core or the build.</span></p>
+        </article>
+        <article class="card">
+          <div class="card-icon">0</div>
+          <h3><span class="zh">启动不加载插件</span><span class="en">Zero plugins at startup</span></h3>
+          <p><span class="zh">只读 manifest.json 建菜单；点哪个才 LoadLibrary 哪个。</span><span class="en">Menus come from plain-text manifests; a DLL loads only when clicked.</span></p>
+        </article>
+        <article class="card">
+          <div class="card-icon">9</div>
+          <h3><span class="zh">九处 UI 插入点</span><span class="en">Nine UI insertion points</span></h3>
+          <p><span class="zh">标题栏 / 菜单 / 状态栏 / 侧栏 / 编辑区视图 / 右键 / 右侧 AI 区 / 下侧页签 / 文件类型。</span><span class="en">Title bar, menu, status bar, sidebar, editor views, context menus, right panel, bottom dock, file handlers.</span></p>
+        </article>
+        <article class="card">
+          <div class="card-icon">v15</div>
+          <h3><span class="zh">宿主 API 只增不改</span><span class="en">Additive host API</span></h3>
+          <p><span class="zh">v1→v15 表尾追加：DPI / 主题 / 多语言 / 编辑区分块 / 深色菜单 / AI 配置，老插件照跑。</span><span class="en">v1→v15 append to the table: DPI, theme, i18n, editor panes, themed menus, AI config — old plugins keep working.</span></p>
+        </article>
+      </div>
+      <div class="shot-grid">
+        <figure class="shot">
+          <span class="dark-only"><img class="zh" src="assets/shot-main-zh-dark.png" alt="工作区树 + Markdown 源码 + 实时预览（中文·深色）" loading="lazy"><img class="en" src="assets/shot-main-en-dark.png" alt="Workspace tree, Markdown source and preview (English, dark)" loading="lazy"></span>
+          <span class="light-only"><img class="zh" src="assets/shot-main-zh-light.png" alt="工作区树 + Markdown 源码 + 实时预览（中文·浅色）" loading="lazy"><img class="en" src="assets/shot-main-en-light.png" alt="Workspace tree, Markdown source and preview (English, light)" loading="lazy"></span>
+          <figcaption><span class="zh">工作区树 + Markdown 源码 + 实时预览（Mermaid 与公式原生渲染）</span><span class="en">Tree, Markdown source and live preview (native Mermaid &amp; math)</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <span class="dark-only"><img class="zh" src="assets/shot-plugins-zh-dark.png" alt="插件管理页（中文·深色）" loading="lazy"><img class="en" src="assets/shot-plugins-en-dark.png" alt="Plugin manager (English, dark)" loading="lazy"></span>
+          <span class="light-only"><img class="zh" src="assets/shot-plugins-zh-light.png" alt="插件管理页（中文·浅色）" loading="lazy"><img class="en" src="assets/shot-plugins-en-light.png" alt="Plugin manager (English, light)" loading="lazy"></span>
+          <figcaption><span class="zh">插件管理页：声明即能力，按需装载，可禁用 / 卸载 / 更新</span><span class="en">Plugin manager: declared capabilities, loaded on demand</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <span class="dark-only"><img class="zh" src="assets/shot-code-zh-dark.png" alt="代码编辑（中文·深色）" loading="lazy"><img class="en" src="assets/shot-code-en-dark.png" alt="Code editing (English, dark)" loading="lazy"></span>
+          <span class="light-only"><img class="zh" src="assets/shot-code-zh-light.png" alt="代码编辑（中文·浅色）" loading="lazy"><img class="en" src="assets/shot-code-en-light.png" alt="Code editing (English, light)" loading="lazy"></span>
+          <figcaption><span class="zh">代码编辑：按扩展名选词法器，配色跟随主题</span><span class="en">Code editing: lexer by extension, colours follow the theme</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ PDF ============================ -->
+  <section class="section" id="pdf">
+    <div class="wrap">
+      <h2><span class="zh">PDF 阅读器：读、选、批注，都在这一个标签里</span><span class="en">A PDF reader that annotates, right in a tab</span></h2>
+      <div class="get-grid">
+        <ul class="reqs">
+          <li><span class="zh"><b>连续滚动</b> + <code>Ctrl+滚轮</code> 缩放；普通滚轮平滑滚动</span><span class="en"><b>Continuous scrolling</b> plus <code>Ctrl+wheel</code> zoom</span></li>
+          <li><span class="zh">左侧三标签页：<b>缩略图 / 书签 / 批注</b></span><span class="en">Sidebar with thumbnails, bookmarks and annotations</span></li>
+          <li><span class="zh">文本层可选中复制、可 <code>Ctrl+F</code> 查找</span><span class="en">Selectable, copyable text layer; <code>Ctrl+F</code> search</span></li>
+          <li><span class="zh"><b>批注能存回 PDF 文件</b>（高亮 / 下划线 / 删除线 / 波浪线 / 文本 / 图形 + 撤销栈）</span><span class="en"><b>Annotations are saved back into the file</b> (highlight, underline, strike-out, squiggly, free text, shapes, undo stack)</span></li>
+          <li><span class="zh">大书不卡：页级缓存 + 可见页裁剪 + 每文档内存域，关档整块归还</span><span class="en">Big books stay smooth: page caches, visible-page culling, per-document arena</span></li>
+          <li><span class="zh"><b>论文速读 / 精读</b>：一键生成「核心贡献 / 实验与可信度 / 局限与坑 / 值不值得精读 / 复现检查清单」；精读再补 Mermaid 图与逐节审校，按文档 ID 缓存不重复花钱</span><span class="en"><b>Paper quick-read / deep-read</b>: contribution, evidence, limits, verdict and a reproduction checklist; deep-read adds Mermaid figures and a per-section review, cached per document</span></li>
+          <li><span class="zh"><b>文本框批注能调</b>：自动换行、高度自适应，选中后可拖动位置、拖左右边改宽；指示批注的指示点不动</span><span class="en"><b>Text boxes you can adjust</b>: wrapping with auto-fit height, drag to move, drag an edge to resize; a callout keeps its target point</span></li>
+        </ul>
+        <figure class="shot">
+          <span class="dark-only"><img class="zh" src="assets/shot-pdf-zh-dark.png" alt="PDF 阅读器（中文·深色）" loading="lazy"><img class="en" src="assets/shot-pdf-en-dark.png" alt="PDF reader (English, dark)" loading="lazy"></span>
+          <span class="light-only"><img class="zh" src="assets/shot-pdf-zh-light.png" alt="PDF 阅读器（中文·浅色）" loading="lazy"><img class="en" src="assets/shot-pdf-en-light.png" alt="PDF reader (English, light)" loading="lazy"></span>
+          <figcaption><span class="zh">打开的是本页材料里的产品文档 PDF 本身</span><span class="en">Showing the very PDF from the docs section below</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ 浏览器 / 字幕（主打） ============================ -->
+  <section class="section" id="subs">
+    <div class="wrap">
+      <h2><span class="zh">浏览器插件：自动字幕 → 自动翻译 → 字幕成文</span><span class="en">The browser plugin: auto subtitles → auto translation → subtitle-to-article</span></h2>
+      <p class="section-lede">
+        <span class="zh">看外语课程最费时间的是「听懂」和「整理」。这条流水线把两件事都做掉：一键得到中文字幕，右键再把它整理成一篇长讲义。</span>
+        <span class="en">Understanding and organising a foreign-language lecture is the slow part. This pipeline does both: subtitles in one click, then a long-form article from the right-click menu.</span>
+      </p>
+
+      <ol class="flow">
+        <li><span class="n">1</span><span><b><span class="zh">取音源</span><span class="en">Fetch audio</span></b> — <span class="zh">站点脚本认领播放页，取音源后在页面内解码成 16 kHz 单声道；超长音频按分片表切窗口逐段解码再拼。</span><span class="en">A site script claims the player page; audio is decoded in-page to 16 kHz mono; very long audio is decoded window-by-window and stitched.</span></span></li>
+        <li><span class="n">2</span><span><b><span class="zh">本地转写</span><span class="en">Local transcription</span></b> — <span class="zh">8 分钟分段交给本机 whisper（CPU 能跑，N 卡自动走 CUDA）；音频不出本机，模型应用内一键下载。</span><span class="en">8-minute segments go to local whisper (CPU or CUDA); the audio never leaves the machine, models download in-app.</span></span></li>
+        <li><span class="n">3</span><span><b><span class="zh">整篇翻译 / 只校对</span><span class="en">Translate or proofread</span></b> — <span class="zh">整篇字幕一次发给 DeepSeek（格式锁死：不漏条、不动时间轴）；中文音频只校对不翻译。</span><span class="en">The whole transcript goes out in one call (schema locked); Chinese audio is proofread only, never translated.</span></span></li>
+        <li><span class="n">4</span><span><b><span class="zh">字幕成文</span><span class="en">Subtitle-to-article</span></b> — <span class="zh">右键「生成文章」：筋骨 → 血肉 → 逐节审校 → 概述/总结 → 总分总组装，一篇可读的长文就出来了。</span><span class="en">Right-click “Generate article”: skeleton → flesh → per-section review → overview &amp; summary → assembled whole.</span></span></li>
+      </ol>
+
+      <figure class="shot">
+        <span class="dark-only"><img class="zh" src="assets/shot-browser-zh-dark.png" alt="浏览器 + 字幕浮层（中文·深色）" loading="lazy"><img class="en" src="assets/shot-browser-en-dark.png" alt="Browser with subtitle overlay (English, dark)" loading="lazy"></span>
+        <span class="light-only"><img class="zh" src="assets/shot-browser-zh-light.png" alt="浏览器 + 字幕浮层（中文·浅色）" loading="lazy"><img class="en" src="assets/shot-browser-en-light.png" alt="Browser with subtitle overlay (English, light)" loading="lazy"></span>
+        <figcaption><span class="zh">英语讲解实时出中文字幕（演示视频《走遍美国》无字幕版；字幕浮层可拖拽/停靠）</span><span class="en">English speech, live Chinese subtitles (demo video: “Family Album U.S.A.”; the overlay is draggable/dockable)</span></figcaption>
+      </figure>
+
+      <div class="cards">
+        <article class="card">
+          <div class="card-icon">&#9670;</div>
+          <h3><span class="zh">成文是有规矩的</span><span class="en">Writing with rules</span></h3>
+          <p><span class="zh">规范从「字幕 ↔ 范文讲义」对照样本里提炼：4 级标题、固定尾节（课后总结 / 检查清单 / 思考题 / 实验设计）、段落模板、扩写比例。</span><span class="en">Rules distilled from transcript↔model-lecture pairs: 4-level headings, a fixed tail (summary, self-check, questions, lab design), paragraph templates, expansion ratio.</span></p>
+        </article>
+        <article class="card">
+          <div class="card-icon">fx</div>
+          <h3><span class="zh">公式是刚性验收</span><span class="en">Formulas are hard-checked</span></h3>
+          <p><span class="zh">只允许 <code>\(…\)</code> 与 <code>\[…\]</code>；出现 <code>$…$</code> 自动返修，组装后全篇再查。实测一集 2.5 小时课程：19.5 万字、0 次违规。</span><span class="en">Only <code>\(…\)</code> and <code>\[…\]</code>; any <code>$…$</code> is repaired automatically and re-checked. Measured: 195k characters, zero violations.</span></p>
+        </article>
+        <article class="card">
+          <div class="card-icon">&#9199;</div>
+          <h3><span class="zh">不重跑、能接着写</span><span class="en">Resume, never redo</span></h3>
+          <p><span class="zh">已完整的字幕/文章不重跑；没完整的按覆盖点续转、按检查点续写；离开页面 / 关标签就停，回来接着干。</span><span class="en">Finished subtitles and articles are never redone; partial work resumes from coverage and checkpoints; leaving stops the jobs, returning continues them.</span></p>
+        </article>
+        <article class="card">
+          <div class="card-icon">&#8599;</div>
+          <h3><span class="zh">像浏览器一样讲礼貌</span><span class="en">Behaves like a browser</span></h3>
+          <p><span class="zh"><code>target="_blank"</code> / <code>window.open</code> / 中键都开新标签；面板按需出现；菜单跟随主题。</span><span class="en">New tabs for <code>target="_blank"</code>, <code>window.open</code> and middle-click; panels appear on demand; menus follow the theme.</span></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ 材料 ============================ -->
+  <section class="section" id="docs">
+    <div class="wrap">
+      <h2><span class="zh">材料：产品介绍（中/英，Markdown + PDF）</span><span class="en">Docs: the same introduction in Markdown and PDF, Chinese and English</span></h2>
+      <p class="section-lede">
+        <span class="zh">两份文档的所有配图都来自 TruthPad 自身截图；演示用的 PDF 与 Markdown 也是自制素材，没有第三方版权内容。</span>
+        <span class="en">Every figure in these documents is a real TruthPad screenshot; the demo PDF and Markdown are self-made — no third-party copyrighted material.</span>
+      </p>
+      <div class="docs-grid">
+        <article class="card">
+          <div class="card-icon">中</div>
+          <h3><span class="zh">中文产品介绍</span><span class="en">Chinese introduction</span></h3>
+          <p><span class="zh">图文并茂，重点讲字幕流水线与 PDF 阅读器。</span><span class="en">Illustrated walkthrough of the subtitle pipeline and the PDF reader.</span></p>
+          <div class="doc-actions">
+            <a class="cta" href="docs/truthpad-zh.md" download>Markdown</a>
+            <a class="ghost-btn" href="docs/truthpad-zh.pdf" download>PDF</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-icon">EN</div>
+          <h3>English introduction</h3>
+          <p>The same content in English, with English-UI screenshots.</p>
+          <div class="doc-actions">
+            <a class="cta" href="docs/truthpad-en.md" download>Markdown</a>
+            <a class="ghost-btn" href="docs/truthpad-en.pdf" download>PDF</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-icon">&#9654;</div>
+          <h3><span class="zh">演示视频</span><span class="en">Demo video</span></h3>
+          <p><span class="zh">字幕功能演示用的公开视频（英语讲解、无字幕）。</span><span class="en">The public video used for the subtitle demo (English, no subtitles).</span></p>
+          <div class="doc-actions">
+            <a class="cta" href="https://www.bilibili.com/video/BV1MJ411p7ne/" target="_blank" rel="noopener">bilibili.com</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ 上手 ============================ -->
+  <section class="section" id="get">
+    <div class="wrap">
+      <h2><span class="zh">上手三步</span><span class="en">Three steps</span></h2>
+      <div class="get-grid">
+        <ol class="flow">
+          <li><span class="n">1</span><span><span class="zh">安装 <b>Beta 渠道</b>包（pdf / wsl / 图片查看器 / 浏览器四个插件，装好即用）。</span><span class="en">Install the <b>Beta</b> package (pdf, wsl, image viewer and browser plugins, ready to use).</span></span></li>
+          <li><span class="n">2</span><span><span class="zh">打开右上角浏览器 → 打开一个视频页 → 点「<b>字幕</b>」：第一次会让你在设置里下载识别模型、填 DeepSeek key。</span><span class="en">Open the built-in browser → a video page → press <b>Subtitles</b>; the first run asks for a model download and a DeepSeek key.</span></span></li>
+          <li><span class="n">3</span><span><span class="zh">右键 →「<b>生成文章</b>」：成品存进工作区树里选中的目录，并自动打开。</span><span class="en">Right-click → <b>Generate article</b>: it is saved into the folder selected in the workspace tree and opened for you.</span></span></li>
+        </ol>
+        <div class="code-block">
+          <pre id="build-cmd">tools\build-installer.ps1 -Channel Beta</pre>
+          <button id="copy-btn" class="ghost-btn copy" type="button"><span class="zh">复制</span><span class="en">Copy</span></button>
         </div>
+      </div>
+      <p class="footnote">
+        <span class="zh">源码可离线构建：CMake + Visual Studio 2019（x64），第三方引擎全部 vendor 在 third_party/。</span>
+        <span class="en">Builds offline: CMake + Visual Studio 2019 (x64); every third-party engine is vendored under third_party/.</span>
+      </p>
     </div>
+  </section>
 
-    <!-- Portfolio Modal 5 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2>Project Name</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="img/portfolio/escape-preview.png" alt="">
-                            <p>Escape is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Escape is a one page web template that was designed with agencies in mind. This template is ideal for those looking for a simple one page solution to describe your business and offer your services.</p>
-                            <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/escape-one-page-psd-web-template/">FreebiesXpress.com</a>.</p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <img src="assets/logo.svg" alt="" width="22" height="22">
+      <span>TruthPad</span>
     </div>
-
-    <!-- Portfolio Modal 6 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2>Project Name</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="img/portfolio/dreams-preview.png" alt="">
-                            <p>Dreams is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Dreams is a modern one page web template designed for almost any purpose. It’s a beautiful template that’s designed with the Bootstrap framework in mind.</p>
-                            <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/">FreebiesXpress.com</a>.</p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="footer-links">
+      <a href="#who"><span class="zh">适合谁</span><span class="en">Who it's for</span></a>
+      <a href="#light"><span class="zh">轻与快</span><span class="en">Light &amp; fast</span></a>
+      <a href="#pdf">PDF</a>
+      <a href="#subs"><span class="zh">浏览器字幕</span><span class="en">Subtitles</span></a>
+      <a href="docs/truthpad-zh.md"><span class="zh">中文文档</span><span class="en">Chinese doc</span></a>
+      <a href="docs/truthpad-en.md"><span class="zh">英文文档</span><span class="en">English doc</span></a>
     </div>
+    <p class="footer-slogan">Make Editing Great Again. &middot; &ldquo;Nobody knows editors better than me!&rdquo;</p>
+  </div>
+</footer>
 
-    <!-- jQuery Version 1.11.0 -->
-    <script src="js/jquery-1.11.0.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="js/classie.js"></script>
-    <script src="js/cbpAnimatedHeader.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="js/agency.js"></script>
-
+<script src="app.js"></script>
 </body>
-
 </html>

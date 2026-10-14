@@ -1,0 +1,330 @@
+﻿/* TruthPad 官网样式 —— 颜色/圆角/字体直接沿用应用自身的主题 token（src/Theme.cpp、resources/preview/preview.css） */
+
+:root {
+  --bg: #111214;
+  --panel: #17181b;
+  --bar: #1b1d20;
+  --border: #2b2d31;
+  --text: #e8e8ea;
+  --muted: #9a9da3;
+  --dim: #6b6e75;
+  --accent: #5a86f0;
+  --accent-text: #ffffff;
+  --hover: #202226;
+  --code-bg: #17181b;
+  --inline-code: #d19a66;
+  --navy: #0b1f3a;
+  --gold: #d9b45a;
+  --cap-red: #d9483c;   /* 空白页海报上那顶红帽子的红 —— 只给口号条用 */
+  --poster-gold: #e0b64a;   /* 海报上那句黄字 */
+  --ui-font: "Segoe UI", "Microsoft YaHei UI", "PingFang SC", system-ui, sans-serif;
+  --mono-font: Consolas, "Cascadia Mono", "Courier New", monospace;
+  --radius-card: 8px;
+  --radius-window: 10px;
+}
+
+body.light {
+  --bg: #ffffff;
+  --panel: #f7f8fa;
+  --bar: #f3f4f6;
+  --border: #e2e4e8;
+  --text: #1f2328;
+  --muted: #57606a;
+  --dim: #8b949e;
+  --accent: #3b6fe0;
+  --hover: #e8eaee;
+  --code-bg: #f7f8fa;
+  --inline-code: #986801;
+  --navy: #0b1f3a;
+  --gold: #b8871f;
+  --cap-red: #b33327;
+  --poster-gold: #97731a;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--ui-font);
+  font-size: 14px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 语言切换：默认中文，html[data-lang="en"] 时显示英文 */
+html[data-lang="en"] .zh { display: none; }
+html:not([data-lang="en"]) .en { display: none; }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+code, pre, kbd { font-family: var(--mono-font); }
+
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+/* 锚点跳转时给吸顶栏留出高度，标题不被遮住 */
+section[id], .cards[id], #top { scroll-margin-top: 72px; }
+
+/* ---------------------------------------------------------------- 顶栏 */
+.topbar {
+  position: sticky; top: 0; z-index: 50;
+  background: var(--bar);
+  border-bottom: 1px solid var(--border);
+}
+.bar-inner { display: flex; align-items: center; gap: 20px; height: 56px; }
+.brand { display: flex; align-items: center; gap: 9px; color: var(--text); font-weight: 600; }
+.brand:hover { text-decoration: none; }
+.brand-name { letter-spacing: 0.2px; }
+.nav { display: flex; gap: 18px; margin-left: 12px; flex: 1; }
+.nav a { color: var(--muted); }
+.nav a:hover { color: var(--text); text-decoration: none; }
+.bar-actions { display: flex; align-items: center; gap: 10px; }
+
+.cta, .ghost-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  height: 32px; padding: 0 14px; border-radius: 6px; cursor: pointer;
+  font-size: 13px; font-family: inherit; white-space: nowrap;
+}
+.cta { background: var(--accent); color: var(--accent-text); border: 1px solid var(--accent); font-weight: 600; }
+.cta:hover { filter: brightness(1.08); text-decoration: none; }
+.ghost-btn { background: transparent; color: var(--muted); border: 1px solid var(--border); }
+.ghost-btn:hover { background: var(--hover); color: var(--text); }
+.ghost-btn .sep { opacity: 0.5; }
+.cta.big, .ghost-btn.big { height: 40px; padding: 0 18px; font-size: 14px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* ---------------------------------------------------------------- Hero */
+.hero { padding: 56px 0 8px; }
+/* 用 minmax(0, 1fr)：1fr 的最小值是内容 min-content，
+   会被 <pre> 里的长命令撑破容器（窄屏横向溢出的经典坑） */
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 44px; align-items: center; }
+.eyebrow { color: var(--muted); font-size: 13px; margin: 0 0 10px; letter-spacing: 0.02em; }
+.hero h1 {
+  margin: 0 0 14px; font-size: 46px; line-height: 1.1; letter-spacing: -0.5px;
+  font-weight: 700; text-wrap: balance;
+}
+.lede { color: var(--muted); font-size: 16px; margin: 0 0 22px; }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 26px; }
+
+.quote-card, .egg {
+  display: flex; gap: 12px; margin: 0;
+  background: var(--panel); border: 1px solid var(--border);
+  border-radius: var(--radius-card); padding: 14px;
+}
+.quote-avatar img, .egg-avatar img { border-radius: 8px; display: block; }
+.quote-head, .egg-head { font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 5px; flex-wrap: wrap; }
+.quote-head strong, .egg-head strong { color: var(--text); }
+.badge { color: var(--accent); }
+.handle { color: var(--muted); }
+.dot { opacity: 0.6; }
+.quote-card blockquote { margin: 6px 0 4px; font-size: 15px; color: var(--text); }
+.quote-foot { font-size: 12px; color: var(--dim); }
+
+.shot { margin: 0; }
+.shot img {
+  display: block; width: 100%; height: auto;
+  border: 1px solid var(--border); border-radius: var(--radius-window);
+  background: var(--panel);
+}
+.shot figcaption { margin-top: 8px; font-size: 12.5px; color: var(--dim); }
+.hero-shot img { box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45); }
+body.light .hero-shot img { box-shadow: 0 18px 44px rgba(31, 35, 40, 0.16); }
+
+/* ---------------------------------------------------------------- 数字条 */
+.stats { border-block: 1px solid var(--border); margin-top: 44px; background: var(--panel); }
+.stats-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; padding-block: 20px; }
+.stat { text-align: center; }
+.stat b { display: block; font-size: 22px; color: var(--text); letter-spacing: -0.3px; }
+.stat span { color: var(--muted); font-size: 12.5px; }
+
+/* ---------------------------------------------------------------- 区块通用 */
+.section { padding: 64px 0; }
+.section h2 { font-size: 27px; margin: 0 0 8px; letter-spacing: -0.3px; }
+.section-lede { color: var(--muted); margin: 0 0 28px; max-width: 62ch; }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 16px; }
+.card {
+  background: var(--panel); border: 1px solid var(--border);
+  border-radius: var(--radius-card); padding: 20px;
+}
+.card-icon {
+  width: 34px; height: 34px; border-radius: 7px; margin-bottom: 12px;
+  display: flex; align-items: center; justify-content: center;
+  background: color-mix(in srgb, var(--accent) 16%, transparent);
+  color: var(--accent); font-family: var(--mono-font); font-size: 14px; font-weight: 700;
+}
+.card h3 { margin: 0 0 8px; font-size: 16px; }
+.card p { margin: 0; color: var(--muted); font-size: 13.5px; }
+.card code, .section-lede code, .steps code, .reqs code, tbody code {
+  background: var(--code-bg); border: 1px solid var(--border); border-radius: 4px;
+  padding: 1px 5px; font-size: 12.5px; color: var(--inline-code);
+}
+
+/* ---------------------------------------------------------------- 宣言区（竞选海报风） */
+.manifesto {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(217, 180, 90, 0.16), transparent 42%),
+    radial-gradient(circle at 88% 82%, rgba(217, 180, 90, 0.12), transparent 46%),
+    var(--navy);
+  border-block: 1px solid rgba(217, 180, 90, 0.28);
+  padding: 64px 0;
+}
+.mano-inner { text-align: center; }
+.mano-kicker {
+  color: var(--gold); letter-spacing: 0.32em; text-transform: uppercase;
+  font-size: 12px; margin: 0 0 12px;
+}
+.manifesto h2 { color: #f2f4f8; font-size: 32px; margin: 0 0 16px; }
+.mano-body { color: #c8d2e0; max-width: 74ch; margin: 0 auto 26px; font-size: 15px; }
+.mano-big {
+  color: var(--gold); font-size: clamp(24px, 4.4vw, 44px); font-weight: 800;
+  letter-spacing: 0.01em; margin: 0 0 10px;
+}
+.mano-small { color: #93a2b8; margin: 0; font-size: 13px; }
+
+/* ---------------------------------------------------------------- 对比表 */
+.table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius-card); }
+table { border-collapse: collapse; width: 100%; min-width: 640px; }
+th, td { text-align: left; padding: 13px 16px; border-bottom: 1px solid var(--border); vertical-align: top; }
+thead th { background: var(--panel); font-size: 13px; color: var(--muted); }
+thead th.us { color: var(--accent); }
+tbody th { color: var(--text); font-weight: 600; width: 22%; font-size: 13.5px; }
+tbody td { color: var(--muted); font-size: 13.5px; }
+tbody tr:last-child th, tbody tr:last-child td { border-bottom: none; }
+tbody td:first-of-type { color: var(--text); }
+.row-politics td b { color: var(--accent); }
+.row-politics { background: color-mix(in srgb, var(--accent) 7%, transparent); }
+.footnote { color: var(--dim); font-size: 12px; margin: 12px 0 0; }
+
+/* ---------------------------------------------------------------- 截图墙 */
+/* 「适合谁」：四类人卡片（2×2，窄屏一列） */
+.who-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(430px, 1fr)); gap: 18px; margin-bottom: 18px; }
+
+.who-card {
+  background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius-card);
+  border-top: 2px solid var(--accent);
+  padding: 20px 22px; display: flex; flex-direction: column; gap: 10px;
+}
+
+.who-card h3 { margin: 0; font-size: 17px; }
+
+.who-hook { margin: 0; color: var(--accent); font-size: 13px; }
+
+.who-list {
+  margin: 0; padding-left: 18px; color: var(--muted);
+  display: grid; gap: 8px; font-size: 13.5px;
+}
+
+.who-list b { color: var(--text); }
+
+.who-list code { font-size: 12.5px; }
+
+.who-shot { margin-top: auto; padding-top: 6px; }
+
+.hero-audience { margin: 14px 0 0; color: var(--muted); font-size: 13px; }
+
+.hero-audience b { color: var(--text); }
+
+.shot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 24px; }
+
+/* ---------------------------------------------------------------- 彩蛋卡 */
+.egg-section { padding-top: 8px; }
+.egg { max-width: 640px; }
+.egg-text { margin: 8px 0 10px; font-size: 14.5px; }
+.egg-meta { display: flex; gap: 20px; color: var(--dim); font-size: 12.5px; flex-wrap: wrap; }
+.egg-meta b { color: var(--muted); font-weight: 600; }
+
+/* ---------------------------------------------------------------- 上手 */
+.get-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 48px; }
+.code-block { position: relative; margin: 0 0 18px; }
+.code-block pre {
+  margin: 0; background: var(--code-bg); border: 1px solid var(--border);
+  border-radius: var(--radius-card); padding: 16px; overflow-x: auto;
+}
+.code-block code { color: var(--text); font-size: 13px; line-height: 1.75; }
+.ghost-btn.copy { position: absolute; top: 8px; right: 8px; height: 26px; padding: 0 10px; font-size: 12px; }
+.setup-shot { margin: 0 0 26px; max-width: 420px; }
+.setup-shot img { border-radius: 8px; }
+.sub-head { font-size: 15px; margin: 0 0 12px; color: var(--muted); font-weight: 600; }
+.reqs, .steps { margin: 0; padding-left: 20px; color: var(--muted); }
+.reqs li, .steps li { margin-bottom: 8px; }
+kbd {
+  background: var(--panel); border: 1px solid var(--border); border-bottom-width: 2px;
+  border-radius: 4px; padding: 1px 5px; font-size: 12px; color: var(--text);
+}
+
+/* ---------------------------------------------------------------- 页脚 */
+.footer { border-top: 1px solid var(--border); background: var(--panel); padding: 34px 0; }
+.footer-brand { margin: 0 0 8px; font-weight: 700; font-size: 15px; }
+.footer-links { margin: 0; display: flex; gap: 18px; font-size: 13px; }
+
+/* ---------------------------------------------------------------- 响应式 */
+@media (max-width: 980px) {
+  .hero-grid, .get-grid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .hero { padding-top: 36px; }
+  .hero h1 { font-size: 36px; }
+  .stats-grid { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
+  .section { padding: 48px 0; }
+}
+@media (max-width: 720px) {
+  .nav { display: none; }
+  .bar-actions .cta { display: none; }
+  .hero h1 { font-size: 30px; }
+  .shot-grid { grid-template-columns: 1fr; }
+  .mano-big { font-size: 26px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
+
+/* ---- 2026-10-12 重建：按站点主题/语言切换配图（中英 × 深浅 四套截图）---- */
+/* 语言：沿用已有 .zh / .en 规则（见文件上方）；这里补"按主题显隐" */
+body:not(.light) .light-only { display: none !important; }
+body.light .dark-only { display: none !important; }
+/* 材料区（4 份文档 + 演示视频）*/
+.docs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+.docs-grid .card { display: flex; flex-direction: column; gap: 6px; }
+.docs-grid .doc-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto; }
+.docs-grid .doc-actions a { font-size: 13px; }
+/* 字幕三件套的流程条 */
+.flow { list-style: none; padding: 0; margin: 14px 0; display: grid; gap: 8px; }
+.flow li { display: flex; gap: 10px; align-items: flex-start; }
+.flow .n { flex: 0 0 22px; height: 22px; border-radius: 50%; background: var(--accent, #4c8bf5);
+           color: #fff; font-size: 12px; line-height: 22px; text-align: center; }
+
+/* ---- 口号条（2026-10-13）：空白页那张"竞选海报"上的两句话，页面的灵魂，别删 ---- */
+.slogan-band {
+  background: var(--panel);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 34px 0 30px;
+  text-align: center;
+}
+.slogan { margin: 0; line-height: 1.2; }
+.slogan-cap {
+  font-size: clamp(24px, 3.6vw, 46px);
+  font-weight: 800;
+  letter-spacing: .5px;
+  color: var(--cap-red);
+}
+.slogan-quote {
+  margin-top: 8px;
+  font-size: clamp(20px, 3vw, 38px);
+  font-weight: 800;
+  color: var(--poster-gold);
+}
+.footer-slogan {
+  grid-column: 1 / -1;
+  margin: 14px 0 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  color: var(--dim);
+  font-size: 12.5px;
+}
+@media (max-width: 720px) {
+  .slogan-band { padding: 26px 0 24px; }
+  }

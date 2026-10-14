@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="TruthPad">
+  <rect x="1" y="1" width="62" height="62" rx="15" fill="#5a86f0"/>
+  <rect x="15" y="15" width="34" height="8" rx="4" fill="#ffffff"/>
+  <rect x="28" y="15" width="8" height="26" rx="4" fill="#ffffff"/>
+  <rect x="21" y="47" width="22" height="6" rx="3" fill="#ffffff" opacity="0.72"/>
+</svg>

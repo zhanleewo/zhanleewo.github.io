@@ -333,3 +333,22 @@ body.light .dark-only { display: none !important; }
 @media (max-width: 720px) {
   .slogan-band { padding: 26px 0 24px; }
   }
+
+/* 点下载时的准备事项提示（两件事：DeepSeek key / Whisper 模型） */
+.dl-prep { margin: 10px 0 0; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px;
+           background: var(--hover); color: var(--muted); font-size: 12.5px; line-height: 1.7; text-align: left; }
+.dl-prep b { color: var(--text); }
+.dl-modal { position: fixed; inset: 0; z-index: 50; display: flex; align-items: center; justify-content: center;
+            background: rgba(0, 0, 0, 0.55); padding: 20px; }
+.dl-modal[hidden] { display: none; }
+.dl-modal-box { max-width: 620px; width: 100%; max-height: 84vh; overflow: auto; background: var(--bg);
+                border: 1px solid var(--border); border-radius: 12px; padding: 20px 22px; text-align: left;
+                box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45); }
+.dl-modal-box h3 { margin: 0 0 12px; font-size: 16px; }
+.dl-modal-list { margin: 0 0 16px; padding-left: 20px; font-size: 13px; line-height: 1.8; color: var(--muted); }
+.dl-modal-list li { margin-bottom: 10px; }
+.dl-modal-list b { color: var(--text); }
+.dl-modal-list code { background: var(--hover); border: 1px solid var(--border); border-radius: 4px;
+                      padding: 1px 5px; font-size: 12px; }
+.dl-modal-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.dl-modal-skip { margin-left: auto; font-size: 12.5px; color: var(--muted); display: flex; align-items: center; gap: 6px; }

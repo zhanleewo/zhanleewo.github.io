@@ -410,14 +410,20 @@
           <li><span class="n">3</span><span><span class="zh">右键 →「<b>生成文章</b>」：成品存进工作区树里选中的目录，并自动打开。</span><span class="en">Right-click → <b>Generate article</b>: it is saved into the folder selected in the workspace tree and opened for you.</span></span></li>
         </ol>
         <div class="download-box">
-          <a class="cta big" href="https://github.com/zhanleewo/truthpad-binary/releases/download/v0.2.0-20261015/TruthPad-Setup-Beta.exe"><span class="zh">下载 Beta 安装包（131.8 MB）</span><span class="en">Download Beta installer (131.8 MB)</span></a>
-          <a class="ghost-btn big" href="https://github.com/zhanleewo/truthpad-binary/releases/download/v0.2.0-20261015/TruthPad-Setup-GA.exe"><span class="zh">下载 GA 安装包（18.3 MB，精简版）</span><span class="en">Download GA installer (18.3 MB, minimal)</span></a>
+          <a class="cta big" href="https://github.com/zhanleewo/truthpad-binary/releases/download/v0.2.0-20261015/TruthPad-Setup-Beta.exe"><span class="zh">下载 Beta 安装包（133.4 MB）</span><span class="en">Download Beta installer (133.4 MB)</span></a>
+          <a class="ghost-btn big" href="https://github.com/zhanleewo/truthpad-binary/releases/download/v0.2.0-20261015/TruthPad-Setup-GA.exe"><span class="zh">下载 GA 安装包（19.8 MB，精简版）</span><span class="en">Download GA installer (19.8 MB, minimal)</span></a>
           <p class="download-note">
             <span class="zh">Windows 10/11 x64 · 安装包自带运行库，不需要另装任何环境 ·
               <a href="https://github.com/zhanleewo/truthpad-binary/releases">全部版本与插件包</a></span>
             <span class="en">Windows 10/11 x64 &middot; the installer ships its own runtime &middot;
               <a href="https://github.com/zhanleewo/truthpad-binary/releases">all releases and plugin packages</a></span>
           </p>
+          <div class="dl-prep">
+            <span class="zh"><b>装完先做两件事</b>：① 设置 →「模型」里填 DeepSeek API Key（AI 功能才工作）；
+              ② 语音转字幕要在插件的配置里点「下载识别模型」（Whisper，约 1.6 GB，需要能访问 huggingface）</span>
+            <span class="en"><b>Two things after install</b>: (1) add your DeepSeek API key in Settings &rarr; Models (required by all AI features);
+              (2) for speech-to-subtitles, download the Whisper model from the plugin's settings (~1.6 GB, needs access to huggingface)</span>
+          </div>
         </div>
       </div>
       <p class="footnote">
@@ -428,6 +434,35 @@
   </section>
 
 </main>
+
+<!-- 点下载时弹的"准备事项"提示（用户 2026-10-15：提醒两件事）-->
+<div id="dl-modal" class="dl-modal" hidden>
+  <div class="dl-modal-box" role="dialog" aria-modal="true" aria-labelledby="dl-modal-title">
+    <h3 id="dl-modal-title"><span class="zh">下载后先做两件事</span><span class="en">Two things to set up after install</span></h3>
+    <ol class="dl-modal-list">
+      <li>
+        <span class="zh"><b>填 DeepSeek API Key</b>：打开「设置 → 模型」，添加一个模型（名称 / 接口地址 / 密钥，
+          也可以直接编辑 <code>%APPDATA%\TruthPad\models.json</code>）。翻译与审校、论文速读 / 精读、
+          字幕生成文章这些 AI 功能都从这份配置取；不填也能用，只是 AI 功能不工作。</span>
+        <span class="en"><b>Add your DeepSeek API key</b>: Settings &rarr; Models, add a model (name / endpoint / key,
+          or edit <code>%APPDATA%\TruthPad\models.json</code>). Translation, paper summaries and article generation all
+          read from this shared config. Without it the app still works &mdash; only the AI features stay off.</span>
+      </li>
+      <li>
+        <span class="zh"><b>语音转字幕要下载 Whisper</b>：打开「插件 → 浏览器 → 配置」点「下载识别模型」（约 1.6 GB），
+          并且这台电脑要能访问 <b>huggingface.com</b>（连不上时可在配置里把下载镜像切成 hf-mirror）。</span>
+        <span class="en"><b>Speech-to-subtitles needs Whisper</b>: open Plugins &rarr; Browser &rarr; Configure and click
+          &ldquo;Download model&rdquo; (~1.6 GB). The machine must be able to reach <b>huggingface.com</b>
+          (switch the mirror to hf-mirror in the same dialog if it is blocked).</span>
+      </li>
+    </ol>
+    <div class="dl-modal-actions">
+      <a id="dl-modal-continue" class="cta" href="#"><span class="zh">继续下载</span><span class="en">Continue to download</span></a>
+      <button id="dl-modal-close" class="ghost-btn" type="button"><span class="zh">关闭</span><span class="en">Close</span></button>
+      <label class="dl-modal-skip"><input type="checkbox" id="dl-modal-skip"> <span class="zh">不再提示</span><span class="en">Don't show again</span></label>
+    </div>
+  </div>
+</div>
 
 <footer class="footer">
   <div class="wrap footer-inner">

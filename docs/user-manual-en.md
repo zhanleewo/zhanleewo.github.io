@@ -1,4 +1,4 @@
-# TruthPad User Manual
+﻿# TruthPad User Manual
 
 > A lightweight, fast, plugin-based development editor — C++20 + pure Win32 + Scintilla,
 > a 2.5 MB single exe, no Node.js in the core or the build chain. This manual covers the current
@@ -263,7 +263,7 @@ A project file can bring up several roots plus a set of settings at once
   "name": "My firmware project",
   "folders": [
     "firmware",
-    { "path": "../sdk", "name": "SDK sources" }
+    { "path": "../lib", "name": "Shared libraries" }
   ],
   "settings": { "theme": "dark", "defaultEncoding": "utf8", "tabWidth": 4 },
   "wsl": { "distro": "Ubuntu", "remotePath": "/home/me/proj" }

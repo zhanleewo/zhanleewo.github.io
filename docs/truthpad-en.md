@@ -1,4 +1,4 @@
-# Meet TruthPad
+﻿# Meet TruthPad
 
 > A lightweight embedded-development editor · C++20 + pure Win32 · a single small exe · a plugin system
 > **All screenshots here are real shots.** The demo lecture PDF and demo Markdown are self-made
@@ -8,9 +8,9 @@
 
 | | |
 | --- | --- |
-| Main binary | **2.5 MB single exe** (static CRT + LTCG); no Node.js in the core or the build chain |
+| Main binary | **2.5 MB single exe**, statically linked runtime, **no Node.js / Electron** |
 | Startup | **Loads zero plugin DLLs** — it reads plain-text manifests to pre-build the menus, and loads a plugin only when you click it |
-| Plugins | One `manifest.json` per capability, **nine UI insertion points**; the host API grew from v1 to v7 without breaking older plugins |
+| Plugins | Installed, updated and disabled from inside the app; **none are loaded at startup** — a plugin comes up only when you use it |
 | Headliners | **PDF reading & annotation** · **Browser plugin: auto subtitles → auto translation → subtitle-to-article** |
 
 ![Workspace tree, Markdown source and live preview: native math and Mermaid rendering (dark theme)](../assets/shot-main-en-dark.png)
@@ -23,8 +23,8 @@
 read in *data mode* — no code executed), pre-build the Plugins menu and title-bar buttons, then wait
 for you.
 
-**Small.** 2.5 MB for the main binary. The engines (Scintilla/Lexilla, WebView2, MuPDF, whisper.cpp)
-are accounted for per plugin, and everything builds offline.
+**Small.** 2.5 MB for the main binary. Heavy engines (WebView2, MuPDF, whisper.cpp) are accounted for
+per plugin: no PDF reading means no PDF memory, no subtitles means no model on disk.
 
 **Light.** The same rule applies to every panel:
 

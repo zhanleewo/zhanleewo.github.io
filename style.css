@@ -201,6 +201,11 @@ tbody td:first-of-type { color: var(--text); }
 
 /* ---------------------------------------------------------------- 截图墙 */
 /* 「适合谁」：四类人卡片（2×2，窄屏一列） */
+/* 上手区：下载按钮（2026-10-14 用户要求官网直接下 Release 安装包） */
+.download-box { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+
+.download-note { margin: 0; color: var(--muted); font-size: 12.5px; }
+
 .who-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(430px, 1fr)); gap: 18px; margin-bottom: 18px; }
 
 .who-card {

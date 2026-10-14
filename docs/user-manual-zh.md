@@ -1,7 +1,7 @@
-# TruthPad 用户手册
+﻿# TruthPad 用户手册
 
 > 轻量、快速、插件化的开发编辑器 —— C++20 + 纯 Win32 + Scintilla，主程序 2.5 MB 单 exe，
-> 核心与构建链零 Node.js。本手册对应当前 Beta 渠道版本（「帮助 → 关于 TruthPad」显示 0.2.0）。
+> 不依赖 Node.js / Electron / Python。本手册对应当前 Beta 渠道版本（「帮助 → 关于 TruthPad」显示 0.2.0）。
 >
 > **读法约定**：`视图 → Markdown 实时预览` 表示菜单路径 —— 菜单从左上角的汉堡按钮 ☰ 弹出；
 > `Ctrl+F` 表示快捷键；`> 🖼️ 【插图 x-y】` 是**待补的截图占位**（全部清单见附录 D），
@@ -214,7 +214,7 @@
   "name": "我的固件工程",
   "folders": [
     "firmware",
-    { "path": "../sdk", "name": "SDK 源码" }
+    { "path": "../lib", "name": "公共库" }
   ],
   "settings": { "theme": "dark", "defaultEncoding": "utf8", "tabWidth": 4 },
   "wsl": { "distro": "Ubuntu", "remotePath": "/home/me/proj" }

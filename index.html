@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="dark light">
 <title>TruthPad — 给科研、学生、工程、程序员的 Windows 原生编辑器</title>
-<meta name="description" content="TruthPad：2.5 MB 单 exe 的 Windows 原生编辑器，启动不加载任何插件。PDF 批注写回文件、论文速读/精读、外语课程实时中文字幕、字幕一键成讲义、WSL 远程文件、PuTTY 终端停靠、九处 UI 插入点的 C++ 插件体系。">
+<meta name="description" content="TruthPad：2.5 MB 单 exe 的 Windows 原生编辑器，启动不加载任何插件。PDF 批注写回文件、论文速读/精读、外语课程实时中文字幕、字幕一键成讲义、WSL 远程文件、PuTTY 终端停靠、插件在线安装更新；不开源，装完即用。">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -28,7 +28,7 @@
     <div class="bar-actions">
       <button id="lang-toggle" class="ghost-btn" type="button" title="切换语言 / Switch language">中<span class="sep">/</span>EN</button>
       <button id="theme-toggle" class="ghost-btn" type="button" title="切换主题 / Toggle theme" aria-label="Toggle theme">☾</button>
-      <a class="cta" href="#get"><span class="zh">下载 Beta</span><span class="en">Get Beta</span></a>
+      <a class="cta" href="https://github.com/zhanleewo/truthpad-binary/releases/download/v0.1-beta/TruthPad-Setup-Beta.exe"><span class="zh">下载 Beta</span><span class="en">Download Beta</span></a>
     </div>
   </div>
 </header>
@@ -46,7 +46,8 @@
           <span class="en">A single C++20 / pure-Win32 exe. Loads zero plugins at startup. Everything else is a plugin.</span>
         </p>
         <div class="hero-actions">
-          <a class="cta big" href="#who"><span class="zh">看它适合谁</span><span class="en">See who it's for</span></a>
+          <a class="cta big" href="https://github.com/zhanleewo/truthpad-binary/releases/download/v0.1-beta/TruthPad-Setup-Beta.exe"><span class="zh">下载 Beta（Windows x64）</span><span class="en">Download Beta (Windows x64)</span></a>
+          <a class="ghost-btn big" href="#who"><span class="zh">看它适合谁</span><span class="en">See who it's for</span></a>
           <a class="ghost-btn big" href="#subs"><span class="zh">看字幕流水线</span><span class="en">Subtitle pipeline</span></a>
         </div>
         <p class="hero-audience">
@@ -56,7 +57,7 @@
         <div class="stats-grid">
           <div class="stat"><b>2.5 MB</b><span class="zh">主程序单 exe</span><span class="en">main binary</span></div>
           <div class="stat"><b>0</b><span class="zh">启动时加载的插件</span><span class="en">plugins loaded at startup</span></div>
-          <div class="stat"><b>9</b><span class="zh">UI 插入点</span><span class="en">UI insertion points</span></div>
+          <div class="stat"><b>4</b><span class="zh">个官方插件，在线安装</span><span class="en">official plugins, installed online</span></div>
         </div>
       </div>
       <figure class="shot hero-shot">
@@ -192,12 +193,12 @@
               <span class="en"><b>Startup you can explain</b>: manifests build the menus, <b>zero plugins loaded</b> and <b>zero WebView2 processes created</b>; panels and views load the first time they are shown.</span>
             </li>
             <li>
-              <span class="zh"><b>插件就是把能力声明出来</b>：C++ 插件 SDK（<b>v1→v15 表尾只增不改</b>，老插件不破）＋九处 UI 插入点；自带 sample 插件当模板，改完丢进插件目录就能用。</span>
-              <span class="en"><b>Plugins are declared capabilities</b>: a C++ plugin SDK (v1→v15, append-only so old plugins keep working) plus nine UI insertion points; the bundled sample plugin is the template.</span>
+              <span class="zh"><b>插件体系是"按需装载"的</b>：装了几个插件都行，启动时不加载任何一个 —— 点哪个功能才拉起哪个 DLL，不用的插件连内存都不占；插件在应用内在线安装、更新、禁用。</span>
+              <span class="en"><b>Plugins load on demand</b>: install as many as you like — none are loaded at startup; a DLL comes up only when you use its feature, and plugins install, update and disable from inside the app.</span>
             </li>
             <li>
-              <span class="zh"><b>零 Node 的构建链</b>：C++20 + 纯 Win32 + CMake + Visual Studio 2019；第三方引擎全部 vendor 在 <code>third_party/</code>，断网也能构建。</span>
-              <span class="en"><b>A build chain with zero Node</b>: C++20, pure Win32, CMake and Visual Studio 2019; every third-party engine is vendored under <code>third_party/</code>, so it builds offline.</span>
+              <span class="zh"><b>零 Node 的运行时</b>：C++20 + 纯 Win32 单 exe，不拖 Electron / Node / Python；2.5 MB 主程序 + 静态运行库，装完就一个目录。</span>
+              <span class="en"><b>A zero-Node runtime</b>: C++20 and pure Win32 in a single exe — no Electron, Node or Python; a 2.5 MB binary plus statically linked runtime in one folder.</span>
             </li>
             <li>
               <span class="zh"><b>编辑器该有的都有</b>：按扩展名选词法器（Lexilla）、正则与跨行查找替换、多根工作区、标签分栏、深色自绘界面（无边框窗口、自绘菜单，跟随主题）。</span>
@@ -240,7 +241,7 @@
         <article class="card">
           <div class="card-icon">2.5M</div>
           <h3><span class="zh">单 exe，零 Node.js</span><span class="en">One exe, zero Node.js</span></h3>
-          <p><span class="zh">静态 CRT + LTCG；核心与构建链都不需要 Node。</span><span class="en">Static CRT + LTCG; no Node anywhere in the core or the build.</span></p>
+          <p><span class="zh">静态链接运行库，解压即用；不需要装 Node / Electron / Python。</span><span class="en">Statically linked; unzip and run — no Node, Electron or Python to install.</span></p>
         </article>
         <article class="card">
           <div class="card-icon">0</div>
@@ -248,9 +249,9 @@
           <p><span class="zh">只读 manifest.json 建菜单；点哪个才 LoadLibrary 哪个。</span><span class="en">Menus come from plain-text manifests; a DLL loads only when clicked.</span></p>
         </article>
         <article class="card">
-          <div class="card-icon">9</div>
-          <h3><span class="zh">九处 UI 插入点</span><span class="en">Nine UI insertion points</span></h3>
-          <p><span class="zh">标题栏 / 菜单 / 状态栏 / 侧栏 / 编辑区视图 / 右键 / 右侧 AI 区 / 下侧页签 / 文件类型。</span><span class="en">Title bar, menu, status bar, sidebar, editor views, context menus, right panel, bottom dock, file handlers.</span></p>
+          <div class="card-icon">店</div>
+          <h3><span class="zh">插件在线装、随手关</span><span class="en">Install plugins from the app</span></h3>
+          <p><span class="zh">插件页里直接下载安装 / 更新 / 卸载（PDF、浏览器、WSL、图片查看器）；不用了可以禁用，禁用后连 DLL 都不加载。</span><span class="en">Install, update or remove plugins right in the app (PDF, browser, WSL, image viewer); disabled plugins are never even loaded.</span></p>
         </article>
         <article class="card">
           <div class="card-icon">v15</div>
@@ -376,6 +377,17 @@
           </div>
         </article>
         <article class="card">
+          <div class="card-icon">册</div>
+          <h3><span class="zh">用户手册</span><span class="en">User manual</span></h3>
+          <p><span class="zh">从界面、编辑器、终端、PDF、浏览器字幕到插件配置，逐项讲怎么用。</span><span class="en">Every feature explained: UI, editor, terminal, PDF, browser subtitles and plugin settings.</span></p>
+          <div class="doc-actions">
+            <a class="cta" href="docs/user-manual-zh.md" download>中文手册</a>
+            <a class="ghost-btn" href="docs/user-manual-zh.pdf" download>PDF</a>
+            <a class="ghost-btn" href="docs/user-manual-en.md" download>English</a>
+            <a class="ghost-btn" href="docs/user-manual-en.pdf" download>PDF</a>
+          </div>
+        </article>
+        <article class="card">
           <div class="card-icon">&#9654;</div>
           <h3><span class="zh">演示视频</span><span class="en">Demo video</span></h3>
           <p><span class="zh">字幕功能演示用的公开视频（英语讲解、无字幕）。</span><span class="en">The public video used for the subtitle demo (English, no subtitles).</span></p>
@@ -397,14 +409,20 @@
           <li><span class="n">2</span><span><span class="zh">打开右上角浏览器 → 打开一个视频页 → 点「<b>字幕</b>」：第一次会让你在设置里下载识别模型、填 DeepSeek key。</span><span class="en">Open the built-in browser → a video page → press <b>Subtitles</b>; the first run asks for a model download and a DeepSeek key.</span></span></li>
           <li><span class="n">3</span><span><span class="zh">右键 →「<b>生成文章</b>」：成品存进工作区树里选中的目录，并自动打开。</span><span class="en">Right-click → <b>Generate article</b>: it is saved into the folder selected in the workspace tree and opened for you.</span></span></li>
         </ol>
-        <div class="code-block">
-          <pre id="build-cmd">tools\build-installer.ps1 -Channel Beta</pre>
-          <button id="copy-btn" class="ghost-btn copy" type="button"><span class="zh">复制</span><span class="en">Copy</span></button>
+        <div class="download-box">
+          <a class="cta big" href="https://github.com/zhanleewo/truthpad-binary/releases/download/v0.1-beta/TruthPad-Setup-Beta.exe"><span class="zh">下载 Beta 安装包（131.8 MB）</span><span class="en">Download Beta installer (131.8 MB)</span></a>
+          <a class="ghost-btn big" href="https://github.com/zhanleewo/truthpad-binary/releases/download/v0.1-beta/TruthPad-Setup-GA.exe"><span class="zh">下载 GA 安装包（18.3 MB，精简版）</span><span class="en">Download GA installer (18.3 MB, minimal)</span></a>
+          <p class="download-note">
+            <span class="zh">Windows 10/11 x64 · 安装包自带运行库，不需要另装任何环境 ·
+              <a href="https://github.com/zhanleewo/truthpad-binary/releases">全部版本与插件包</a></span>
+            <span class="en">Windows 10/11 x64 &middot; the installer ships its own runtime &middot;
+              <a href="https://github.com/zhanleewo/truthpad-binary/releases">all releases and plugin packages</a></span>
+          </p>
         </div>
       </div>
       <p class="footnote">
-        <span class="zh">源码可离线构建：CMake + Visual Studio 2019（x64），第三方引擎全部 vendor 在 third_party/。</span>
-        <span class="en">Builds offline: CMake + Visual Studio 2019 (x64); every third-party engine is vendored under third_party/.</span>
+        <span class="zh">装完即用：不需要 Node / Python / .NET，也不需要联网（除字幕翻译需要自备 DeepSeek key）。</span>
+        <span class="en">Nothing else to install: no Node, Python or .NET, and it works offline (only subtitle translation needs your own DeepSeek key).</span>
       </p>
     </div>
   </section>

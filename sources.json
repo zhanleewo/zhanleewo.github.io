@@ -1,265 +1,333 @@
 ﻿{
-    "schema": 3,
-    "generated": "2026-10-17 03:16:26",
-    "note": "TruthPad 官方插件源（6 个插件）。url 是 GitHub Release 资产的绝对地址；size/sha256 与包一一对应，客户端下载后会校验。",
-    "plugins": [
-        {
-            "id": "browser",
-            "api": 2,
-            "kind": "tool",
-            "name": "浏览器",
-            "nameEn": "Browser",
-            "version": "1.0.0",
-            "author": "TruthPad",
-            "published": "2026-10-17",
-            "description": "内嵌 WebView2 的轻量浏览器：前进 / 后退 / 刷新 / 地址栏。开发时用来在编辑器里看视频教程（YouTube / bilibili）。入口在标题栏右侧的按钮（插件菜单里也有一项）",
-            "descriptionEn": "Lightweight embedded WebView2 browser: back / forward / reload / address bar. Handy for watching video tutorials (YouTube / bilibili) right inside the editor. Entry point is the button on the right of the title bar (also available in the plugin menu).",
-            "archive": "browser.zip",
-            "size": 88114265,
-            "sha256": "e76d1a087ded4ed467434b18e83c0aafd3b2ffb7a1edab3f8c87ccc42fd80825",
-            "dll": "browser.dll",
-            "capabilities": null,
-            "activation": {
-                "events": [],
-                "commands": [
-                    "browser.open"
-                ],
-                "startup": false
-            },
-            "ui": [
-                "menu×1",
-                "titlebar×1",
-                "views×1"
-            ],
-            "depends": [
-                "browser-asr.dll",
-                "ggml-base.dll",
-                "ggml-cpu.dll",
-                "ggml-cuda.dll",
-                "ggml-vulkan.dll",
-                "ggml.dll",
-                "whisper.dll"
-            ],
-            "url": "https://github.com/zhanleewo/truthpad-binary/releases/download/v0.2.0-20261017/browser.zip"
-        },
-        {
-            "id": "imageviewer",
-            "api": 2,
-            "kind": "viewer",
-            "name": "图片查看器",
-            "nameEn": "Image Viewer",
-            "version": "1.0.0",
-            "author": "TruthPad",
-            "published": "2026-10-17",
-            "description": "在编辑区标签里查看图片：滚轮以光标为中心缩放、拖拽平移、双击适应/1:1、亮度/对比度/饱和度调色、裁剪、保存（覆盖/另存为）、←/→ 同目录翻页",
-            "descriptionEn": "View images in an editor tab: wheel zooms around the cursor, drag pans, double-click fits/1:1, brightness/contrast/saturation adjustments, crop, save (overwrite / save as), ←/→ flips through the folder.",
-            "archive": "imageviewer.zip",
-            "size": 293104,
-            "sha256": "6271b98bf5bbe3ec7a79c630b77c705ac1e917f9581b82cd1318d26e15857dee",
-            "dll": "imageviewer.dll",
-            "capabilities": null,
-            "activation": {
-                "file_handlers": [
-                    ".png",
-                    ".jpg",
-                    ".jpeg",
-                    ".bmp",
-                    ".gif",
-                    ".webp",
-                    ".tif",
-                    ".tiff"
-                ],
-                "commands": [
-                    "imageviewer.open"
-                ],
-                "startup": false
-            },
-            "ui": [
-                "menu×1",
-                "editor_menu×1",
-                "views×1"
-            ],
-            "homepage": "https://github.com/truthpad/plugins",
-            "url": "https://github.com/zhanleewo/truthpad-binary/releases/download/v0.2.0-20261017/imageviewer.zip"
-        },
-        {
-            "id": "netdisk",
-            "api": 2,
-            "kind": "provider",
-            "name": "百度网盘",
-            "nameEn": "Baidu Netdisk",
-            "version": "1.0.0",
-            "author": "TruthPad",
-            "published": "2026-10-17",
-            "description": "百度网盘：左栏文件管理（列目录/排序/网格）+ 下载（断点续传）+ 视频直接流播 + 下侧传输面板。授权信息在插件配置里（AppKey/SecretKey）。",
-            "descriptionEn": "Baidu Netdisk: file browser in the left sidebar (list/sort/grid), downloads with resume, direct video streaming, and a transfers panel at the bottom. Credentials live in the plugin config (AppKey/SecretKey).",
-            "archive": "netdisk.zip",
-            "size": 556378,
-            "sha256": "c9d97f3b83449e4897c6e03e7c95fae1f6feda031c35606bff2730987c339cac",
-            "dll": "netdisk.dll",
-            "capabilities": null,
-            "activation": {
-                "events": [],
-                "commands": [
-                    "netdisk.open",
-                    "netdisk.login",
-                    "netdisk.logout",
-                    "netdisk.transfers",
-                    "netdisk.refresh"
-                ],
-                "startup": false
-            },
-            "ui": [
-                "menu×4",
-                "sidebar×1",
-                "panel×1",
-                "views×3"
-            ],
-            "url": "https://github.com/zhanleewo/truthpad-binary/releases/download/v0.2.0-20261017/netdisk.zip"
-        },
-        {
-            "id": "pdf",
-            "api": 2,
-            "kind": "viewer",
-            "name": "PDF 阅读器",
-            "nameEn": "PDF Reader",
-            "version": "1.0.0",
-            "author": "TruthPad",
-            "published": "2026-10-17",
-            "description": "PDF 阅读与批注（MuPDF 引擎；本插件以 AGPL-3.0 发布）：连续滚动、缩略图/书签/批注三标签左栏、文本选择与查找、高亮/下划线/删除线/便签批注并能保存回文件",
-            "descriptionEn": "PDF reading and annotation (MuPDF engine; this plugin is released under AGPL-3.0): continuous scrolling, a three-tab sidebar (thumbnails / bookmarks / annotations), text selection and search, highlight/underline/strikethrough/sticky-note annotations saved back into the file.",
-            "archive": "pdf.zip",
-            "size": 32686413,
-            "sha256": "545993eb0e0494fef0701e074f9b3667a93746ceb5a1a3cc8f92c59b288915dd",
-            "dll": "pdf.dll",
-            "capabilities": null,
-            "activation": {
-                "file_handlers": [
-                    ".pdf"
-                ],
-                "commands": [
-                    "pdf.save",
-                    "pdf.undo",
-                    "pdf.redo",
-                    "pdf.fit_width",
-                    "pdf.fit_page",
-                    "pdf.zoom_in",
-                    "pdf.zoom_out",
-                    "pdf.find",
-                    "pdf.find_next",
-                    "pdf.find_prev"
-                ],
-                "startup": false
-            },
-            "ui": [
-                "menu×10",
-                "views×1"
-            ],
-            "homepage": "https://github.com/truthpad/plugins",
-            "url": "https://github.com/zhanleewo/truthpad-binary/releases/download/v0.2.0-20261017/pdf.zip"
-        },
-        {
-            "id": "videoplayer",
-            "api": 2,
-            "kind": "viewer",
-            "name": "视频播放器",
-            "nameEn": "Video Player",
-            "version": "1.0.0",
-            "author": "TruthPad",
-            "published": "2026-10-17",
-            "description": "FFmpeg 解码的原生播放器：本地文件与网络流（HLS/DASH/RTSP/RTMP/TS/SRT…），左栏播放列表 + 经典控制条。",
-            "descriptionEn": "Native FFmpeg player: local files and network streams (HLS/DASH/RTSP/RTMP/TS/SRT…), playlist sidebar and classic controls.",
-            "archive": "videoplayer.zip",
-            "size": 164656925,
-            "sha256": "40dd7142ce3f776e33b17bb7ffa29f4ea8c1aaf881701e391bfc0c0190c5c498",
-            "dll": "videoplayer.dll",
-            "capabilities": null,
-            "activation": {
-                "file_handlers": [
-                    ".mp4",
-                    ".m4v",
-                    ".mov",
-                    ".mkv",
-                    ".webm",
-                    ".avi",
-                    ".flv",
-                    ".ts",
-                    ".m2ts",
-                    ".mpg",
-                    ".mpeg",
-                    ".vob",
-                    ".wmv",
-                    ".asf",
-                    ".3gp",
-                    ".3g2",
-                    ".rm",
-                    ".rmvb",
-                    ".ogv",
-                    ".mts"
-                ],
-                "commands": [
-                    "videoplayer.open",
-                    "videoplayer.openEmpty"
-                ],
-                "startup": false
-            },
-            "ui": [
-                "menu×2",
-                "titlebar×1",
-                "views×1"
-            ],
-            "depends": [
-                "avcodec-63.dll",
-                "avdevice-63.dll",
-                "avfilter-12.dll",
-                "avformat-63.dll",
-                "avutil-61.dll",
-                "ggml-base.dll",
-                "ggml-cpu.dll",
-                "ggml-cuda.dll",
-                "ggml-vulkan.dll",
-                "ggml.dll",
-                "swresample-7.dll",
-                "swscale-10.dll",
-                "videoplayer-asr.dll",
-                "whisper.dll"
-            ],
-            "url": "https://github.com/zhanleewo/truthpad-binary/releases/download/v0.2.0-20261017/videoplayer.zip"
-        },
-        {
-            "id": "wsl",
-            "api": 2,
-            "kind": "provider",
-            "name": "WSL 集成",
-            "nameEn": "WSL Integration",
-            "version": "1.0.0",
-            "author": "TruthPad",
-            "published": "2026-10-17",
-            "description": "连接 WSL 发行版：wsl:// 远程目录与文件在编辑器内等价操作，项目文件里的 wsl 块可自动挂载",
-            "descriptionEn": "Connect WSL distributions: wsl:// remote folders and files behave like local ones in the editor; the wsl block in project files mounts automatically.",
-            "archive": "wsl.zip",
-            "size": 324706,
-            "sha256": "8ec91c7efd3c9cff67e018bb8afb34c79a8a8c4051a39b10fc2cbb4ab8dd5a6a",
-            "dll": "wsl.dll",
-            "capabilities": null,
-            "activation": {
-                "schemes": [
-                    "wsl"
-                ],
-                "events": [
-                    "project_opened"
-                ],
-                "commands": [
-                    "wsl.connect",
-                    "wsl.open_folder",
-                    "wsl.disconnect"
-                ],
-                "startup": false
-            },
-            "ui": [
-                "menu×3"
-            ],
-            "url": "https://github.com/zhanleewo/truthpad-binary/releases/download/v0.2.0-20261017/wsl.zip"
-        }
-    ]
+    "schema":  3,
+    "generated":  "2026-10-19 01:54:59",
+    "note":  "TruthPad 官方插件源（9 个插件）。url 是 GitHub Release 资产的绝对地址；size/sha256 与包一一对应，客户端下载后会校验。",
+    "plugins":  [
+                    {
+                        "id":  "aiagent",
+                        "api":  2,
+                        "kind":  "agent",
+                        "name":  "AI 助手",
+                        "nameEn":  "AI Assistant",
+                        "version":  "1.0.0",
+                        "author":  "TruthPad",
+                        "published":  "2026-10-19",
+                        "description":  "TruthPad AI 助手：右侧 WebView2 对话、DeepSeek 直连、工具调用、会话管理与归档。",
+                        "descriptionEn":  "TruthPad AI Assistant: WebView2 chat in the right panel, direct DeepSeek client, tool calling, session management and archiving.",
+                        "archive":  "aiagent.zip",
+                        "size":  2320641,
+                        "sha256":  "6661d63289abb18cf64eb134ffbf5370fbe816ffdc956a8a186e2a130ac9d700",
+                        "dll":  "aiagent.dll",
+                        "capabilities":  null,
+                        "activation":  {
+                                           "commands":  [
+                                                            "aiagent.focus",
+                                                            "aiagent.clear"
+                                                        ],
+                                           "startup":  false
+                                       },
+                        "ui":  [
+                                   "menu×2",
+                                   "panel×1",
+                                   "views×1"
+                               ],
+                        "url":  "https://github.com/zhanleewo/truthpad-binary/releases/download/v0.2.0-20261019/aiagent.zip"
+                    },
+                    {
+                        "id":  "browser",
+                        "api":  2,
+                        "kind":  "tool",
+                        "name":  "浏览器",
+                        "nameEn":  "Browser",
+                        "version":  "1.0.0",
+                        "author":  "TruthPad",
+                        "published":  "2026-10-19",
+                        "description":  "内嵌 WebView2 的轻量浏览器：前进 / 后退 / 刷新 / 地址栏。开发时用来在编辑器里看视频教程（YouTube / bilibili）。入口在标题栏右侧的按钮（插件菜单里也有一项）",
+                        "descriptionEn":  "Lightweight embedded WebView2 browser: back / forward / reload / address bar. Handy for watching video tutorials (YouTube / bilibili) right inside the editor. Entry point is the button on the right of the title bar (also available in the plugin menu).",
+                        "archive":  "browser.zip",
+                        "size":  1037466,
+                        "sha256":  "3b3fbed94d32d90e0d27c5c198ba523faa4798fc4c243ab8a67cf93a9cd87a32",
+                        "dll":  "browser.dll",
+                        "capabilities":  null,
+                        "activation":  {
+                                           "events":  [
+
+                                                      ],
+                                           "commands":  [
+                                                            "browser.open"
+                                                        ],
+                                           "startup":  false
+                                       },
+                        "ui":  [
+                                   "menu×1",
+                                   "titlebar×1",
+                                   "views×1"
+                               ],
+                        "url":  "https://github.com/zhanleewo/truthpad-binary/releases/download/v0.2.0-20261019/browser.zip"
+                    },
+                    {
+                        "id":  "deepseek",
+                        "api":  2,
+                        "kind":  "provider",
+                        "name":  "DeepSeek 模型服务",
+                        "nameEn":  "DeepSeek model service",
+                        "version":  "1.0.0",
+                        "author":  "TruthPad",
+                        "published":  "2026-10-19",
+                        "description":  "为全软件提供 DeepSeek 对话/流式生成服务。浏览器、视频播放器、PDF 插件通过 call 总线请求；模型配置来自共享 models.json，HTTP/SSE、作业池与授权都在本插件。",
+                        "descriptionEn":  "DeepSeek chat/streaming service for the whole app. Browser, video player and PDF request it through the call bus; models come from the shared models.json, while HTTP/SSE, the job pool and licensing live here.",
+                        "archive":  "deepseek.zip",
+                        "size":  182958,
+                        "sha256":  "76374a8ed7e3741d292af9a31a4f77ff8934a07415039360b57938cf551f2efe",
+                        "dll":  "deepseek.dll",
+                        "capabilities":  null,
+                        "activation":  {
+                                           "startup":  false
+                                       },
+                        "url":  "https://github.com/zhanleewo/truthpad-binary/releases/download/v0.2.0-20261019/deepseek.zip"
+                    },
+                    {
+                        "id":  "imageviewer",
+                        "api":  2,
+                        "kind":  "viewer",
+                        "name":  "图片查看器",
+                        "nameEn":  "Image Viewer",
+                        "version":  "1.0.0",
+                        "author":  "TruthPad",
+                        "published":  "2026-10-19",
+                        "description":  "在编辑区标签里查看图片：滚轮以光标为中心缩放、拖拽平移、双击适应/1:1、亮度/对比度/饱和度调色、裁剪、保存（覆盖/另存为）、←/→ 同目录翻页",
+                        "descriptionEn":  "View images in an editor tab: wheel zooms around the cursor, drag pans, double-click fits/1:1, brightness/contrast/saturation adjustments, crop, save (overwrite / save as), ←/→ flips through the folder.",
+                        "archive":  "imageviewer.zip",
+                        "size":  514514,
+                        "sha256":  "5d09a65cd9dd62cbc08d7a6b376bdcc8c33ca066d4b929e815047dc1a9112026",
+                        "dll":  "imageviewer.dll",
+                        "capabilities":  null,
+                        "activation":  {
+                                           "file_handlers":  [
+                                                                 ".png",
+                                                                 ".jpg",
+                                                                 ".jpeg",
+                                                                 ".bmp",
+                                                                 ".gif",
+                                                                 ".webp",
+                                                                 ".tif",
+                                                                 ".tiff"
+                                                             ],
+                                           "commands":  [
+                                                            "imageviewer.open"
+                                                        ],
+                                           "startup":  false
+                                       },
+                        "ui":  [
+                                   "menu×1",
+                                   "editor_menu×1",
+                                   "views×1"
+                               ],
+                        "homepage":  "https://github.com/truthpad/plugins",
+                        "url":  "https://github.com/zhanleewo/truthpad-binary/releases/download/v0.2.0-20261019/imageviewer.zip"
+                    },
+                    {
+                        "id":  "netdisk",
+                        "api":  2,
+                        "kind":  "provider",
+                        "name":  "百度网盘",
+                        "nameEn":  "Baidu Netdisk",
+                        "version":  "1.0.0",
+                        "author":  "TruthPad",
+                        "published":  "2026-10-19",
+                        "description":  "百度网盘：左栏文件管理（列目录/排序/网格）+ 下载（断点续传）+ 视频直接流播 + 下侧传输面板。授权信息在插件配置里（AppKey/SecretKey）。",
+                        "descriptionEn":  "Baidu Netdisk: file browser in the left sidebar (list/sort/grid), downloads with resume, direct video streaming, and a transfers panel at the bottom. Credentials live in the plugin config (AppKey/SecretKey).",
+                        "archive":  "netdisk.zip",
+                        "size":  616984,
+                        "sha256":  "dd83010e04ff3b7063e1c6fe069ab004daa63f23562a50b3dcf03f5d5a0fac31",
+                        "dll":  "netdisk.dll",
+                        "capabilities":  null,
+                        "activation":  {
+                                           "events":  [
+
+                                                      ],
+                                           "commands":  [
+                                                            "netdisk.open",
+                                                            "netdisk.login",
+                                                            "netdisk.logout",
+                                                            "netdisk.transfers",
+                                                            "netdisk.refresh"
+                                                        ],
+                                           "startup":  false
+                                       },
+                        "ui":  [
+                                   "menu×4",
+                                   "sidebar×1",
+                                   "panel×1",
+                                   "views×3"
+                               ],
+                        "url":  "https://github.com/zhanleewo/truthpad-binary/releases/download/v0.2.0-20261019/netdisk.zip"
+                    },
+                    {
+                        "id":  "pdf",
+                        "api":  2,
+                        "kind":  "viewer",
+                        "name":  "PDF 阅读器",
+                        "nameEn":  "PDF Reader",
+                        "version":  "1.0.0",
+                        "author":  "TruthPad",
+                        "published":  "2026-10-19",
+                        "description":  "PDF 阅读与批注（MuPDF 引擎；本插件以 AGPL-3.0 发布）：连续滚动、缩略图/书签/批注三标签左栏、文本选择与查找、高亮/下划线/删除线/便签批注并能保存回文件",
+                        "descriptionEn":  "PDF reading and annotation (MuPDF engine; this plugin is released under AGPL-3.0): continuous scrolling, a three-tab sidebar (thumbnails / bookmarks / annotations), text selection and search, highlight/underline/strikethrough/sticky-note annotations saved back into the file.",
+                        "archive":  "pdf.zip",
+                        "size":  32891175,
+                        "sha256":  "767bd9927a1b0b8e617cabead4e8e9f371aa27b93b0ad52f437cc9e9f4442e51",
+                        "dll":  "pdf.dll",
+                        "capabilities":  null,
+                        "activation":  {
+                                           "file_handlers":  [
+                                                                 ".pdf"
+                                                             ],
+                                           "commands":  [
+                                                            "pdf.save",
+                                                            "pdf.undo",
+                                                            "pdf.redo",
+                                                            "pdf.fit_width",
+                                                            "pdf.fit_page",
+                                                            "pdf.zoom_in",
+                                                            "pdf.zoom_out",
+                                                            "pdf.find",
+                                                            "pdf.find_next",
+                                                            "pdf.find_prev"
+                                                        ],
+                                           "startup":  false
+                                       },
+                        "ui":  [
+                                   "menu×10",
+                                   "views×1"
+                               ],
+                        "homepage":  "https://github.com/truthpad/plugins",
+                        "url":  "https://github.com/zhanleewo/truthpad-binary/releases/download/v0.2.0-20261019/pdf.zip"
+                    },
+                    {
+                        "id":  "videoplayer",
+                        "api":  2,
+                        "kind":  "viewer",
+                        "name":  "视频播放器",
+                        "nameEn":  "Video Player",
+                        "version":  "1.0.0",
+                        "author":  "TruthPad",
+                        "published":  "2026-10-19",
+                        "description":  "FFmpeg 解码的原生播放器：本地文件与网络流（HLS/DASH/RTSP/RTMP/TS/SRT…），左栏播放列表 + 经典控制条。",
+                        "descriptionEn":  "Native FFmpeg player: local files and network streams (HLS/DASH/RTSP/RTMP/TS/SRT…), playlist sidebar and classic controls.",
+                        "archive":  "videoplayer.zip",
+                        "size":  77578190,
+                        "sha256":  "6b0f55e90aee289ec67f496a86b9ab072000c3d74bf1725bf4f8b0ed0d9f2363",
+                        "dll":  "videoplayer.dll",
+                        "capabilities":  null,
+                        "activation":  {
+                                           "file_handlers":  [
+                                                                 ".mp4",
+                                                                 ".m4v",
+                                                                 ".mov",
+                                                                 ".mkv",
+                                                                 ".webm",
+                                                                 ".avi",
+                                                                 ".flv",
+                                                                 ".ts",
+                                                                 ".m2ts",
+                                                                 ".mpg",
+                                                                 ".mpeg",
+                                                                 ".vob",
+                                                                 ".wmv",
+                                                                 ".asf",
+                                                                 ".3gp",
+                                                                 ".3g2",
+                                                                 ".rm",
+                                                                 ".rmvb",
+                                                                 ".ogv",
+                                                                 ".mts"
+                                                             ],
+                                           "commands":  [
+                                                            "videoplayer.open",
+                                                            "videoplayer.openEmpty"
+                                                        ],
+                                           "startup":  false
+                                       },
+                        "ui":  [
+                                   "menu×2",
+                                   "titlebar×1",
+                                   "views×1"
+                               ],
+                        "depends":  [
+                                        "avcodec-63.dll",
+                                        "avdevice-63.dll",
+                                        "avfilter-12.dll",
+                                        "avformat-63.dll",
+                                        "avutil-61.dll",
+                                        "swresample-7.dll",
+                                        "swscale-10.dll"
+                                    ],
+                        "url":  "https://github.com/zhanleewo/truthpad-binary/releases/download/v0.2.0-20261019/videoplayer.zip"
+                    },
+                    {
+                        "id":  "whisper",
+                        "api":  2,
+                        "kind":  "provider",
+                        "name":  "Whisper 本地识别服务",
+                        "nameEn":  "Whisper local transcription service",
+                        "version":  "1.0.0",
+                        "author":  "TruthPad",
+                        "published":  "2026-10-19",
+                        "description":  "为全软件提供本地音频转字幕（whisper.cpp）。浏览器与视频播放器通过 call 总线请求；按需加载、槽位队列、模型仓库与授权都在本插件里。",
+                        "descriptionEn":  "Local audio-to-subtitle service for the whole app (whisper.cpp). Browser and video player request it through the call bus; lazy loading, slot queue, model store and licensing live here.",
+                        "archive":  "whisper.zip",
+                        "size":  87286389,
+                        "sha256":  "14b6207636a04273fb81dd430677814916aae881b7229db769a2cdd2d098132d",
+                        "dll":  "whisper-provider.dll",
+                        "capabilities":  null,
+                        "activation":  {
+                                           "startup":  false
+                                       },
+                        "depends":  [
+                                        "ggml-base.dll",
+                                        "ggml-cpu.dll",
+                                        "ggml-cuda.dll",
+                                        "ggml-vulkan.dll",
+                                        "ggml.dll",
+                                        "whisper.dll"
+                                    ],
+                        "url":  "https://github.com/zhanleewo/truthpad-binary/releases/download/v0.2.0-20261019/whisper.zip"
+                    },
+                    {
+                        "id":  "wsl",
+                        "api":  2,
+                        "kind":  "provider",
+                        "name":  "WSL 集成",
+                        "nameEn":  "WSL Integration",
+                        "version":  "1.0.0",
+                        "author":  "TruthPad",
+                        "published":  "2026-10-19",
+                        "description":  "连接 WSL 发行版：wsl:// 远程目录与文件在编辑器内等价操作，项目文件里的 wsl 块可自动挂载",
+                        "descriptionEn":  "Connect WSL distributions: wsl:// remote folders and files behave like local ones in the editor; the wsl block in project files mounts automatically.",
+                        "archive":  "wsl.zip",
+                        "size":  327418,
+                        "sha256":  "d4922a9730eacd641003eedb1e4233ba0e065b73e471d83112629c823ca07e75",
+                        "dll":  "wsl.dll",
+                        "capabilities":  null,
+                        "activation":  {
+                                           "schemes":  [
+                                                           "wsl"
+                                                       ],
+                                           "events":  [
+                                                          "project_opened"
+                                                      ],
+                                           "commands":  [
+                                                            "wsl.connect",
+                                                            "wsl.open_folder",
+                                                            "wsl.disconnect"
+                                                        ],
+                                           "startup":  false
+                                       },
+                        "ui":  [
+                                   "menu×3"
+                               ],
+                        "url":  "https://github.com/zhanleewo/truthpad-binary/releases/download/v0.2.0-20261019/wsl.zip"
+                    }
+                ]
 }

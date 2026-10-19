@@ -1,8 +1,8 @@
 ﻿# TruthPad User Manual
 
 > A lightweight, fast, plugin-based development editor — C++20 + pure Win32 + Scintilla,
-> a 2.5 MB single exe, no Node.js in the core or the build chain. This manual covers the current
-> Beta channel build (Help → About TruthPad shows 0.2.0).
+> a 9.1 MB single exe, no Node.js in the core or the build chain. This manual covers the current
+> Beta channel build (Help → About TruthPad shows 0.2.1).
 >
 > **How to read**: `View → Markdown Live Preview` means a menu path — the menu opens from the
 > hamburger button ☰ at the top left; `Ctrl+F` means a keyboard shortcut;

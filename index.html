@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="dark light">
 <title>TruthPad — 给科研、学生、工程、程序员的 Windows 原生编辑器</title>
-<meta name="description" content="TruthPad：2.5 MB 单 exe 的 Windows 原生编辑器，启动不加载任何插件。PDF 批注写回文件、论文速读/精读、外语课程实时中文字幕、字幕一键成讲义、WSL 远程文件、PuTTY 终端停靠、插件在线安装更新；不开源，装完即用。">
+<meta name="description" content="TruthPad：9.1 MB 单 exe 的 Windows 原生编辑器，启动不加载任何插件。PDF 批注写回文件、论文速读/精读、外语课程实时中文字幕、字幕一键成讲义、WSL 远程文件、PuTTY 终端停靠、插件在线安装更新；不开源，装完即用。">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -28,7 +28,7 @@
     <div class="bar-actions">
       <button id="lang-toggle" class="ghost-btn" type="button" title="切换语言 / Switch language">中<span class="sep">/</span>EN</button>
       <button id="theme-toggle" class="ghost-btn" type="button" title="切换主题 / Toggle theme" aria-label="Toggle theme">☾</button>
-      <a class="cta" href="https://github.com/zhanleewo/truthpad-binary/releases/download/v0.2.0-20261019/TruthPad-Setup-Beta.exe"><span class="zh">下载 Beta</span><span class="en">Download Beta</span></a>
+      <a class="cta" href="https://github.com/zhanleewo/truthpad-binary/releases/download/v0.2.1-20261019/TruthPad-Setup-Beta.exe"><span class="zh">下载 Beta</span><span class="en">Download Beta</span></a>
     </div>
   </div>
 </header>
@@ -46,7 +46,7 @@
           <span class="en">A single C++20 / pure-Win32 exe. Loads zero plugins at startup. Everything else is a plugin.</span>
         </p>
         <div class="hero-actions">
-          <a class="cta big" href="https://github.com/zhanleewo/truthpad-binary/releases/download/v0.2.0-20261019/TruthPad-Setup-Beta.exe"><span class="zh">下载 Beta（Windows x64）</span><span class="en">Download Beta (Windows x64)</span></a>
+          <a class="cta big" href="https://github.com/zhanleewo/truthpad-binary/releases/download/v0.2.1-20261019/TruthPad-Setup-Beta.exe"><span class="zh">下载 Beta（Windows x64）</span><span class="en">Download Beta (Windows x64)</span></a>
           <a class="ghost-btn big" href="#who"><span class="zh">看它适合谁</span><span class="en">See who it's for</span></a>
           <a class="ghost-btn big" href="#subs"><span class="zh">看字幕流水线</span><span class="en">Subtitle pipeline</span></a>
         </div>
@@ -55,9 +55,9 @@
           <span class="en"><b>Researchers · students · engineers · programmers</b> — four ways to work.</span>
         </p>
         <div class="stats-grid">
-          <div class="stat"><b>2.5 MB</b><span class="zh">主程序单 exe</span><span class="en">main binary</span></div>
+          <div class="stat"><b>9.1 MB</b><span class="zh">主程序单 exe</span><span class="en">main binary</span></div>
           <div class="stat"><b>0</b><span class="zh">启动时加载的插件</span><span class="en">plugins loaded at startup</span></div>
-          <div class="stat"><b>4</b><span class="zh">个官方插件，在线安装</span><span class="en">official plugins, installed online</span></div>
+          <div class="stat"><b>9</b><span class="zh">个官方插件，在线安装</span><span class="en">official plugins, installed online</span></div>
         </div>
       </div>
       <figure class="shot hero-shot">
@@ -137,8 +137,8 @@
               <span class="en"><b>Notes are just Markdown</b>: live preview with formulas, tables and Mermaid; build folders in the workspace tree; global search with regex and <code>glob</code>.</span>
             </li>
             <li>
-              <span class="zh"><b>轻到可以装在老笔记本上</b>：主程序 2.5 MB，装完即用；不用的插件可以禁用 —— 不看 PDF，PDF 就完全不加载。</span>
-              <span class="en"><b>Light enough for an old laptop</b>: a 2.5 MB main binary, works right after install; unused plugins can be disabled — no PDF reading, no PDF loaded.</span>
+              <span class="zh"><b>轻到可以装在老笔记本上</b>：主程序 9.1 MB，装完即用；不用的插件可以禁用 —— 不看 PDF，PDF 就完全不加载。</span>
+              <span class="en"><b>Light enough for an old laptop</b>: a 9.1 MB main binary, works right after install; unused plugins can be disabled — no PDF reading, no PDF loaded.</span>
             </li>
           </ul>
           <figure class="shot who-shot">
@@ -197,8 +197,8 @@
               <span class="en"><b>Plugins load on demand</b>: install as many as you like — none are loaded at startup; a DLL comes up only when you use its feature, and plugins install, update and disable from inside the app.</span>
             </li>
             <li>
-              <span class="zh"><b>零 Node 的运行时</b>：C++20 + 纯 Win32 单 exe，不拖 Electron / Node / Python；2.5 MB 主程序 + 静态运行库，装完就一个目录。</span>
-              <span class="en"><b>A zero-Node runtime</b>: C++20 and pure Win32 in a single exe — no Electron, Node or Python; a 2.5 MB binary plus statically linked runtime in one folder.</span>
+              <span class="zh"><b>零 Node 的运行时</b>：C++20 + 纯 Win32 单 exe，不拖 Electron / Node / Python；9.1 MB 主程序 + 静态运行库，装完就一个目录。</span>
+              <span class="en"><b>A zero-Node runtime</b>: C++20 and pure Win32 in a single exe — no Electron, Node or Python; a 9.1 MB binary plus statically linked runtime in one folder.</span>
             </li>
             <li>
               <span class="zh"><b>编辑器该有的都有</b>：按扩展名选词法器（Lexilla）、正则与跨行查找替换、多根工作区、标签分栏、深色自绘界面（无边框窗口、自绘菜单，跟随主题）。</span>
@@ -410,8 +410,8 @@
           <li><span class="n">3</span><span><span class="zh">右键 →「<b>生成文章</b>」：成品存进工作区树里选中的目录，并自动打开。</span><span class="en">Right-click → <b>Generate article</b>: it is saved into the folder selected in the workspace tree and opened for you.</span></span></li>
         </ol>
         <div class="download-box">
-          <a class="cta big" href="https://github.com/zhanleewo/truthpad-binary/releases/download/v0.2.0-20261019/TruthPad-Setup-Beta.exe"><span class="zh">下载 Beta 安装包（54.2 MB）</span><span class="en">Download Beta installer (54.2 MB)</span></a>
-          <a class="ghost-btn big" href="https://github.com/zhanleewo/truthpad-binary/releases/download/v0.2.0-20261019/TruthPad-Setup-GA.exe"><span class="zh">下载 GA 安装包（22.8 MB，精简版）</span><span class="en">Download GA installer (22.8 MB, minimal)</span></a>
+          <a class="cta big" href="https://github.com/zhanleewo/truthpad-binary/releases/download/v0.2.1-20261019/TruthPad-Setup-Beta.exe"><span class="zh">下载 Beta 安装包（54.2 MB）</span><span class="en">Download Beta installer (54.2 MB)</span></a>
+          <a class="ghost-btn big" href="https://github.com/zhanleewo/truthpad-binary/releases/download/v0.2.1-20261019/TruthPad-Setup-GA.exe"><span class="zh">下载 GA 安装包（22.9 MB，精简版）</span><span class="en">Download GA installer (22.9 MB, minimal)</span></a>
           <p class="download-note">
             <span class="zh">Windows 10/11 x64 · 安装包自带运行库，不需要另装任何环境 ·
               <a href="https://github.com/zhanleewo/truthpad-binary/releases">全部版本与插件包</a></span>

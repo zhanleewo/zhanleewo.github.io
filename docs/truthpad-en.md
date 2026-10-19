@@ -8,7 +8,7 @@
 
 | | |
 | --- | --- |
-| Main binary | **2.5 MB single exe**, statically linked runtime, **no Node.js / Electron** |
+| Main binary | **9.1 MB single exe**, statically linked runtime, **no Node.js / Electron** |
 | Startup | **Loads zero plugin DLLs** — it reads plain-text manifests to pre-build the menus, and loads a plugin only when you click it |
 | Plugins | Installed, updated and disabled from inside the app; **none are loaded at startup** — a plugin comes up only when you use it |
 | Headliners | **PDF reading & annotation** · **Browser plugin: auto subtitles → auto translation → subtitle-to-article** |
@@ -23,7 +23,7 @@
 read in *data mode* — no code executed), pre-build the Plugins menu and title-bar buttons, then wait
 for you.
 
-**Small.** 2.5 MB for the main binary. Heavy engines (WebView2, MuPDF, whisper.cpp) are accounted for
+**Small.** 9.1 MB for the main binary. Heavy engines (WebView2, MuPDF, whisper.cpp) are accounted for
 per plugin: no PDF reading means no PDF memory, no subtitles means no model on disk.
 
 **Light.** The same rule applies to every panel:

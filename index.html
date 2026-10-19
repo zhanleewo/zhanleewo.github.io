@@ -4,31 +4,29 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="dark light">
-<title>TruthPad — 给科研、学生、工程、程序员的 Windows 原生编辑器</title>
-<meta name="description" content="TruthPad：9.1 MB 单 exe 的 Windows 原生编辑器，启动不加载任何插件。PDF 批注写回文件、论文速读/精读、外语课程实时中文字幕、字幕一键成讲义、WSL 远程文件、PuTTY 终端停靠、插件在线安装更新；不开源，装完即用。">
+<title>TruthPad — 会动手的 AI 编辑器</title>
+<meta name="description" content="TruthPad：把 AI 助手放进原生编辑器。让 AI 读文件、改代码、操作 PDF / 浏览器 / 播放器；9.1 MB 单 exe，零 Node，插件按需加载。">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="topbar">
-  <div class="wrap bar-inner">
+  <div class="wrap bar">
     <a class="brand" href="#top">
       <img src="assets/logo.svg" alt="" width="26" height="26">
       <span class="brand-name">TruthPad</span>
     </a>
     <nav class="nav">
-      <a href="#who"><span class="zh">适合谁</span><span class="en">Who it's&nbsp;for</span></a>
-      <a href="#light"><span class="zh">轻与快</span><span class="en">Light &amp; fast</span></a>
-      <a href="#pdf">PDF</a>
-      <a href="#subs"><span class="zh">浏览器字幕</span><span class="en">Subtitles</span></a>
-      <a href="#docs"><span class="zh">材料</span><span class="en">Docs</span></a>
-      <a href="#get"><span class="zh">上手</span><span class="en">Get&nbsp;it</span></a>
+      <a href="#ai"><span class="zh">AI 助手</span><span class="en">AI</span></a>
+      <a href="#editor"><span class="zh">编辑器</span><span class="en">Editor</span></a>
+      <a href="#scenes"><span class="zh">专业场景</span><span class="en">Scenes</span></a>
+      <a href="#get"><span class="zh">下载</span><span class="en">Download</span></a>
     </nav>
     <div class="bar-actions">
-      <button id="lang-toggle" class="ghost-btn" type="button" title="切换语言 / Switch language">中<span class="sep">/</span>EN</button>
-      <button id="theme-toggle" class="ghost-btn" type="button" title="切换主题 / Toggle theme" aria-label="Toggle theme">☾</button>
-      <a class="cta" href="https://github.com/zhanleewo/truthpad-binary/releases/download/v0.2.1-20261019/TruthPad-Setup-Beta.exe"><span class="zh">下载 Beta</span><span class="en">Download Beta</span></a>
+      <button id="lang-toggle" class="ghost" type="button" title="切换语言 / Switch language">中<span class="sep">/</span>EN</button>
+      <button id="theme-toggle" class="ghost icon" type="button" title="切换主题 / Toggle theme" aria-label="Toggle theme">☾</button>
+      <a class="btn primary small" href="https://github.com/zhanleewo/truthpad-binary/releases/download/v0.2.1-20261019/TruthPad-Setup-Beta.exe"><span class="zh">下载</span><span class="en">Download</span></a>
     </div>
   </div>
 </header>
@@ -37,432 +35,222 @@
 
   <!-- ============================ Hero ============================ -->
   <section class="hero">
-    <div class="wrap hero-grid">
-      <div class="hero-copy">
-        <p class="eyebrow">TruthPad · <span class="zh">Windows 原生嵌入式开发编辑器</span><span class="en">a Windows-native editor</span></p>
-        <h1><span class="zh">小到能装进口袋，<br>强到能读懂一门外语课</span><span class="en">Small enough to pocket,<br>smart enough to subtitle a lecture</span></h1>
-        <p class="lede">
-          <span class="zh">C++20 + 纯 Win32 单 exe；启动不加载任何插件；能力全部挂在插件体系上。</span>
-          <span class="en">A single C++20 / pure-Win32 exe. Loads zero plugins at startup. Everything else is a plugin.</span>
-        </p>
-        <div class="hero-actions">
-          <a class="cta big" href="https://github.com/zhanleewo/truthpad-binary/releases/download/v0.2.1-20261019/TruthPad-Setup-Beta.exe"><span class="zh">下载 Beta（Windows x64）</span><span class="en">Download Beta (Windows x64)</span></a>
-          <a class="ghost-btn big" href="#who"><span class="zh">看它适合谁</span><span class="en">See who it's for</span></a>
-          <a class="ghost-btn big" href="#subs"><span class="zh">看字幕流水线</span><span class="en">Subtitle pipeline</span></a>
-        </div>
-        <p class="hero-audience">
-          <span class="zh"><b>科研工作者 · 学生 · 工程技术人员 · 程序员</b> —— 四类人，四套用法。</span>
-          <span class="en"><b>Researchers · students · engineers · programmers</b> — four ways to work.</span>
-        </p>
-        <div class="stats-grid">
-          <div class="stat"><b>9.1 MB</b><span class="zh">主程序单 exe</span><span class="en">main binary</span></div>
-          <div class="stat"><b>0</b><span class="zh">启动时加载的插件</span><span class="en">plugins loaded at startup</span></div>
-          <div class="stat"><b>9</b><span class="zh">个官方插件，在线安装</span><span class="en">official plugins, installed online</span></div>
-        </div>
+    <div class="wrap hero-copy">
+      <p class="eyebrow"><span class="pulse"></span>TruthPad 0.2.1 · <span class="zh">智能编辑器</span><span class="en">AI-native editor</span></p>
+      <h1>
+        <span class="zh">不只是编辑器，<br><em>是一个会动手的 AI 助手。</em></span>
+        <span class="en">More than an editor.<br><em>An AI that gets things done.</em></span>
+      </h1>
+      <p class="lede">
+        <span class="zh">让 AI 直接读文件、改代码、操作 TruthPad。底层仍是原生 C++、单 exe、零 Node。</span>
+        <span class="en">Ask AI to read files, edit code and operate TruthPad — on a native C++ single-exe core with zero Node.</span>
+      </p>
+      <div class="hero-actions">
+        <a class="btn primary big" href="https://github.com/zhanleewo/truthpad-binary/releases/download/v0.2.1-20261019/TruthPad-Setup-Beta.exe"><span class="zh">下载 Beta（Windows x64）</span><span class="en">Download Beta (Windows x64)</span></a>
+        <a class="btn big" href="#ai"><span class="zh">看 AI 能做什么</span><span class="en">See what AI can do</span></a>
       </div>
-      <figure class="shot hero-shot">
-        <span class="dark-only">
-          <img class="zh" src="assets/shot-blank-zh-dark.png" alt="TruthPad 空白页（中文·深色）" loading="lazy">
-          <img class="en" src="assets/shot-blank-en-dark.png" alt="TruthPad empty state (English, dark)" loading="lazy">
-        </span>
-        <span class="light-only">
-          <img class="zh" src="assets/shot-blank-zh-light.png" alt="TruthPad 空白页（中文·浅色）" loading="lazy">
-          <img class="en" src="assets/shot-blank-en-light.png" alt="TruthPad empty state (English, light)" loading="lazy">
-        </span>
+      <div class="hero-stats">
+        <div><b>9.1 MB</b><span class="zh">主程序单 exe</span><span class="en">single exe</span></div>
+        <div><b>0</b><span class="zh">启动时加载的插件</span><span class="en">plugins at startup</span></div>
+        <div><b>9</b><span class="zh">个官方插件</span><span class="en">official plugins</span></div>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <figure class="hero-media shot-frame">
+        <div class="dark-only">
+          <img class="shot zh" src="assets/shot-ai-zh-dark.png" alt="TruthPad AI 助手：读取 PDF、整理复习提纲" width="2800" height="1760" loading="lazy" decoding="async">
+          <img class="shot en" src="assets/shot-ai-en-dark.png" alt="TruthPad AI assistant building a PDF revision outline" width="2800" height="1760" loading="lazy" decoding="async">
+        </div>
+        <div class="light-only">
+          <img class="shot zh" src="assets/shot-ai-zh-light.png" alt="TruthPad AI 助手：读取 PDF、整理复习提纲" width="2800" height="1760" loading="lazy" decoding="async">
+          <img class="shot en" src="assets/shot-ai-en-light.png" alt="TruthPad AI assistant building a PDF revision outline" width="2800" height="1760" loading="lazy" decoding="async">
+        </div>
+        <figcaption>
+          <span class="zh">AI 助手直接调用 TruthPad 工具：读 PDF 状态、翻页取文本、整理提纲。点击图片可放大查看。</span>
+          <span class="en">The AI calls TruthPad tools directly: reads the PDF state, pages through text, builds an outline. Click the image to zoom in.</span>
+        </figcaption>
       </figure>
     </div>
   </section>
 
-  <!-- ============================ 适合谁（四类人，四套用法） ============================ -->
-  <section class="section" id="who">
+  <!-- ============================ AI ============================ -->
+  <section class="section" id="ai">
     <div class="wrap">
-      <h2><span class="zh">四类人，四套用法</span><span class="en">Four kinds of people, four ways to work</span></h2>
-      <p class="section-lede">
-        <span class="zh">同一个程序，四种打开方式。下面每一条都是现成功能，不是路线图。</span>
-        <span class="en">One program, four ways in. Every item below ships today — none of it is a roadmap.</span>
-      </p>
-
-      <div class="who-grid">
-
-        <!-- 科研 -->
-        <article class="who-card">
-          <h3><span class="zh">科研工作者</span><span class="en">Researchers</span></h3>
-          <p class="who-hook">
-            <span class="zh">读论文、做批注、整理讲义 —— 一天要重复十遍。</span>
-            <span class="en">Read, annotate, write up — ten times a day.</span>
-          </p>
-          <ul class="who-list">
-            <li>
-              <span class="zh"><b>批注写回 PDF 文件本身</b>：高亮 / 下划线 / 删除线 / 图形 / 文本框 / 指示批注都能存回文件，换个阅读器打开也看得见。文本框<b>自动换行、高度自适应</b>，选中后能像画图软件一样拖动位置、拖左右边改宽度。</span>
-              <span class="en"><b>Annotations saved into the file</b>: highlight, underline, strike-out, shapes, text boxes and callouts are written back, visible in any reader. Text boxes wrap and auto-fit, and once selected can be dragged or resized by their left/right edges.</span>
-            </li>
-            <li>
-              <span class="zh"><b>论文速读 / 精读</b>：一键得到「核心贡献 / 实验与可信度 / 局限与坑 / 值不值得精读 / 复现检查清单」，精读再补 Mermaid 图与逐节审校；按文档 ID 缓存，同一篇不重复花 token。</span>
-              <span class="en"><b>Paper quick-read / deep-read</b>: contribution, evidence, limits, verdict and a reproduction checklist — deep-read adds Mermaid figures and a per-section review. Cached per document, so the same paper never costs twice.</span>
-            </li>
-            <li>
-              <span class="zh"><b>公式与图就是排版好的</b>：Markdown 里写 <code>\(…\)</code>、<code>\[…\]</code> 和 <code>mermaid</code> 代码块，预览里直接出公式与流程图。</span>
-              <span class="en"><b>Maths and diagrams, typeset</b>: write <code>\(…\)</code>, <code>\[…\]</code> or a <code>mermaid</code> block in Markdown and the preview renders formulas and flowcharts.</span>
-            </li>
-            <li>
-              <span class="zh"><b>一集课程 → 一篇讲师级讲义</b>：本地 whisper 转写 + 三阶段成文，结尾自动带课后总结、学习检查清单、思考题、实验设计；写到一半关掉也能续。</span>
-              <span class="en"><b>A lecture becomes a long-form handout</b>: local whisper plus a three-stage writer, ending with a summary, self-check list, questions and lab design; stop halfway and it resumes.</span>
-            </li>
-          </ul>
-          <figure class="shot who-shot">
-            <span class="dark-only"><img class="zh" src="assets/shot-pdf-zh-dark.png" alt="PDF 阅读与批注（中文·深色）" loading="lazy"><img class="en" src="assets/shot-pdf-en-dark.png" alt="PDF reading and annotation (English, dark)" loading="lazy"></span>
-            <span class="light-only"><img class="zh" src="assets/shot-pdf-zh-light.png" alt="PDF 阅读与批注（中文·浅色）" loading="lazy"><img class="en" src="assets/shot-pdf-en-light.png" alt="PDF reading and annotation (English, light)" loading="lazy"></span>
-            <figcaption><span class="zh">正文、缩略图、批注在同一个标签里；批注存回文件</span><span class="en">Text, thumbnails and annotations in one tab; saved back to the file</span></figcaption>
-          </figure>
-        </article>
-
-        <!-- 学生 -->
-        <article class="who-card">
-          <h3><span class="zh">学生</span><span class="en">Students</span></h3>
-          <p class="who-hook">
-            <span class="zh">外语课听不懂、课程太散、笔记永远没整理。</span>
-            <span class="en">Lectures too fast, notes never written up.</span>
-          </p>
-          <ul class="who-list">
-            <li>
-              <span class="zh"><b>外语课实时出中文字幕</b>：内置浏览器打开视频页点「字幕」；转写在本机跑（音频不出电脑），译文整篇一次到位；字幕条可拖拽、可停靠。</span>
-              <span class="en"><b>Live Chinese subtitles for a foreign-language lecture</b>: open the video in the built-in browser and press Subtitles; transcription runs locally (audio never leaves the machine) and the translation arrives in one pass; the overlay is draggable and dockable.</span>
-            </li>
-            <li>
-              <span class="zh"><b>把一集课变成能复习的讲义</b>：右键「生成文章」→ 标题 / 概述 / 小节 / 总结，公式与图都补齐；没写完关掉也行，回来自动接着写。</span>
-              <span class="en"><b>Turn a lecture into revision material</b>: right-click Generate article → title, overview, sections, summary, with formulas and figures filled in; unfinished work resumes next time.</span>
-            </li>
-            <li>
-              <span class="zh"><b>笔记就是 Markdown</b>：边写边预览，公式、表格、Mermaid 都渲染；工作区树里随手建文件夹，全局搜索支持正则和 <code>glob</code>。</span>
-              <span class="en"><b>Notes are just Markdown</b>: live preview with formulas, tables and Mermaid; build folders in the workspace tree; global search with regex and <code>glob</code>.</span>
-            </li>
-            <li>
-              <span class="zh"><b>轻到可以装在老笔记本上</b>：主程序 9.1 MB，装完即用；不用的插件可以禁用 —— 不看 PDF，PDF 就完全不加载。</span>
-              <span class="en"><b>Light enough for an old laptop</b>: a 9.1 MB main binary, works right after install; unused plugins can be disabled — no PDF reading, no PDF loaded.</span>
-            </li>
-          </ul>
-          <figure class="shot who-shot">
-            <span class="dark-only"><img class="zh" src="assets/shot-browser-zh-dark.png" alt="浏览器 + 中文字幕浮层（中文·深色）" loading="lazy"><img class="en" src="assets/shot-browser-en-dark.png" alt="Browser with subtitles (English, dark)" loading="lazy"></span>
-            <span class="light-only"><img class="zh" src="assets/shot-browser-zh-light.png" alt="浏览器 + 中文字幕浮层（中文·浅色）" loading="lazy"><img class="en" src="assets/shot-browser-en-light.png" alt="Browser with subtitles (English, light)" loading="lazy"></span>
-            <figcaption><span class="zh">英语讲解实时出中文字幕，字幕条贴在页面上</span><span class="en">English speech, live Chinese subtitles on the page</span></figcaption>
-          </figure>
-        </article>
-
-        <!-- 工程技术人员 -->
-        <article class="who-card">
-          <h3><span class="zh">工程技术人员</span><span class="en">Engineers &amp; technicians</span></h3>
-          <p class="who-hook">
-            <span class="zh">看手册、连设备、翻日志、改远程文件 —— 工具散在五个软件里。</span>
-            <span class="en">Manuals, devices, logs and remote files — spread across five programs.</span>
-          </p>
-          <ul class="who-list">
-            <li>
-              <span class="zh"><b>终端就在编辑器底部</b>：PuTTY 会话（串口 / SSH / Telnet）以标签页停靠在下侧，会话配置独立存储，不动系统里那份。</span>
-              <span class="en"><b>A terminal docked under the editor</b>: PuTTY sessions (serial, SSH, Telnet) live in bottom tabs; their profiles are stored separately and leave your system PuTTY alone.</span>
-            </li>
-            <li>
-              <span class="zh"><b>WSL 与远程文件跟本地一样</b>：<code>wsl://</code> 挂进工作区树后，打开、编辑、保存、搜索、另存为全程一致 —— 因为文件系统本身就是插件。</span>
-              <span class="en"><b>WSL and remote files behave like local ones</b>: mount <code>wsl://</code> into the tree and open, edit, save, search and Save-As all work the same — the file system itself is a plugin.</span>
-            </li>
-            <li>
-              <span class="zh"><b>手册和图纸能批注</b>：批注存回 PDF，发给同事照样看得见；几百页的手册不卡（页级缓存、可见页裁剪、关档整块把内存还给系统）。</span>
-              <span class="en"><b>Manual and drawing annotation</b>: annotations go back into the PDF and survive sharing; hundreds of pages stay smooth (page caches, visible-page culling, whole arena returned on close).</span>
-            </li>
-            <li>
-              <span class="zh"><b>日志分频道、可过滤</b>：构建与插件的日志进底部输出栏，按频道分开、按级别过滤；图片查看器能缩放、平移、调亮度对比度、裁剪，不改原文件。</span>
-              <span class="en"><b>Logs per channel, with levels</b>: build and plugin logs land in the bottom output pane, split by channel and filterable by level; the image viewer zooms, pans, adjusts and crops without touching the original.</span>
-            </li>
-          </ul>
-          <figure class="shot who-shot">
-            <span class="dark-only"><img class="zh" src="assets/shot-main-zh-dark.png" alt="工作区树 + 编辑器 + 预览（中文·深色）" loading="lazy"><img class="en" src="assets/shot-main-en-dark.png" alt="Workspace tree, editor and preview (English, dark)" loading="lazy"></span>
-            <span class="light-only"><img class="zh" src="assets/shot-main-zh-light.png" alt="工作区树 + 编辑器 + 预览（中文·浅色）" loading="lazy"><img class="en" src="assets/shot-main-en-light.png" alt="Workspace tree, editor and preview (English, light)" loading="lazy"></span>
-            <figcaption><span class="zh">工作区树（含远程根）+ 编辑器 + 实时预览，一个窗口里干活</span><span class="en">Tree (remote roots included), editor and live preview in one window</span></figcaption>
-          </figure>
-        </article>
-
-        <!-- 程序员 -->
-        <article class="who-card">
-          <h3><span class="zh">程序员</span><span class="en">Programmers</span></h3>
-          <p class="who-hook">
-            <span class="zh">想要「起得快、改得动、能扩展」的编辑器，而不是再装一套 Electron。</span>
-            <span class="en">An editor that starts fast, can be changed, and can be extended — without another Electron runtime.</span>
-          </p>
-          <ul class="who-list">
-            <li>
-              <span class="zh"><b>启动快得能解释</b>：启动只读清单建菜单，<b>一个插件都不加载</b>、<b>一个 WebView2 都不创建</b>；面板和视图第一次显示才装载（收起状态下实测 0 个 WebView2 进程）。</span>
-              <span class="en"><b>Startup you can explain</b>: manifests build the menus, <b>zero plugins loaded</b> and <b>zero WebView2 processes created</b>; panels and views load the first time they are shown.</span>
-            </li>
-            <li>
-              <span class="zh"><b>插件体系是"按需装载"的</b>：装了几个插件都行，启动时不加载任何一个 —— 点哪个功能才拉起哪个 DLL，不用的插件连内存都不占；插件在应用内在线安装、更新、禁用。</span>
-              <span class="en"><b>Plugins load on demand</b>: install as many as you like — none are loaded at startup; a DLL comes up only when you use its feature, and plugins install, update and disable from inside the app.</span>
-            </li>
-            <li>
-              <span class="zh"><b>零 Node 的运行时</b>：C++20 + 纯 Win32 单 exe，不拖 Electron / Node / Python；9.1 MB 主程序 + 静态运行库，装完就一个目录。</span>
-              <span class="en"><b>A zero-Node runtime</b>: C++20 and pure Win32 in a single exe — no Electron, Node or Python; a 9.1 MB binary plus statically linked runtime in one folder.</span>
-            </li>
-            <li>
-              <span class="zh"><b>编辑器该有的都有</b>：按扩展名选词法器（Lexilla）、正则与跨行查找替换、多根工作区、标签分栏、深色自绘界面（无边框窗口、自绘菜单，跟随主题）。</span>
-              <span class="en"><b>The usual editor things, done properly</b>: lexer per extension (Lexilla), regex and multi-line search &amp; replace, multi-root workspace, split tabs, and a fully owner-drawn dark UI that follows the theme.</span>
-            </li>
-          </ul>
-          <figure class="shot who-shot">
-            <span class="dark-only"><img class="zh" src="assets/shot-code-zh-dark.png" alt="代码编辑（中文·深色）" loading="lazy"><img class="en" src="assets/shot-code-en-dark.png" alt="Code editing (English, dark)" loading="lazy"></span>
-            <span class="light-only"><img class="zh" src="assets/shot-code-zh-light.png" alt="代码编辑（中文·浅色）" loading="lazy"><img class="en" src="assets/shot-code-en-light.png" alt="Code editing (English, light)" loading="lazy"></span>
-            <figcaption><span class="zh">语法高亮跟随主题；插件可把自己的视图开成标签</span><span class="en">Syntax colours follow the theme; plugins can open their own views as tabs</span></figcaption>
-          </figure>
-        </article>
-
+      <div class="section-head">
+        <p class="kicker">AI ASSISTANT</p>
+        <h2>
+          <span class="zh">AI 不只是聊天。<br><em>它能直接操作 TruthPad。</em></span>
+          <span class="en">Not just chat.<br><em>It operates TruthPad.</em></span>
+        </h2>
+        <p class="section-sub">
+          <span class="zh">工具调用、附件、访问限制、模型与推理级别，都在输入框边上。</span>
+          <span class="en">Tool calls, attachments, access control, model and reasoning level — all next to the composer.</span>
+        </p>
       </div>
 
-      <p class="footnote">
-        <span class="zh">四类人用的是同一个程序：装哪个插件、开哪个面板，自己定。集成显卡也跑得动，离线也跑得动。</span>
-        <span class="en">All four use the same program — which plugins and panels you enable is up to you. It runs on integrated graphics and it runs offline.</span>
-      </p>
-    </div>
-  </section>
-
-  <!-- ============================ 口号（灵魂，别删）============================ -->
-  <section class="slogan-band">
-    <div class="wrap">
-      <p class="slogan slogan-cap">Make Editing Great Again.</p>
-      <p class="slogan slogan-quote">&ldquo;Nobody knows editors better than me!&rdquo;</p>
-    </div>
-  </section>
-
-  <!-- ============================ 轻与快 ============================ -->
-  <section class="section" id="light">
-    <div class="wrap">
-      <h2><span class="zh">快、小、轻量，功能却不少</span><span class="en">Fast, small, light — and featureful</span></h2>
-      <p class="section-lede">
-        <span class="zh">启动只做三件事：读清单、预建入口、等你点。插件按需加载 —— 连「右侧 AI 面板」「下侧日志页签」这类界面，也是第一次显示才装载。</span>
-        <span class="en">Startup does three things: read the manifests, pre-build the entries, wait for you. Plugins load on demand — even panels load only the first time they are shown.</span>
-      </p>
       <div class="cards">
         <article class="card">
-          <div class="card-icon">2.5M</div>
-          <h3><span class="zh">单 exe，零 Node.js</span><span class="en">One exe, zero Node.js</span></h3>
-          <p><span class="zh">静态链接运行库，解压即用；不需要装 Node / Electron / Python。</span><span class="en">Statically linked; unzip and run — no Node, Electron or Python to install.</span></p>
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg>
+          </div>
+          <h3><span class="zh">能动手</span><span class="en">It acts</span></h3>
+          <p><span class="zh">开文件、改代码、切主题，驱动 PDF、浏览器、播放器和网盘。不是只会说“你可以这样做”。</span><span class="en">Opens files, edits code, switches themes, drives PDF, browser, player and cloud storage. It does the work, not just describes it.</span></p>
         </article>
         <article class="card">
-          <div class="card-icon">0</div>
-          <h3><span class="zh">启动不加载插件</span><span class="en">Zero plugins at startup</span></h3>
-          <p><span class="zh">只读 manifest.json 建菜单；点哪个才 LoadLibrary 哪个。</span><span class="en">Menus come from plain-text manifests; a DLL loads only when clicked.</span></p>
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v6c0 4.4 3 8.4 7 9.5 4-1.1 7-5.1 7-9.5V6l-7-3Zm0 2.2 5 2.1V12c0 3.2-2.1 6.3-5 7.4-2.9-1.1-5-4.2-5-7.4V7.3l5-2.1Z"/></svg>
+          </div>
+          <h3><span class="zh">有边界</span><span class="en">Guardrails</span></h3>
+          <p><span class="zh">只读 / 标准 / 完全访问。危险操作先弹确认，写操作可以按会话授权。</span><span class="en">Read-only, standard or full access. Dangerous actions ask first; write access can be granted per session.</span></p>
         </article>
         <article class="card">
-          <div class="card-icon">店</div>
-          <h3><span class="zh">插件在线装、随手关</span><span class="en">Install plugins from the app</span></h3>
-          <p><span class="zh">插件页里直接下载安装 / 更新 / 卸载（PDF、浏览器、WSL、图片查看器、网盘、视频播放器、AI 助手等）；不用了可以禁用，禁用后连 DLL 都不加载。</span><span class="en">Install, update or remove plugins right in the app (PDF, browser, WSL, image viewer, netdisk, video player, AI assistant and more); disabled plugins are never even loaded.</span></p>
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H8l-4 4V5Zm3 4h10M7 12h6"/></svg>
+          </div>
+          <h3><span class="zh">有上下文</span><span class="en">Context</span></h3>
+          <p><span class="zh">附件直接拖进对话，会话自动归档；模型和推理档位随手切换，长上下文自动压缩。</span><span class="en">Attach files to the conversation, archive sessions, switch model and reasoning level, and let long contexts compact themselves.</span></p>
         </article>
-        <article class="card">
-          <div class="card-icon">v15</div>
-          <h3><span class="zh">宿主 API 只增不改</span><span class="en">Additive host API</span></h3>
-          <p><span class="zh">v1→v15 表尾追加：DPI / 主题 / 多语言 / 编辑区分块 / 深色菜单 / AI 配置，老插件照跑。</span><span class="en">v1→v15 append to the table: DPI, theme, i18n, editor panes, themed menus, AI config — old plugins keep working.</span></p>
-        </article>
-      </div>
-      <div class="shot-grid">
-        <figure class="shot">
-          <span class="dark-only"><img class="zh" src="assets/shot-main-zh-dark.png" alt="工作区树 + Markdown 源码 + 实时预览（中文·深色）" loading="lazy"><img class="en" src="assets/shot-main-en-dark.png" alt="Workspace tree, Markdown source and preview (English, dark)" loading="lazy"></span>
-          <span class="light-only"><img class="zh" src="assets/shot-main-zh-light.png" alt="工作区树 + Markdown 源码 + 实时预览（中文·浅色）" loading="lazy"><img class="en" src="assets/shot-main-en-light.png" alt="Workspace tree, Markdown source and preview (English, light)" loading="lazy"></span>
-          <figcaption><span class="zh">工作区树 + Markdown 源码 + 实时预览（Mermaid 与公式原生渲染）</span><span class="en">Tree, Markdown source and live preview (native Mermaid &amp; math)</span></figcaption>
-        </figure>
-        <figure class="shot">
-          <span class="dark-only"><img class="zh" src="assets/shot-plugins-zh-dark.png" alt="插件管理页（中文·深色）" loading="lazy"><img class="en" src="assets/shot-plugins-en-dark.png" alt="Plugin manager (English, dark)" loading="lazy"></span>
-          <span class="light-only"><img class="zh" src="assets/shot-plugins-zh-light.png" alt="插件管理页（中文·浅色）" loading="lazy"><img class="en" src="assets/shot-plugins-en-light.png" alt="Plugin manager (English, light)" loading="lazy"></span>
-          <figcaption><span class="zh">插件管理页：声明即能力，按需装载，可禁用 / 卸载 / 更新</span><span class="en">Plugin manager: declared capabilities, loaded on demand</span></figcaption>
-        </figure>
-        <figure class="shot">
-          <span class="dark-only"><img class="zh" src="assets/shot-code-zh-dark.png" alt="代码编辑（中文·深色）" loading="lazy"><img class="en" src="assets/shot-code-en-dark.png" alt="Code editing (English, dark)" loading="lazy"></span>
-          <span class="light-only"><img class="zh" src="assets/shot-code-zh-light.png" alt="代码编辑（中文·浅色）" loading="lazy"><img class="en" src="assets/shot-code-en-light.png" alt="Code editing (English, light)" loading="lazy"></span>
-          <figcaption><span class="zh">代码编辑：按扩展名选词法器，配色跟随主题</span><span class="en">Code editing: lexer by extension, colours follow the theme</span></figcaption>
-        </figure>
       </div>
     </div>
   </section>
 
-  <!-- ============================ PDF ============================ -->
-  <section class="section" id="pdf">
-    <div class="wrap">
-      <h2><span class="zh">PDF 阅读器：读、选、批注，都在这一个标签里</span><span class="en">A PDF reader that annotates, right in a tab</span></h2>
-      <div class="get-grid">
-        <ul class="reqs">
-          <li><span class="zh"><b>连续滚动</b> + <code>Ctrl+滚轮</code> 缩放；普通滚轮平滑滚动</span><span class="en"><b>Continuous scrolling</b> plus <code>Ctrl+wheel</code> zoom</span></li>
-          <li><span class="zh">左侧三标签页：<b>缩略图 / 书签 / 批注</b></span><span class="en">Sidebar with thumbnails, bookmarks and annotations</span></li>
-          <li><span class="zh">文本层可选中复制、可 <code>Ctrl+F</code> 查找</span><span class="en">Selectable, copyable text layer; <code>Ctrl+F</code> search</span></li>
-          <li><span class="zh"><b>批注能存回 PDF 文件</b>（高亮 / 下划线 / 删除线 / 波浪线 / 文本 / 图形 + 撤销栈）</span><span class="en"><b>Annotations are saved back into the file</b> (highlight, underline, strike-out, squiggly, free text, shapes, undo stack)</span></li>
-          <li><span class="zh">大书不卡：页级缓存 + 可见页裁剪 + 每文档内存域，关档整块归还</span><span class="en">Big books stay smooth: page caches, visible-page culling, per-document arena</span></li>
-          <li><span class="zh"><b>论文速读 / 精读</b>：一键生成「核心贡献 / 实验与可信度 / 局限与坑 / 值不值得精读 / 复现检查清单」；精读再补 Mermaid 图与逐节审校，按文档 ID 缓存不重复花钱</span><span class="en"><b>Paper quick-read / deep-read</b>: contribution, evidence, limits, verdict and a reproduction checklist; deep-read adds Mermaid figures and a per-section review, cached per document</span></li>
-          <li><span class="zh"><b>文本框批注能调</b>：自动换行、高度自适应，选中后可拖动位置、拖左右边改宽；指示批注的指示点不动</span><span class="en"><b>Text boxes you can adjust</b>: wrapping with auto-fit height, drag to move, drag an edge to resize; a callout keeps its target point</span></li>
+  <!-- ============================ Editor ============================ -->
+  <section class="section alt" id="editor">
+    <div class="wrap split">
+      <div class="split-copy">
+        <p class="kicker">NATIVE CORE</p>
+        <h2>
+          <span class="zh">AI 之下，<br><em>仍是一把快刀。</em></span>
+          <span class="en">Under the AI,<br><em>a fast native core.</em></span>
+        </h2>
+        <ul class="checks">
+          <li><span class="zh"><b>Scintilla + Lexilla</b>：多语言语法高亮，打开大文件也不拖泥带水。</span><span class="en"><b>Scintilla + Lexilla</b>: multi-language highlighting that stays fast on large files.</span></li>
+          <li><span class="zh"><b>Markdown 预览</b>：大文件滚动不触发重渲染，源码与预览按行对齐。</span><span class="en"><b>Markdown preview</b>: scrolling no longer triggers a full re-render; source and preview stay line-aligned.</span></li>
+          <li><span class="zh"><b>9.1 MB 单 exe / 零 Node</b>：不需要 Electron、Node 或 Python；插件用到才加载。</span><span class="en"><b>9.1 MB single exe / zero Node</b>: no Electron, Node or Python; plugins load only when used.</span></li>
         </ul>
-        <figure class="shot">
-          <span class="dark-only"><img class="zh" src="assets/shot-pdf-zh-dark.png" alt="PDF 阅读器（中文·深色）" loading="lazy"><img class="en" src="assets/shot-pdf-en-dark.png" alt="PDF reader (English, dark)" loading="lazy"></span>
-          <span class="light-only"><img class="zh" src="assets/shot-pdf-zh-light.png" alt="PDF 阅读器（中文·浅色）" loading="lazy"><img class="en" src="assets/shot-pdf-en-light.png" alt="PDF reader (English, light)" loading="lazy"></span>
-          <figcaption><span class="zh">打开的是本页材料里的产品文档 PDF 本身</span><span class="en">Showing the very PDF from the docs section below</span></figcaption>
-        </figure>
       </div>
-    </div>
-  </section>
-
-  <!-- ============================ 浏览器 / 字幕（主打） ============================ -->
-  <section class="section" id="subs">
-    <div class="wrap">
-      <h2><span class="zh">浏览器插件：自动字幕 → 自动翻译 → 字幕成文</span><span class="en">The browser plugin: auto subtitles → auto translation → subtitle-to-article</span></h2>
-      <p class="section-lede">
-        <span class="zh">看外语课程最费时间的是「听懂」和「整理」。这条流水线把两件事都做掉：一键得到中文字幕，右键再把它整理成一篇长讲义。</span>
-        <span class="en">Understanding and organising a foreign-language lecture is the slow part. This pipeline does both: subtitles in one click, then a long-form article from the right-click menu.</span>
-      </p>
-
-      <ol class="flow">
-        <li><span class="n">1</span><span><b><span class="zh">取音源</span><span class="en">Fetch audio</span></b> — <span class="zh">站点脚本认领播放页，取音源后在页面内解码成 16 kHz 单声道；超长音频按分片表切窗口逐段解码再拼。</span><span class="en">A site script claims the player page; audio is decoded in-page to 16 kHz mono; very long audio is decoded window-by-window and stitched.</span></span></li>
-        <li><span class="n">2</span><span><b><span class="zh">本地转写</span><span class="en">Local transcription</span></b> — <span class="zh">8 分钟分段交给本机 whisper（CPU 能跑，N 卡自动走 CUDA）；音频不出本机，模型应用内一键下载。</span><span class="en">8-minute segments go to local whisper (CPU or CUDA); the audio never leaves the machine, models download in-app.</span></span></li>
-        <li><span class="n">3</span><span><b><span class="zh">整篇翻译 / 只校对</span><span class="en">Translate or proofread</span></b> — <span class="zh">整篇字幕一次发给 DeepSeek（格式锁死：不漏条、不动时间轴）；中文音频只校对不翻译。</span><span class="en">The whole transcript goes out in one call (schema locked); Chinese audio is proofread only, never translated.</span></span></li>
-        <li><span class="n">4</span><span><b><span class="zh">字幕成文</span><span class="en">Subtitle-to-article</span></b> — <span class="zh">右键「生成文章」：筋骨 → 血肉 → 逐节审校 → 概述/总结 → 总分总组装，一篇可读的长文就出来了。</span><span class="en">Right-click “Generate article”: skeleton → flesh → per-section review → overview &amp; summary → assembled whole.</span></span></li>
-      </ol>
-
-      <figure class="shot">
-        <span class="dark-only"><img class="zh" src="assets/shot-browser-zh-dark.png" alt="浏览器 + 字幕浮层（中文·深色）" loading="lazy"><img class="en" src="assets/shot-browser-en-dark.png" alt="Browser with subtitle overlay (English, dark)" loading="lazy"></span>
-        <span class="light-only"><img class="zh" src="assets/shot-browser-zh-light.png" alt="浏览器 + 字幕浮层（中文·浅色）" loading="lazy"><img class="en" src="assets/shot-browser-en-light.png" alt="Browser with subtitle overlay (English, light)" loading="lazy"></span>
-        <figcaption><span class="zh">英语讲解实时出中文字幕（演示视频《走遍美国》无字幕版；字幕浮层可拖拽/停靠）</span><span class="en">English speech, live Chinese subtitles (demo video: “Family Album U.S.A.”; the overlay is draggable/dockable)</span></figcaption>
-      </figure>
-
-      <div class="cards">
-        <article class="card">
-          <div class="card-icon">&#9670;</div>
-          <h3><span class="zh">成文是有规矩的</span><span class="en">Writing with rules</span></h3>
-          <p><span class="zh">规范从「字幕 ↔ 范文讲义」对照样本里提炼：4 级标题、固定尾节（课后总结 / 检查清单 / 思考题 / 实验设计）、段落模板、扩写比例。</span><span class="en">Rules distilled from transcript↔model-lecture pairs: 4-level headings, a fixed tail (summary, self-check, questions, lab design), paragraph templates, expansion ratio.</span></p>
-        </article>
-        <article class="card">
-          <div class="card-icon">fx</div>
-          <h3><span class="zh">公式是刚性验收</span><span class="en">Formulas are hard-checked</span></h3>
-          <p><span class="zh">只允许 <code>\(…\)</code> 与 <code>\[…\]</code>；出现 <code>$…$</code> 自动返修，组装后全篇再查。实测一集 2.5 小时课程：19.5 万字、0 次违规。</span><span class="en">Only <code>\(…\)</code> and <code>\[…\]</code>; any <code>$…$</code> is repaired automatically and re-checked. Measured: 195k characters, zero violations.</span></p>
-        </article>
-        <article class="card">
-          <div class="card-icon">&#9199;</div>
-          <h3><span class="zh">不重跑、能接着写</span><span class="en">Resume, never redo</span></h3>
-          <p><span class="zh">已完整的字幕/文章不重跑；没完整的按覆盖点续转、按检查点续写；离开页面 / 关标签就停，回来接着干。</span><span class="en">Finished subtitles and articles are never redone; partial work resumes from coverage and checkpoints; leaving stops the jobs, returning continues them.</span></p>
-        </article>
-        <article class="card">
-          <div class="card-icon">&#8599;</div>
-          <h3><span class="zh">像浏览器一样讲礼貌</span><span class="en">Behaves like a browser</span></h3>
-          <p><span class="zh"><code>target="_blank"</code> / <code>window.open</code> / 中键都开新标签；面板按需出现；菜单跟随主题。</span><span class="en">New tabs for <code>target="_blank"</code>, <code>window.open</code> and middle-click; panels appear on demand; menus follow the theme.</span></p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================ 材料 ============================ -->
-  <section class="section" id="docs">
-    <div class="wrap">
-      <h2><span class="zh">材料：产品介绍（中/英，Markdown + PDF）</span><span class="en">Docs: the same introduction in Markdown and PDF, Chinese and English</span></h2>
-      <p class="section-lede">
-        <span class="zh">两份文档的所有配图都来自 TruthPad 自身截图；演示用的 PDF 与 Markdown 也是自制素材，没有第三方版权内容。</span>
-        <span class="en">Every figure in these documents is a real TruthPad screenshot; the demo PDF and Markdown are self-made — no third-party copyrighted material.</span>
-      </p>
-      <div class="docs-grid">
-        <article class="card">
-          <div class="card-icon">中</div>
-          <h3><span class="zh">中文产品介绍</span><span class="en">Chinese introduction</span></h3>
-          <p><span class="zh">图文并茂，重点讲字幕流水线与 PDF 阅读器。</span><span class="en">Illustrated walkthrough of the subtitle pipeline and the PDF reader.</span></p>
-          <div class="doc-actions">
-            <a class="cta" href="docs/truthpad-zh.md" download>Markdown</a>
-            <a class="ghost-btn" href="docs/truthpad-zh.pdf" download>PDF</a>
-          </div>
-        </article>
-        <article class="card">
-          <div class="card-icon">EN</div>
-          <h3>English introduction</h3>
-          <p>The same content in English, with English-UI screenshots.</p>
-          <div class="doc-actions">
-            <a class="cta" href="docs/truthpad-en.md" download>Markdown</a>
-            <a class="ghost-btn" href="docs/truthpad-en.pdf" download>PDF</a>
-          </div>
-        </article>
-        <article class="card">
-          <div class="card-icon">册</div>
-          <h3><span class="zh">用户手册</span><span class="en">User manual</span></h3>
-          <p><span class="zh">从界面、编辑器、终端、PDF、浏览器字幕到插件配置，逐项讲怎么用。</span><span class="en">Every feature explained: UI, editor, terminal, PDF, browser subtitles and plugin settings.</span></p>
-          <div class="doc-actions">
-            <a class="cta" href="docs/user-manual-zh.md" download>中文手册</a>
-            <a class="ghost-btn" href="docs/user-manual-zh.pdf" download>PDF</a>
-            <a class="ghost-btn" href="docs/user-manual-en.md" download>English</a>
-            <a class="ghost-btn" href="docs/user-manual-en.pdf" download>PDF</a>
-          </div>
-        </article>
-        <article class="card">
-          <div class="card-icon">&#9654;</div>
-          <h3><span class="zh">演示视频</span><span class="en">Demo video</span></h3>
-          <p><span class="zh">字幕功能演示用的公开视频（英语讲解、无字幕）。</span><span class="en">The public video used for the subtitle demo (English, no subtitles).</span></p>
-          <div class="doc-actions">
-            <a class="cta" href="https://www.bilibili.com/video/BV1MJ411p7ne/" target="_blank" rel="noopener">bilibili.com</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================ 上手 ============================ -->
-  <section class="section" id="get">
-    <div class="wrap">
-      <h2><span class="zh">上手三步</span><span class="en">Three steps</span></h2>
-      <div class="get-grid">
-        <ol class="flow">
-          <li><span class="n">1</span><span><span class="zh">安装 <b>Beta 渠道</b>包（pdf / wsl / 图片查看器 / 浏览器四个插件，装好即用）。</span><span class="en">Install the <b>Beta</b> package (pdf, wsl, image viewer and browser plugins, ready to use).</span></span></li>
-          <li><span class="n">2</span><span><span class="zh">打开右上角浏览器 → 打开一个视频页 → 点「<b>字幕</b>」：第一次会让你在设置里下载识别模型、填 DeepSeek key。</span><span class="en">Open the built-in browser → a video page → press <b>Subtitles</b>; the first run asks for a model download and a DeepSeek key.</span></span></li>
-          <li><span class="n">3</span><span><span class="zh">右键 →「<b>生成文章</b>」：成品存进工作区树里选中的目录，并自动打开。</span><span class="en">Right-click → <b>Generate article</b>: it is saved into the folder selected in the workspace tree and opened for you.</span></span></li>
-        </ol>
-        <div class="download-box">
-          <a class="cta big" href="https://github.com/zhanleewo/truthpad-binary/releases/download/v0.2.1-20261019/TruthPad-Setup-Beta.exe"><span class="zh">下载 Beta 安装包（54.2 MB）</span><span class="en">Download Beta installer (54.2 MB)</span></a>
-          <a class="ghost-btn big" href="https://github.com/zhanleewo/truthpad-binary/releases/download/v0.2.1-20261019/TruthPad-Setup-GA.exe"><span class="zh">下载 GA 安装包（22.9 MB，精简版）</span><span class="en">Download GA installer (22.9 MB, minimal)</span></a>
-          <p class="download-note">
-            <span class="zh">Windows 10/11 x64 · 安装包自带运行库，不需要另装任何环境 ·
-              <a href="https://github.com/zhanleewo/truthpad-binary/releases">全部版本与插件包</a></span>
-            <span class="en">Windows 10/11 x64 &middot; the installer ships its own runtime &middot;
-              <a href="https://github.com/zhanleewo/truthpad-binary/releases">all releases and plugin packages</a></span>
-          </p>
-          <div class="dl-prep">
-            <span class="zh"><b>装完先做两件事</b>：① 设置 →「模型」里填 DeepSeek API Key（AI 功能才工作）；
-              ② 语音转字幕要在插件的配置里点「下载识别模型」（Whisper，约 1.6 GB，需要能访问 huggingface）</span>
-            <span class="en"><b>Two things after install</b>: (1) add your DeepSeek API key in Settings &rarr; Models (required by all AI features);
-              (2) for speech-to-subtitles, download the Whisper model from the plugin's settings (~1.6 GB, needs access to huggingface)</span>
-          </div>
+      <figure class="shot-frame">
+        <div class="dark-only">
+          <img class="shot zh" src="assets/shot-editor-zh-dark.png" alt="TruthPad Markdown 源码与预览分栏" width="2800" height="1760" loading="lazy" decoding="async">
+          <img class="shot en" src="assets/shot-editor-en-dark.png" alt="TruthPad Markdown source and preview split view" width="2800" height="1760" loading="lazy" decoding="async">
         </div>
+        <div class="light-only">
+          <img class="shot zh" src="assets/shot-editor-zh-light.png" alt="TruthPad Markdown 源码与预览分栏" width="2800" height="1760" loading="lazy" decoding="async">
+          <img class="shot en" src="assets/shot-editor-en-light.png" alt="TruthPad Markdown source and preview split view" width="2800" height="1760" loading="lazy" decoding="async">
+        </div>
+        <figcaption><span class="zh">Markdown 源码 / 预览分栏，公式、表格、代码块直接渲染。</span><span class="en">Markdown source and preview side by side, with formulas, tables and code blocks rendered live.</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============================ Scenes ============================ -->
+  <section class="section" id="scenes">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">BEYOND AI</p>
+        <h2>
+          <span class="zh">不止 AI。<br><em>同一条原生底座上的专业工具。</em></span>
+          <span class="en">Beyond AI.<br><em>Professional tools on the same native core.</em></span>
+        </h2>
       </div>
-      <p class="footnote">
-        <span class="zh">装完即用：不需要 Node / Python / .NET，也不需要联网（除字幕翻译需要自备 DeepSeek key）。</span>
-        <span class="en">Nothing else to install: no Node, Python or .NET, and it works offline (only subtitle translation needs your own DeepSeek key).</span>
+
+      <div class="scene-grid">
+        <article class="scene-card">
+          <figure class="shot-frame">
+            <div class="dark-only">
+              <img class="shot zh" src="assets/shot-pdf-zh-dark.png" alt="TruthPad PDF 阅读器" width="2800" height="1760" loading="lazy" decoding="async">
+              <img class="shot en" src="assets/shot-pdf-en-dark.png" alt="TruthPad PDF reader" width="2800" height="1760" loading="lazy" decoding="async">
+            </div>
+            <div class="light-only">
+              <img class="shot zh" src="assets/shot-pdf-zh-light.png" alt="TruthPad PDF 阅读器" width="2800" height="1760" loading="lazy" decoding="async">
+              <img class="shot en" src="assets/shot-pdf-en-light.png" alt="TruthPad PDF reader" width="2800" height="1760" loading="lazy" decoding="async">
+            </div>
+          </figure>
+          <div class="scene-copy">
+            <h3>PDF</h3>
+            <p><span class="zh">阅读、批注写回文件、书签、文本查找；论文速读 / 精读直接生成中文讲义。</span><span class="en">Read, annotate back into the file, bookmarks and text search; speed-read papers into a Chinese digest.</span></p>
+          </div>
+        </article>
+
+        <article class="scene-card">
+          <figure class="shot-frame">
+            <div class="dark-only">
+              <img class="shot zh" src="assets/shot-code-zh-dark.png" alt="TruthPad 代码编辑" width="2800" height="1760" loading="lazy" decoding="async">
+              <img class="shot en" src="assets/shot-code-en-dark.png" alt="TruthPad code editing" width="2800" height="1760" loading="lazy" decoding="async">
+            </div>
+            <div class="light-only">
+              <img class="shot zh" src="assets/shot-code-zh-light.png" alt="TruthPad 代码编辑" width="2800" height="1760" loading="lazy" decoding="async">
+              <img class="shot en" src="assets/shot-code-en-light.png" alt="TruthPad code editing" width="2800" height="1760" loading="lazy" decoding="async">
+            </div>
+          </figure>
+          <div class="scene-copy">
+            <h3><span class="zh">代码编辑</span><span class="en">Code</span></h3>
+            <p><span class="zh">C++20 原生编辑器，多语言高亮、分栏、查找替换、外部改动重载。</span><span class="en">A native C++20 editor with multi-language highlighting, split panes, search and external-change reload.</span></p>
+          </div>
+        </article>
+
+        <article class="scene-card">
+          <figure class="shot-frame">
+            <div class="dark-only">
+              <img class="shot zh" src="assets/shot-browser-zh-dark.png" alt="TruthPad 浏览器字幕" width="2800" height="1760" loading="lazy" decoding="async">
+              <img class="shot en" src="assets/shot-browser-en-dark.png" alt="TruthPad browser subtitles" width="2800" height="1760" loading="lazy" decoding="async">
+            </div>
+            <div class="light-only">
+              <img class="shot zh" src="assets/shot-browser-zh-light.png" alt="TruthPad 浏览器字幕" width="2800" height="1760" loading="lazy" decoding="async">
+              <img class="shot en" src="assets/shot-browser-en-light.png" alt="TruthPad browser subtitles" width="2800" height="1760" loading="lazy" decoding="async">
+            </div>
+          </figure>
+          <div class="scene-copy">
+            <h3><span class="zh">浏览器 + 字幕</span><span class="en">Browser + subtitles</span></h3>
+            <p><span class="zh">内嵌浏览器，视频页自动字幕、翻译，字幕一键整理成文章 / 讲义。</span><span class="en">An embedded browser that subtitles and translates video pages, then turns them into an article or lecture notes.</span></p>
+          </div>
+        </article>
+
+        <article class="scene-card">
+          <figure class="shot-frame">
+            <div class="dark-only">
+              <img class="shot zh" src="assets/shot-plugins-zh-dark.png" alt="TruthPad 插件管理" width="2800" height="1760" loading="lazy" decoding="async">
+              <img class="shot en" src="assets/shot-plugins-en-dark.png" alt="TruthPad plugin manager" width="2800" height="1760" loading="lazy" decoding="async">
+            </div>
+            <div class="light-only">
+              <img class="shot zh" src="assets/shot-plugins-zh-light.png" alt="TruthPad 插件管理" width="2800" height="1760" loading="lazy" decoding="async">
+              <img class="shot en" src="assets/shot-plugins-en-light.png" alt="TruthPad plugin manager" width="2800" height="1760" loading="lazy" decoding="async">
+            </div>
+          </figure>
+          <div class="scene-copy">
+            <h3><span class="zh">插件在线安装</span><span class="en">Plugins online</span></h3>
+            <p><span class="zh">9 个官方插件，在线安装 / 更新 / 禁用；禁用就不加载，主程序保持小。</span><span class="en">Nine official plugins, installed, updated and disabled online. Disabled means not loaded; the host stays small.</span></p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ Download ============================ -->
+  <section class="download" id="get">
+    <div class="wrap download-inner">
+      <p class="kicker">GET TRUTHPAD</p>
+      <h2>
+        <span class="zh">把 AI 放进你的编辑器。</span>
+        <span class="en">Put an AI inside your editor.</span>
+      </h2>
+      <p class="download-sub">
+        <span class="zh">Windows 10/11 x64 · 安装包自带运行库 · 30 天全功能试用</span>
+        <span class="en">Windows 10/11 x64 · runtime included · 30-day full-feature trial</span>
+      </p>
+      <div class="download-actions">
+        <a class="btn primary big" href="https://github.com/zhanleewo/truthpad-binary/releases/download/v0.2.1-20261019/TruthPad-Setup-Beta.exe"><span class="zh">下载 Beta</span><span class="en">Download Beta</span><b>54.2 MB</b></a>
+        <a class="btn big" href="https://github.com/zhanleewo/truthpad-binary/releases/download/v0.2.1-20261019/TruthPad-Setup-GA.exe"><span class="zh">下载 GA（精简）</span><span class="en">Download GA (minimal)</span><b>22.9 MB</b></a>
+      </div>
+      <p class="download-note">
+        <span class="zh">插件源：<a href="sources.json">sources.json</a> · 文档：<a href="docs/truthpad-zh.md">中文</a> / <a href="docs/truthpad-en.md">English</a> · PDF：<a href="docs/truthpad-zh.pdf">中文</a> / <a href="docs/truthpad-en.pdf">English</a> · <a href="https://github.com/zhanleewo/truthpad-binary/releases">全部版本</a></span>
+        <span class="en">Plugin source: <a href="sources.json">sources.json</a> · Docs: <a href="docs/truthpad-zh.md">中文</a> / <a href="docs/truthpad-en.md">English</a> · PDF: <a href="docs/truthpad-zh.pdf">中文</a> / <a href="docs/truthpad-en.pdf">English</a> · <a href="https://github.com/zhanleewo/truthpad-binary/releases">All releases</a></span>
       </p>
     </div>
   </section>
 
 </main>
-
-<!-- 点下载时弹的"准备事项"提示（用户 2026-10-15：提醒两件事）-->
-<div id="dl-modal" class="dl-modal" hidden>
-  <div class="dl-modal-box" role="dialog" aria-modal="true" aria-labelledby="dl-modal-title">
-    <h3 id="dl-modal-title"><span class="zh">下载后先做两件事</span><span class="en">Two things to set up after install</span></h3>
-    <ol class="dl-modal-list">
-      <li>
-        <span class="zh"><b>填 DeepSeek API Key</b>：打开「设置 → 模型」，添加一个模型（名称 / 接口地址 / 密钥，
-          也可以直接编辑 <code>%APPDATA%\TruthPad\models.json</code>）。翻译与审校、论文速读 / 精读、
-          字幕生成文章这些 AI 功能都从这份配置取；不填也能用，只是 AI 功能不工作。</span>
-        <span class="en"><b>Add your DeepSeek API key</b>: Settings &rarr; Models, add a model (name / endpoint / key,
-          or edit <code>%APPDATA%\TruthPad\models.json</code>). Translation, paper summaries and article generation all
-          read from this shared config. Without it the app still works &mdash; only the AI features stay off.</span>
-      </li>
-      <li>
-        <span class="zh"><b>语音转字幕要下载 Whisper</b>：打开「插件 → 浏览器 → 配置」点「下载识别模型」（约 1.6 GB），
-          并且这台电脑要能访问 <b>huggingface.com</b>（连不上时可在配置里把下载镜像切成 hf-mirror）。</span>
-        <span class="en"><b>Speech-to-subtitles needs Whisper</b>: open Plugins &rarr; Browser &rarr; Configure and click
-          &ldquo;Download model&rdquo; (~1.6 GB). The machine must be able to reach <b>huggingface.com</b>
-          (switch the mirror to hf-mirror in the same dialog if it is blocked).</span>
-      </li>
-    </ol>
-    <div class="dl-modal-actions">
-      <a id="dl-modal-continue" class="cta" href="#"><span class="zh">继续下载</span><span class="en">Continue to download</span></a>
-      <button id="dl-modal-close" class="ghost-btn" type="button"><span class="zh">关闭</span><span class="en">Close</span></button>
-      <label class="dl-modal-skip"><input type="checkbox" id="dl-modal-skip"> <span class="zh">不再提示</span><span class="en">Don't show again</span></label>
-    </div>
-  </div>
-</div>
 
 <footer class="footer">
   <div class="wrap footer-inner">
@@ -471,27 +259,52 @@
       <span>TruthPad</span>
     </div>
     <div class="footer-links">
-      <a href="#who"><span class="zh">适合谁</span><span class="en">Who it's for</span></a>
-      <a href="#light"><span class="zh">轻与快</span><span class="en">Light &amp; fast</span></a>
-      <a href="#pdf">PDF</a>
-      <a href="#subs"><span class="zh">浏览器字幕</span><span class="en">Subtitles</span></a>
-      <a href="docs/truthpad-zh.md"><span class="zh">中文文档</span><span class="en">Chinese doc</span></a>
-      <a href="docs/truthpad-en.md"><span class="zh">英文文档</span><span class="en">English doc</span></a>
+      <a href="#ai">AI</a>
+      <a href="#editor"><span class="zh">编辑器</span><span class="en">Editor</span></a>
+      <a href="#scenes"><span class="zh">场景</span><span class="en">Scenes</span></a>
+      <a class="zh" href="docs/user-manual-zh.md">用户手册</a>
+      <a class="en" href="docs/user-manual-en.md">User manual</a>
+      <a class="zh" href="docs/truthpad-zh.md">产品文档</a>
+      <a class="en" href="docs/truthpad-en.md">Product doc</a>
     </div>
-
-    <!-- QQ 频道（2026-10-16 用户要求；图是频道分享卡片本身，没做裁剪 —— 只把手机截图的黑色外边
-         去掉了，否则浅色主题下会是一大块黑边） -->
     <div class="footer-qq">
-      <img src="assets/qq-channel.png" alt="TruthPad QQ 频道二维码" width="150" loading="lazy">
-      <p class="footer-qq-text">
-        <b><span class="zh">加入 QQ 频道</span><span class="en">Join our QQ channel</span></b><br>
-        <span class="zh">扫一扫二维码加入（频道号 <code>pd16463833</code>）：问题、建议、新功能都在这儿聊。</span>
-        <span class="en">Scan the QR code to join (channel ID <code>pd16463833</code>) &mdash; questions, ideas, feature requests.</span>
-      </p>
+      <img src="assets/qq-channel.png" alt="TruthPad QQ 频道" width="120" height="120" loading="lazy">
+      <div class="footer-qq-text">
+        <b><span class="zh">QQ 频道</span><span class="en">QQ channel</span></b>
+        <span class="zh">扫码加入，反馈问题 / 获取新版本</span>
+        <span class="en">Scan to join, report issues and get new builds</span>
+      </div>
     </div>
     <p class="footer-slogan">Make Editing Great Again. &middot; &ldquo;Nobody knows editors better than me!&rdquo;</p>
   </div>
 </footer>
+
+<!-- 点下载时的准备事项提示（用户 2026-10-15 要求） -->
+<div id="dl-modal" class="modal" hidden>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="dl-modal-title">
+    <h3 id="dl-modal-title"><span class="zh">下载后先做两件事</span><span class="en">Two things after install</span></h3>
+    <ol class="modal-list">
+      <li><span class="zh"><b>填 DeepSeek API Key</b>：设置 →「模型」，添加模型或直接编辑 <code>%APPDATA%\TruthPad\models.json</code>。AI 助手、翻译、速读都从这份配置取。</span><span class="en"><b>Add your DeepSeek API key</b>: Settings → Models, add a model or edit <code>%APPDATA%\TruthPad\models.json</code>. The AI assistant, translation and speed-reading all read this config.</span></li>
+      <li><span class="zh"><b>字幕要下载 Whisper</b>：插件 → 浏览器 → 配置 →「下载识别模型」（约 1.6 GB，需要能访问 huggingface.com）。</span><span class="en"><b>Subtitles need Whisper</b>: Plugins → Browser → Configure → Download model (~1.6 GB, needs access to huggingface.com).</span></li>
+    </ol>
+    <div class="modal-actions">
+      <a id="dl-modal-continue" class="btn primary" href="#"><span class="zh">继续下载</span><span class="en">Continue</span></a>
+      <button id="dl-modal-close" class="btn" type="button"><span class="zh">关闭</span><span class="en">Close</span></button>
+      <label class="modal-skip"><input type="checkbox" id="dl-modal-skip"> <span class="zh">不再提示</span><span class="en">Don't show again</span></label>
+    </div>
+  </div>
+</div>
+
+<!-- 截图查看器：滚轮缩放 + 拖动平移 -->
+<div id="lightbox" class="lightbox" hidden>
+  <div class="lightbox-bar">
+    <span class="lightbox-hint"><span class="zh">滚轮缩放 · 拖动平移 · 双击复位</span><span class="en">Wheel to zoom · Drag to pan · Double-click to reset</span></span>
+    <span id="lightbox-zoom" class="lightbox-zoom">100%</span>
+    <button id="lightbox-reset" class="lightbox-btn" type="button"><span class="zh">适应</span><span class="en">Fit</span></button>
+    <button id="lightbox-close" class="lightbox-btn" type="button" aria-label="Close">✕</button>
+  </div>
+  <img id="lightbox-img" alt="" draggable="false">
+</div>
 
 <script src="app.js"></script>
 </body>

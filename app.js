@@ -88,6 +88,50 @@
     });
   }
 
+  // ---------------------------------------------------------------- Agent 横向画廊
+  // 原生滚动 + scroll-snap；左右按钮按"一张卡片 + 间距"滚动，底部细进度条反映位置。
+  (function () {
+    var gallery = document.getElementById('agent-gallery');
+    if (!gallery) return;
+    var prev = document.getElementById('agent-gallery-prev');
+    var next = document.getElementById('agent-gallery-next');
+    var progress = document.getElementById('agent-gallery-progress');
+
+    function gap() {
+      var style = window.getComputedStyle(gallery);
+      var value = parseFloat(style.columnGap || style.gap);
+      return isNaN(value) ? 18 : value;
+    }
+    function step() {
+      var slide = gallery.querySelector('.agent-slide');
+      return slide ? slide.getBoundingClientRect().width + gap() : gallery.clientWidth * 0.8;
+    }
+    function maxScroll() {
+      return Math.max(0, gallery.scrollWidth - gallery.clientWidth);
+    }
+    function update() {
+      var max = maxScroll();
+      if (prev) prev.disabled = gallery.scrollLeft <= 2;
+      if (next) next.disabled = gallery.scrollLeft >= max - 2;
+      if (progress) progress.style.width = (max > 0 ? (gallery.scrollLeft / max) * 100 : 100) + '%';
+    }
+    function go(direction) {
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      gallery.scrollBy({ left: direction * step(), behavior: reduce ? 'auto' : 'smooth' });
+    }
+
+    if (prev) prev.addEventListener('click', function () { go(-1); });
+    if (next) next.addEventListener('click', function () { go(1); });
+    gallery.addEventListener('scroll', update, { passive: true });
+    gallery.addEventListener('keydown', function (e) {
+      if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+      e.preventDefault();
+      go(e.key === 'ArrowRight' ? 1 : -1);
+    });
+    window.addEventListener('resize', update);
+    requestAnimationFrame(update);
+  })();
+
   // ---------------------------------------------------------------- 截图查看器
   // 点页面上的 .shot 打开；滚轮以光标为中心缩放，按住拖动平移，双击复位。
   // 原图是 2800×1760（2× DPI 截图），这里只在显示时缩放，不另存缩略图。

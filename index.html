@@ -74,44 +74,287 @@
     </div>
   </section>
 
-  <!-- ============================ AI ============================ -->
-  <section class="section" id="ai">
+  <!-- ============================ AI（分层：场景 / Skill / Tools / Gallery） ============================ -->
+  <section class="section agent-section" id="ai">
     <div class="wrap">
-      <div class="section-head">
-        <p class="kicker">AI ASSISTANT</p>
+      <div class="section-head agent-head">
+        <p class="kicker">AI ASSISTANT · THREE LAYERS</p>
         <h2>
-          <span class="zh">AI 不只是聊天。<br><em>它能直接操作 TruthPad。</em></span>
-          <span class="en">Not just chat.<br><em>It operates TruthPad.</em></span>
+          <span class="zh">会聊天只是起点。<br><em>它懂场景，有方法，还真能动手。</em></span>
+          <span class="en">Chat is only the start.<br><em>It follows a method — and gets it done.</em></span>
         </h2>
         <p class="section-sub">
-          <span class="zh">工具调用、附件、访问限制、模型与推理级别，都在输入框边上。</span>
-          <span class="en">Tool calls, attachments, access control, model and reasoning level — all next to the composer.</span>
+          <span class="zh">从科研、学习、工程三个真实场景往下拆：上层是可复用的 Skill，底层是 210 个能直接操作编辑器的工具。</span>
+          <span class="en">Start from three real workflows — research, learning and engineering — then go deeper: reusable Skills on top, 210 tools that operate the editor underneath.</span>
         </p>
       </div>
 
-      <div class="cards">
-        <article class="card">
-          <div class="card-icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg>
+      <!-- Layer 01：场景 -->
+      <div class="agent-layer-head">
+        <span class="layer-num">01</span>
+        <div>
+          <p class="kicker">SCENARIOS</p>
+          <h3><span class="zh">先看它怎么工作</span><span class="en">See it work</span></h3>
+        </div>
+        <p class="layer-note"><span class="zh">不是演示一句问答，是一条能走完的工作流。</span><span class="en">Not a one-shot demo — a workflow you can finish.</span></p>
+      </div>
+
+      <div class="agent-scenarios">
+        <article class="scenario-card">
+          <div class="scenario-top">
+            <span class="scenario-label"><span class="zh">科研</span><span class="en">RESEARCH</span></span>
+            <span class="scenario-arrow">↗</span>
           </div>
-          <h3><span class="zh">能动手</span><span class="en">It acts</span></h3>
-          <p><span class="zh">开文件、改代码、切主题，驱动 PDF、浏览器、播放器和网盘。不是只会说“你可以这样做”。</span><span class="en">Opens files, edits code, switches themes, drives PDF, browser, player and cloud storage. It does the work, not just describes it.</span></p>
+          <h3><span class="zh">一篇论文，<br>读成一张证据地图。</span><span class="en">Turn one paper<br>into an evidence map.</span></h3>
+          <p><span class="zh">先速读判断值不值得读，再精读拆方法；最后把每个结论钉到页码、证据类型和强度上。</span><span class="en">Triage whether it is worth reading, reconstruct the method, then pin every claim to a page, evidence type and strength.</span></p>
+          <div class="scenario-steps">
+            <span>paper-speedread</span><i>→</i><span>paper-evidence-map</span><i>→</i><span>paper-method-repro</span>
+          </div>
+          <div class="scenario-output"><span class="zh">产出：证据表 + 复现评分</span><span class="en">Output: evidence table + reproducibility score</span></div>
         </article>
-        <article class="card">
-          <div class="card-icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v6c0 4.4 3 8.4 7 9.5 4-1.1 7-5.1 7-9.5V6l-7-3Zm0 2.2 5 2.1V12c0 3.2-2.1 6.3-5 7.4-2.9-1.1-5-4.2-5-7.4V7.3l5-2.1Z"/></svg>
+
+        <article class="scenario-card">
+          <div class="scenario-top">
+            <span class="scenario-label"><span class="zh">学习</span><span class="en">LEARNING</span></span>
+            <span class="scenario-arrow">↗</span>
           </div>
-          <h3><span class="zh">有边界</span><span class="en">Guardrails</span></h3>
-          <p><span class="zh">只读 / 标准 / 完全访问。危险操作先弹确认，写操作可以按会话授权。</span><span class="en">Read-only, standard or full access. Dangerous actions ask first; write access can be granted per session.</span></p>
+          <h3><span class="zh">把视频课，<br>变成会出题的学习材料。</span><span class="en">Turn a lecture<br>into material that quizzes you.</span></h3>
+          <p><span class="zh">字幕、时间戳笔记、术语表，再交给自测 Skill：先作答，再看答案与解释，最后拿到复习计划。</span><span class="en">Subtitles, timestamped notes, a glossary — then a self-test Skill: answer first, reveal explanations second, leave with a review plan.</span></p>
+          <div class="scenario-steps">
+            <span>video-lecture-notes</span><i>→</i><span>paper-glossary</span><i>→</i><span>exam-self-test</span>
+          </div>
+          <div class="scenario-output"><span class="zh">产出：笔记 + 自测题 + 答案分离 + 复习计划</span><span class="en">Output: notes + quiz + separated answers + review plan</span></div>
         </article>
-        <article class="card">
-          <div class="card-icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H8l-4 4V5Zm3 4h10M7 12h6"/></svg>
+
+        <article class="scenario-card">
+          <div class="scenario-top">
+            <span class="scenario-label"><span class="zh">工程</span><span class="en">ENGINEERING</span></span>
+            <span class="scenario-arrow">↗</span>
           </div>
-          <h3><span class="zh">有上下文</span><span class="en">Context</span></h3>
-          <p><span class="zh">附件直接拖进对话，会话自动归档；模型和推理档位随手切换，长上下文自动压缩。</span><span class="en">Attach files to the conversation, archive sessions, switch model and reasoning level, and let long contexts compact themselves.</span></p>
+          <h3><span class="zh">从一句需求，<br>到代码和验证。</span><span class="en">From a request<br>to code and verification.</span></h3>
+          <p><span class="zh">定位文件、按行编辑、跑终端和测试、读日志；需要时连上 SSH，在服务器上装依赖、取结果。</span><span class="en">Find files, edit by line, run the terminal and tests, read logs — and when needed, SSH into a server to install dependencies and fetch results.</span></p>
+          <div class="scenario-steps">
+            <span>host_find</span><i>→</i><span>host_editor_edit</span><i>→</i><span>terminal.run</span>
+          </div>
+          <div class="scenario-output"><span class="zh">产出：改动 + 测试记录 + 变更摘要</span><span class="en">Output: edits + test log + change summary</span></div>
         </article>
       </div>
+
+      <!-- Layer 02：Skill -->
+      <div class="agent-layer-head">
+        <span class="layer-num">02</span>
+        <div>
+          <p class="kicker">SKILLS</p>
+          <h3><span class="zh">把高手的工作流，装进一句命令</span><span class="en">Package an expert workflow into one command</span></h3>
+        </div>
+        <p class="layer-note"><span class="zh">18 个内置 Skill，可复制、可修改、可放进项目。</span><span class="en">18 built-in Skills. Copy them, edit them, keep them in a project.</span></p>
+      </div>
+
+      <div class="agent-split agent-skills">
+        <div class="agent-copy">
+          <p class="kicker">SELF-TEST, NOT A SUMMARY</p>
+          <h3><span class="zh">读完之后，<br><em>让 AI 出题考你。</em></span><span class="en">After reading,<br><em>let AI quiz you.</em></span></h3>
+          <p><span class="zh"><code>exam-self-test</code> 不是把笔记再总结一遍。它把材料拆成可检验的掌握度：学习笔记、覆盖定义与推导的自测题、答案与解释分离，最后给出按错误安排的复习计划。</span><span class="en"><code>exam-self-test</code> does not just summarize again. It turns the material into something checkable: study notes, questions covering definitions and derivations, answers separated from explanations, and a review plan driven by mistakes.</span></p>
+          <ul class="checks">
+            <li><span class="zh"><b>先作答，再看答案</b>：答案与解释分开，避免“看懂了”冒充“学会了”。</span><span class="en"><b>Answer first, reveal later</b>: answers and explanations stay separate, so recognition cannot pretend to be mastery.</span></li>
+            <li><span class="zh"><b>证据感</b>：<code>paper-evidence-map</code> 把论点映射到页码与证据强度，<code>paper-method-repro</code> 给出 1–5 分复现评分。</span><span class="en"><b>Evidence-aware</b>: <code>paper-evidence-map</code> pins claims to pages and strength; <code>paper-method-repro</code> scores reproducibility from 1–5.</span></li>
+            <li><span class="zh"><b>可复用</b>：<code>/skill list</code> 查看，<code>/skill invoke</code> 调用；用户和项目都能有自己的 <code>.skills/</code>。</span><span class="en"><b>Reusable</b>: browse with <code>/skill list</code>, run with <code>/skill invoke</code>; users and projects can keep their own <code>.skills/</code>.</span></li>
+          </ul>
+          <div class="skill-cloud">
+            <span class="skill-chip hot">exam-self-test</span>
+            <span class="skill-chip">paper-speedread</span>
+            <span class="skill-chip">paper-evidence-map</span>
+            <span class="skill-chip">paper-method-repro</span>
+            <span class="skill-chip">literature-matrix</span>
+            <span class="skill-chip">pdf-toc-repair</span>
+            <span class="skill-chip more"><span class="zh">+12 个内置</span><span class="en">+12 more</span></span>
+          </div>
+        </div>
+
+        <div class="skill-board">
+          <div class="skill-board-top">
+            <span class="skill-command">/skill invoke exam-self-test</span>
+            <span class="skill-badge">builtin</span>
+          </div>
+          <div class="skill-board-title">
+            <span class="zh">把这一章变成一次自测</span><span class="en">Turn this chapter into a self-test</span>
+          </div>
+          <div class="skill-steps">
+            <div class="skill-step"><b>01</b><div><strong><span class="zh">学习笔记</span><span class="en">Study notes</span></strong><span><span class="zh">结构、定义、推导与考点</span><span class="en">Structure, definitions, derivations, exam points</span></span></div></div>
+            <div class="skill-step"><b>02</b><div><strong><span class="zh">自测题</span><span class="en">Quiz</span></strong><span><span class="zh">覆盖记忆、理解、应用三层</span><span class="en">Recall, comprehension and application</span></span></div></div>
+            <div class="skill-step"><b>03</b><div><strong><span class="zh">答案分离</span><span class="en">Separated answers</span></strong><span><span class="zh">先作答，再看解释</span><span class="en">Answer first, explanation later</span></span></div></div>
+            <div class="skill-step"><b>04</b><div><strong><span class="zh">复习计划</span><span class="en">Review plan</span></strong><span><span class="zh">按错误与间隔安排下一轮</span><span class="en">Next round scheduled by mistakes and spacing</span></span></div></div>
+          </div>
+          <div class="skill-board-output">
+            <span class="skill-output-label">OUTPUT</span>
+            <span class="zh">笔记 · 自测题 · 答案 · 复习计划 → 工作区</span><span class="en">Notes · quiz · answers · review plan → workspace</span>
+          </div>
+          <div class="skill-board-foot"><span class="zh">Skill 只是说明，不执行脚本；所有动作仍走 tools、访问限制和确认。</span><span class="en">A Skill is instructions, not a script; every action still goes through tools, access limits and confirmation.</span></div>
+        </div>
+      </div>
+
+      <!-- Layer 03：Tools -->
+      <div class="agent-layer-head">
+        <span class="layer-num">03</span>
+        <div>
+          <p class="kicker">TOOLS</p>
+          <h3><span class="zh">不是只会说，是有一双手</span><span class="en">Not just talk — it has hands</span></h3>
+        </div>
+        <p class="layer-note"><span class="zh">210 tools，横跨宿主、PDF、浏览器、终端、视频、图片和网盘。</span><span class="en">210 tools across the host, PDF, browser, terminal, video, images and cloud storage.</span></p>
+      </div>
+
+      <div class="agent-split agent-tools">
+        <div class="agent-copy">
+          <h3><span class="zh">工具不是装饰品。<br><em>每一步都能落到文件上。</em></span><span class="en">Tools are not decoration.<br><em>Every step lands on a file.</em></span></h3>
+          <p><span class="zh">宿主提供文件、编辑器、标签、面板；插件提供 PDF、浏览器、终端、视频、图片和网盘能力。Agent 先发现工具，再按工具说明调用，结果回到对话里。</span><span class="en">The host provides files, editor, tabs and panels; plugins provide PDF, browser, terminal, video, image and netdisk capabilities. The agent discovers tools, calls them by contract, and renders results back in the conversation.</span></p>
+          <ul class="checks">
+            <li><span class="zh"><b>文件与编辑区</b>：查找、读写、按行插入/删除、一次 undo 组。</span><span class="en"><b>Files and editor</b>: find, read/write, insert or delete by line, all in one undo group.</span></li>
+            <li><span class="zh"><b>专业工具</b>：PDF 批注/页面/合并拆分/表格，浏览器截图与字幕，视频章节，网盘浏览与下载。</span><span class="en"><b>Pro tools</b>: PDF annotations, pages, merge/split and tables; browser capture and subtitles; video chapters; netdisk browse/download.</span></li>
+            <li><span class="zh"><b>终端与服务器</b>：PowerShell、cmd、SSH、串口与 SFTP；长任务在后台跑，输出回到对话。</span><span class="en"><b>Terminal and servers</b>: PowerShell, cmd, SSH, serial and SFTP; long jobs run in the background and report into the conversation.</span></li>
+            <li><span class="zh"><b>访问限制</b>：只读 / 标准 / 完全三档；敏感参数脱敏，危险操作先确认。</span><span class="en"><b>Access control</b>: read-only, standard or full; sensitive arguments are redacted and dangerous actions ask first.</span></li>
+          </ul>
+        </div>
+        <div class="tool-matrix">
+          <div class="tool-total"><b>210</b><span class="zh">个工具</span><span class="en">tools</span></div>
+          <div class="tool-cell"><b>52</b><span>HOST</span><small><span class="zh">文件 / 编辑区 / 标签 / 面板</span><span class="en">files / editor / tabs / panels</span></small></div>
+          <div class="tool-cell"><b>60</b><span>PDF</span><small><span class="zh">批注 / 页面 / 合并 / 表格</span><span class="en">annotate / pages / merge / tables</span></small></div>
+          <div class="tool-cell"><b>24</b><span>BROWSER</span><small><span class="zh">导航 / 截图 / 字幕 / 文章</span><span class="en">navigate / capture / subtitles / articles</span></small></div>
+          <div class="tool-cell"><b>24</b><span>TERMINAL</span><small><span class="zh">cmd / PS / SSH / TTY / SFTP</span><span class="en">cmd / PS / SSH / TTY / SFTP</span></small></div>
+          <div class="tool-cell"><b>20</b><span>VIDEO</span><small><span class="zh">章节 / 字幕 / 截图 / 播放</span><span class="en">chapters / subtitles / frames / playback</span></small></div>
+          <div class="tool-cell"><b>15</b><span>IMAGE</span><small><span class="zh">查看 / 缩放 / 导出</span><span class="en">view / zoom / export</span></small></div>
+          <div class="tool-cell"><b>15</b><span>NETDISK</span><small><span class="zh">浏览 / 下载 / 配额 / 文件操作</span><span class="en">browse / download / quota / file ops</span></small></div>
+        </div>
+      </div>
+
+      <!-- Gallery -->
+      <div class="agent-gallery-head">
+        <div>
+          <p class="kicker">GALLERY</p>
+          <h3><span class="zh">看它把一件件事做完</span><span class="en">See it finish real work</span></h3>
+          <p><span class="zh">横向滑动，或点图片放大。每一张都是 TruthPad 里的真实界面。</span><span class="en">Scroll sideways, or click any image to zoom. Every frame is the real TruthPad UI.</span></p>
+        </div>
+        <div class="gallery-actions">
+          <button id="agent-gallery-prev" class="gallery-btn" type="button" aria-label="Previous">←</button>
+          <button id="agent-gallery-next" class="gallery-btn" type="button" aria-label="Next">→</button>
+        </div>
+      </div>
+
+      <div class="agent-gallery" id="agent-gallery" tabindex="0" aria-label="Agent gallery">
+        <article class="agent-slide">
+          <figure class="shot-frame agent-slide-visual">
+            <div class="dark-only">
+              <img class="shot zh" src="assets/shot-ai-zh-dark.png" alt="AI 助手在 TruthPad 中处理 PDF 提纲" width="2800" height="1760" loading="lazy" decoding="async">
+              <img class="shot en" src="assets/shot-ai-en-dark.png" alt="AI assistant building a PDF outline in TruthPad" width="2800" height="1760" loading="lazy" decoding="async">
+            </div>
+            <div class="light-only">
+              <img class="shot zh" src="assets/shot-ai-zh-light.png" alt="AI 助手在 TruthPad 中处理 PDF 提纲" width="2800" height="1760" loading="lazy" decoding="async">
+              <img class="shot en" src="assets/shot-ai-en-light.png" alt="AI assistant building a PDF outline in TruthPad" width="2800" height="1760" loading="lazy" decoding="async">
+            </div>
+            <span class="slide-tag"><span class="zh">科研 · 论文</span><span class="en">RESEARCH · PAPER</span></span>
+          </figure>
+          <div class="agent-slide-copy">
+            <h3><span class="zh">从一篇论文开始</span><span class="en">Start with one paper</span></h3>
+            <p><span class="zh">速读、精读、证据地图、复现评分，四步都在对话里完成。</span><span class="en">Triage, deep read, evidence map and reproducibility score — all in one conversation.</span></p>
+            <span class="slide-meta">paper-speedread → paper-evidence-map</span>
+          </div>
+        </article>
+
+        <article class="agent-slide">
+          <figure class="shot-frame agent-slide-visual">
+            <div class="dark-only">
+              <img class="shot zh" src="assets/shot-browser-zh-dark.png" alt="TruthPad 浏览器字幕与讲义" width="2800" height="1760" loading="lazy" decoding="async">
+              <img class="shot en" src="assets/shot-browser-en-dark.png" alt="TruthPad browser subtitles and notes" width="2800" height="1760" loading="lazy" decoding="async">
+            </div>
+            <div class="light-only">
+              <img class="shot zh" src="assets/shot-browser-zh-light.png" alt="TruthPad 浏览器字幕与讲义" width="2800" height="1760" loading="lazy" decoding="async">
+              <img class="shot en" src="assets/shot-browser-en-light.png" alt="TruthPad browser subtitles and notes" width="2800" height="1760" loading="lazy" decoding="async">
+            </div>
+            <span class="slide-tag"><span class="zh">学习 · 视频课</span><span class="en">LEARNING · LECTURE</span></span>
+          </figure>
+          <div class="agent-slide-copy">
+            <h3><span class="zh">把视频课变成复习材料</span><span class="en">Turn a lecture into revision material</span></h3>
+            <p><span class="zh">字幕、时间戳笔记、术语表、自测题，一条链路走完。</span><span class="en">Subtitles, timestamped notes, a glossary and a quiz — one connected workflow.</span></p>
+            <span class="slide-meta">video-lecture-notes → exam-self-test</span>
+          </div>
+        </article>
+
+        <article class="agent-slide">
+          <figure class="shot-frame agent-slide-visual">
+            <div class="dark-only">
+              <img class="shot zh" src="assets/shot-code-zh-dark.png" alt="TruthPad 代码编辑与 AI 修改" width="2800" height="1760" loading="lazy" decoding="async">
+              <img class="shot en" src="assets/shot-code-en-dark.png" alt="TruthPad code editing with AI changes" width="2800" height="1760" loading="lazy" decoding="async">
+            </div>
+            <div class="light-only">
+              <img class="shot zh" src="assets/shot-code-zh-light.png" alt="TruthPad 代码编辑与 AI 修改" width="2800" height="1760" loading="lazy" decoding="async">
+              <img class="shot en" src="assets/shot-code-en-light.png" alt="TruthPad code editing with AI changes" width="2800" height="1760" loading="lazy" decoding="async">
+            </div>
+            <span class="slide-tag"><span class="zh">工程 · 代码</span><span class="en">ENGINEERING · CODE</span></span>
+          </figure>
+          <div class="agent-slide-copy">
+            <h3><span class="zh">让 AI 真的改代码</span><span class="en">Let it actually change the code</span></h3>
+            <p><span class="zh">查找、编辑、跑终端和测试，改动按你的访问级别确认。</span><span class="en">Find, edit, run the terminal and tests — with changes gated by your access level.</span></p>
+            <span class="slide-meta">host_find → host_editor_edit → terminal.run</span>
+          </div>
+        </article>
+
+        <article class="agent-slide">
+          <figure class="shot-frame agent-slide-visual">
+            <div class="dark-only">
+              <img class="shot zh" src="assets/shot-editor-zh-dark.png" alt="TruthPad Markdown 笔记与预览" width="2800" height="1760" loading="lazy" decoding="async">
+              <img class="shot en" src="assets/shot-editor-en-dark.png" alt="TruthPad Markdown notes and preview" width="2800" height="1760" loading="lazy" decoding="async">
+            </div>
+            <div class="light-only">
+              <img class="shot zh" src="assets/shot-editor-zh-light.png" alt="TruthPad Markdown 笔记与预览" width="2800" height="1760" loading="lazy" decoding="async">
+              <img class="shot en" src="assets/shot-editor-en-light.png" alt="TruthPad Markdown notes and preview" width="2800" height="1760" loading="lazy" decoding="async">
+            </div>
+            <span class="slide-tag"><span class="zh">学习 · 笔记</span><span class="en">LEARNING · NOTES</span></span>
+          </figure>
+          <div class="agent-slide-copy">
+            <h3><span class="zh">笔记留在工作区</span><span class="en">Notes that stay in the workspace</span></h3>
+            <p><span class="zh">Markdown、公式、表格和引用保持可读，自测结果和笔记放在一起。</span><span class="en">Markdown, formulas, tables and citations stay readable; quiz results live next to the notes.</span></p>
+            <span class="slide-meta">host_file_edit → Markdown preview</span>
+          </div>
+        </article>
+
+        <article class="agent-slide">
+          <figure class="shot-frame agent-slide-visual">
+            <div class="dark-only">
+              <img class="shot zh" src="assets/shot-pdf-zh-dark.png" alt="TruthPad PDF 阅读与批注" width="2800" height="1760" loading="lazy" decoding="async">
+              <img class="shot en" src="assets/shot-pdf-en-dark.png" alt="TruthPad PDF reading and annotation" width="2800" height="1760" loading="lazy" decoding="async">
+            </div>
+            <div class="light-only">
+              <img class="shot zh" src="assets/shot-pdf-zh-light.png" alt="TruthPad PDF 阅读与批注" width="2800" height="1760" loading="lazy" decoding="async">
+              <img class="shot en" src="assets/shot-pdf-en-light.png" alt="TruthPad PDF reading and annotation" width="2800" height="1760" loading="lazy" decoding="async">
+            </div>
+            <span class="slide-tag"><span class="zh">科研 · PDF</span><span class="en">RESEARCH · PDF</span></span>
+          </figure>
+          <div class="agent-slide-copy">
+            <h3><span class="zh">PDF 不只是阅读</span><span class="en">PDF beyond reading</span></h3>
+            <p><span class="zh">批注、目录修复、表格抽取、合并拆分，60 个工具可被 Agent 调用。</span><span class="en">Annotations, TOC repair, table extraction, merge and split — 60 tools the agent can call.</span></p>
+            <span class="slide-meta">paper-table-extract → pdf-toc-repair</span>
+          </div>
+        </article>
+
+        <article class="agent-slide">
+          <figure class="shot-frame agent-slide-visual">
+            <div class="dark-only">
+              <img class="shot zh" src="assets/shot-plugins-zh-dark.png" alt="TruthPad 插件管理与工具总线" width="2800" height="1760" loading="lazy" decoding="async">
+              <img class="shot en" src="assets/shot-plugins-en-dark.png" alt="TruthPad plugin manager and tool bus" width="2800" height="1760" loading="lazy" decoding="async">
+            </div>
+            <div class="light-only">
+              <img class="shot zh" src="assets/shot-plugins-zh-light.png" alt="TruthPad 插件管理与工具总线" width="2800" height="1760" loading="lazy" decoding="async">
+              <img class="shot en" src="assets/shot-plugins-en-light.png" alt="TruthPad plugin manager and tool bus" width="2800" height="1760" loading="lazy" decoding="async">
+            </div>
+            <span class="slide-tag"><span class="zh">系统 · 工具总线</span><span class="en">SYSTEM · TOOLS</span></span>
+          </figure>
+          <div class="agent-slide-copy">
+            <h3><span class="zh">插件即工具</span><span class="en">Plugins are tools</span></h3>
+            <p><span class="zh">能力来自插件，Agent 按需发现和调用；禁用就不加载，主程序保持小。</span><span class="en">Capabilities come from plugins. The agent discovers and calls them on demand; disabled means not loaded, and the host stays small.</span></p>
+            <span class="slide-meta">plugin catalog → lazy load</span>
+          </div>
+        </article>
+      </div>
+      <div class="agent-gallery-progress" aria-hidden="true"><span id="agent-gallery-progress"></span></div>
     </div>
   </section>
 

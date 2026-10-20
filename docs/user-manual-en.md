@@ -137,7 +137,7 @@ just `"%1"`, with no `--quick`), opening a file degrades to the full UI — run
   **Search**), plugin entries follow by priority; clicking an icon expands the sidebar on that panel;
   collapse it with the title-bar button or `Ctrl+B`.
 - **Editor area**: tab bar plus the editor (line numbers, folding, lexer chosen by file extension).
-- **Bottom panel**: session tabs plus an **Output** tab (Ctrl+` to show/hide).
+- **Bottom panel**: plugin tabs (such as **Terminal**) plus an **Output** tab (Ctrl+backtick to show/hide).
 - **Right panel**: two tabs — **Preview** (everything plugins generate opens here) and **AI**.
 - **Status bar**: on the left, the message, line/column (with selection length when there is one),
   language, encoding and line endings; on the right, plugin buttons (e.g. the PDF quick/deep read)
@@ -234,24 +234,24 @@ as a workspace root.
 
 ### 2.7 Terminal and Output
 
-- **Terminal panel**: Ctrl+` toggles it; **New Session** is Ctrl+Shift+T.
-- **New Session dialog** has three tabs:
-  - **Serial**: port (detected ports are listed; the first one is preselected), baud rate (115200),
-    data bits (8), parity (N), stop bits (1), flow control (N), encoding (UTF-8; choose CP936 to
-    display GBK Chinese output correctly);
-  - **SSH**: host, port (22), user; authentication is handled by a PuTTY dialog (passwords and keys);
-  - **Local**: `cmd.exe` or `PowerShell`, started in its own console and docked into the panel.
-  - Official PuTTY is required: drop it into `tools\putty\` next to the program (you get a hint if
-    it is missing).
-- **Session tab context menu**: Pop Out to a Separate Window / Dock into Panel (whichever applies),
-  Close Session, New Session…; the **Output** tab's menu offers Clear Channel.
+- **Terminal plugin**: the top-level **Terminal** menu opens cmd / PowerShell / SSH / TTY; all
+  sessions live in the bottom **Terminal** tabs, not in editor tabs. Ctrl+backtick toggles the bottom panel.
+- **SSH**: enter host, port and user. A password may be supplied once at connect time, or left empty;
+  the terminal then shows `user@host's password:` and reads it without echo. SSH sessions support
+  disconnect and terminal resizing.
+- **Serial TTY**: pick a port and baud rate (automatic detection is supported), plus data bits,
+  parity, stop bits, flow control and UTF-8 output.
+- **SFTP**: after an SSH connection, open the SFTP sidebar from the left rail. Type a remote path in
+  the path box; file/folder icons match the netdisk plugin. Clicking the sidebar header ✕ disconnects
+  SFTP and removes the rail icon; hiding the sidebar from the title bar does not disconnect.
+  `sftp://` is internal to TruthPad and does not mount a drive.
 - **Output panel**: multiple channels (TruthPad, Build, and plugin channels such as **PDF** and
   **Browser**). Each line reads `timestamp [module] [level]: text`; the **level** button at the far
   right of the tab strip selects the **minimum level shown** (Trace / Debug / Info / Warning / Error /
   All, default Info). A plugin's channel tab appears automatically the first time it writes output.
   Right-click the panel to clear or copy everything.
 
-> 🖼️ **Figure 2-6** — New Session dialog (Serial tab) and docked session tabs
+> 🖼️ **Figure 2-6** — Terminal panel (cmd / PowerShell / SSH / TTY) and the SFTP file sidebar
 
 ### 2.8 Project files `*.truthpad.json`
 
@@ -278,7 +278,7 @@ A project file can bring up several roots plus a set of settings at once
 
 ### 2.9 Settings (`Ctrl+,`)
 
-Six sections on the left: **Appearance / Editor / Terminal / Plugins / Models / About**.
+Six sections on the left: **Appearance / Editor / Plugins / Models / Default apps / About**.
 
 - **Appearance**: Language (applies immediately), File log level (Trace default / Debug / Info /
   Warning / Error — lines below it are not written to the log files, plugin logs included),
@@ -286,12 +286,11 @@ Six sections on the left: **Appearance / Editor / Terminal / Plugins / Models / 
   **Edit theme.json**).
 - **Editor**: Font size (currently 14px), Tab width (4 spaces; a project file's `settings.tabWidth`
   can override it).
-- **Terminal**: Terminal provider (serial/SSH come from PuTTY), Local shell (cmd.exe / PowerShell,
-  enabled).
 - **Plugins**: explanation of the plugins folder, a **Manage plugins…** button, and the
   "N discovered · M loaded" counter.
 - **Models**: see 5.5 — one shared model configuration for every AI plugin.
-- **About**: version and components (Scintilla 5.6.7 · Lexilla 5.5.4 · WebView2 · PuTTY).
+- **Default apps**: choose the file types associated with TruthPad (PDF / source / images / video).
+- **About**: version and components (Scintilla 5.6.7 · Lexilla 5.5.4 · WebView2 · libvterm 0.3.3 · libssh2 1.11.1).
 
 > 🖼️ **Figure 2-7** — Settings: the Appearance and Models sections
 
@@ -351,7 +350,7 @@ Six sections on the left: **Appearance / Editor / Terminal / Plugins / Models / 
 | `Ctrl+Shift+F` | Search in files (left sidebar) |
 | `Ctrl+B` / `Ctrl+Alt+B` | Sidebar / AI assistant panel |
 | `Ctrl+Shift+M` | Markdown live preview (editor ↔ split) |
-| Ctrl+` | Show/hide the terminal panel |
+| Ctrl+backtick | Show/hide the terminal panel |
 | `Ctrl+Shift+T` | New terminal session |
 | `Ctrl+Shift+P` / `Ctrl+,` | Plugin manager / Settings |
 | `Ctrl+Tab` / `Ctrl+Shift+Tab` | Next / previous tab (cycles within the focused pane) |
@@ -972,7 +971,7 @@ the website assets.
 | 2-3 | The drop hint while dragging a tab to split | Screen-capture mid-drag |
 | 2-4 | Search results in the sidebar (grouped + replace row) | Search a keyword in the sample repo |
 | 2-5 | Workspace tree context menu + the drag card | Right-click a tree node (the card needs a timed capture) |
-| 2-6 | New Session dialog (Serial) and docked session tabs | Open the New Session dialog |
+| 2-6 | Terminal panel (cmd / PowerShell / SSH / TTY) and the SFTP file sidebar | Open the Terminal panel |
 | 2-7 | Settings: Appearance and Models sections | Open the settings page |
 | 2-8 | Plugin manager + a plugin settings dialog | Click Configure on a plugin |
 | 3-1 | Split mode and the two sync arrows on the preview top bar | Open a markdown file's preview |

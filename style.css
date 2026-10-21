@@ -141,6 +141,9 @@ section[id], #top { scroll-margin-top: 78px; }
 .hero h1 em {
   display: block;
   font-style: normal;
+  /* 渐变背景只画在元素的 padding box 里；line-height 1.08 的下缘太紧，
+     英文 "get / things" 的底部会被 background-clip:text 吃掉。给 10px 余量。 */
+  padding-bottom: 10px;
   background: linear-gradient(100deg, var(--accent) 10%, var(--accent-2) 90%);
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
